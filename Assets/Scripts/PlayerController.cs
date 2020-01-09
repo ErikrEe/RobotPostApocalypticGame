@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
 
     public bool isGrounded = false;
 
+
     Rigidbody2D rb;
 
     // Start is called before the first frame update
@@ -23,8 +24,10 @@ public class PlayerController : MonoBehaviour
     {
         Jump();
 
-        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
-        transform.position += movement * Time.deltaTime * moveSpeed;
+         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
+         transform.position += movement * Time.deltaTime * moveSpeed;
+
+
     }
 
     void Jump()
