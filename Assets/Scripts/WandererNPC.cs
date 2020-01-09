@@ -50,7 +50,7 @@ public class WandererNPC : MonoBehaviour
 
     void ChooseMoveDirection()
     {
-        // Choose whether to move sideways or up/down
+        // Choose whether to move R or L ?
         currentMoveDirection = Mathf.FloorToInt(Random.Range(0, moveDirections.Length));
     }
 }
