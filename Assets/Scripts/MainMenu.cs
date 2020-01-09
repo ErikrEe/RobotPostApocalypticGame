@@ -19,4 +19,13 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Options");
     }
+
+    public void BackToMainMenu() //this function loads the "MainMenu" scene again
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    //fixa en funktion som unloadar ESC MENU
+    //fixa så att karaktären och allt annat är pausat under esc menu
+    //fixa så att det un-pausar när esc menu är unloadat
 }
