@@ -5,6 +5,12 @@ using System.Threading;
 
 public class Flower : MonoBehaviour
 {
+
+
+    //måste fixa så att det går att glidflyga med blomman
+    //ändra q till e
+    //fixa så att scriptet går att använda för andra grejer än bara blomman.
+    //fixa så att blomman är vid sidan åt det håll som spelaren går
     [SerializeField] // #####finns det något annat sätt att hitta "player" på?
     Rigidbody2D player;
     GameObject thisObject;
@@ -21,7 +27,7 @@ public class Flower : MonoBehaviour
     void Update()
     {
         vector.x = player.transform.position.x; //makes the variable vector equal to the players x position 
-        if (Input.GetKeyDown(KeyCode.E) && (player.transform.position - this.transform.position).sqrMagnitude < 1.25f * 1.25f) //This if statement is triggered whe the button E is pressed and when the player is close enough to the object in a 1.3*1.3 radius from the player.
+        if (Input.GetKeyDown(KeyCode.E) && (player.transform.position - this.transform.position).sqrMagnitude < 1.5f * 1.5f) //This if statement is triggered whe the button E is pressed and when the player is close enough to the object in a 1.3*1.3 radius from the player.
         {
             vector.x = vector.x + 0.7f; //makes the vector.x equal to itself plus 0.7f
             gameObject.transform.position = new Vector2(vector.x, gameObject.transform.position.y); //Makes the position of the game object equal to the players position plus 0.7f on the x axis
