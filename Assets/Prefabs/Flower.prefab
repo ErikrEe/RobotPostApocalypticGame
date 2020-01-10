@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1244602025465395368
+--- !u!1 &2715514515572245027
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,10 +8,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1244602025465395369}
-  - component: {fileID: 1244602025465395373}
-  - component: {fileID: 1244602025465395372}
-  - component: {fileID: 1244602025465395375}
+  - component: {fileID: 2715514515572245026}
+  - component: {fileID: 2715514515572245030}
+  - component: {fileID: 2715514515572245031}
+  - component: {fileID: 2715514515572245028}
   m_Layer: 0
   m_Name: Flower (1)
   m_TagString: Ground
@@ -19,35 +19,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1244602025465395369
+--- !u!4 &2715514515572245026
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1244602025465395368}
+  m_GameObject: {fileID: 2715514515572245027}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.476, y: 0.17, z: 0}
   m_LocalScale: {x: 0.0638, y: 10.834, z: 1}
   m_Children: []
-  m_Father: {fileID: 1244602026306856359}
+  m_Father: {fileID: 2715514516816338732}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
---- !u!33 &1244602025465395373
+--- !u!33 &2715514515572245030
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1244602025465395368}
+  m_GameObject: {fileID: 2715514515572245027}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &1244602025465395372
+--- !u!23 &2715514515572245031
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1244602025465395368}
+  m_GameObject: {fileID: 2715514515572245027}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -78,13 +78,13 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!61 &1244602025465395375
+--- !u!61 &2715514515572245028
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1244602025465395368}
+  m_GameObject: {fileID: 2715514515572245027}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -104,7 +104,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!1 &1244602026306856354
+--- !u!1 &2715514516816338729
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,11 +112,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1244602026306856359}
-  - component: {fileID: 1244602026306856358}
-  - component: {fileID: 1244602026306856353}
-  - component: {fileID: 1244602026306856352}
-  - component: {fileID: 1244602026306856355}
+  - component: {fileID: 2715514516816338732}
+  - component: {fileID: 2715514516816338733}
+  - component: {fileID: 2715514516816338730}
+  - component: {fileID: 2715514516816338731}
+  - component: {fileID: 2715514516816338728}
+  - component: {fileID: 2715514516816338735}
   m_Layer: 0
   m_Name: Flower
   m_TagString: Ground
@@ -124,36 +125,36 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1244602026306856359
+--- !u!4 &2715514516816338732
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1244602026306856354}
+  m_GameObject: {fileID: 2715514516816338729}
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 3.95, y: -0.31, z: 0}
+  m_LocalPosition: {x: 1.06, y: 0.71, z: 0}
   m_LocalScale: {x: 2.1029954, y: 0.17699221, z: 1.9154999}
   m_Children:
-  - {fileID: 1244602025465395369}
+  - {fileID: 2715514515572245026}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
---- !u!33 &1244602026306856358
+--- !u!33 &2715514516816338733
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1244602026306856354}
+  m_GameObject: {fileID: 2715514516816338729}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &1244602026306856353
+--- !u!23 &2715514516816338730
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1244602026306856354}
+  m_GameObject: {fileID: 2715514516816338729}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -184,15 +185,15 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!61 &1244602026306856352
+--- !u!61 &2715514516816338731
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1244602026306856354}
+  m_GameObject: {fileID: 2715514516816338729}
   m_Enabled: 1
-  m_Density: 1
+  m_Density: 0.1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
@@ -210,19 +211,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!50 &1244602026306856355
+--- !u!50 &2715514516816338728
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1244602026306856354}
+  m_GameObject: {fileID: 2715514516816338729}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.62949145
+  m_Mass: 0.294499
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -231,3 +232,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &2715514516816338735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2715514516816338729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd033a77c4617944d97d2e85e32621d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  flower: {fileID: 2715514516816338728}
+  pickedUp: 0

@@ -5,38 +5,51 @@ using System.Threading;
 
 public class Flower : MonoBehaviour
 {
-    [SerializeField] //finns det något annat sätt att hitta "player" på?
+    [SerializeField] // #####finns det något annat sätt att hitta "player" på?
     Rigidbody2D player;
     GameObject thisObject;
+    [SerializeField] 
+    Rigidbody2D flower;
+
+    Vector2 vector;
 
 
     public bool pickedUp = false;
     // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && (player.transform.position - this.transform.position).sqrMagnitude < 1.3f * 1.3f) //This if statement is triggered whe the button E is pressed and when the player is close enough to the object in a 1.3*1.3 radius from the player.
+        vector.x = player.transform.position.x; //makes the variable vector equal to the players x position 
+        if (Input.GetKeyDown(KeyCode.E) && (player.transform.position - this.transform.position).sqrMagnitude < 1.25f * 1.25f) //This if statement is triggered whe the button E is pressed and when the player is close enough to the object in a 1.3*1.3 radius from the player.
         {
-            //flower.transform.SetParent(player.transform);
-            gameObject.transform.parent = player.transform; //denna fungerar också
-            pickedUp = true;
-            //thisObject.constraints = RigidbodyConstraints2D.FreezeRotation; // så att objectet inte välter när ma pker in i den
-            //gameObject.tag = "PickedUp";
+            vector.x = vector.x + 0.7f; //makes the vector.x equal to itself plus 0.7f
+            gameObject.transform.position = new Vector2(vector.x, gameObject.transform.position.y); //Makes the position of the game object equal to the players position plus 0.7f on the x axis
+            gameObject.transform.parent = player.transform; //Makes the gameObject a child of the player (player from the serialize field player variable)
+            pickedUp = true;  //changes this bool to true
+            gameObject.transform.rotation = Quaternion.Euler(0, 0, -90); //changes the rotation of the object to 0,0,-90 so that the object is in its default position when picked up
+            flower.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation; //Freezes the rotation and position of the object when it's picked up so it does not fall over or slide away from the player/parent
+            //flower.constraints = RigidbodyConstraints2D.FreezeRotation; // Freezes the rotation of the object when it's picked up so it does not fall over
         }
-        
+
+       /* if(Input.GetKeyDown(KeyCode.A))// här försöker jag ändra så att blomman är på andra sidan av karaktären när den går åt vänster
+        {
+
+            vector.x = vector.x + 0.7f;
+            gameObject.transform.position = new Vector2(vector.x, gameObject.transform.position.y); //Makes the position of the game object equal to the players position plus 0.7f on the x axis
+        } */
+        //fixa så att man kan glidflyga när man håller i blomman
+
 
         //#### ÄNDRA Q TILL E - dock loopar den om för fort och jag har ingen aning om hur man ska fixa det....
-        if (Input.GetKey(KeyCode.Q) && pickedUp)   // gameObject.tag == "PickedUp" osäker på om det där ska vara med
+        if (Input.GetKey(KeyCode.Q) && pickedUp) 
         {
             gameObject.transform.parent = null; //this removes the object from being a child to the player 
             pickedUp = false;
-            //gameObject.Constraints = RigidbodyConstraints2D.None; // så att objectet man vältas igen
+            flower.constraints = RigidbodyConstraints2D.None; // Un freezes the object so it can tilt over again.
 
         } 
+
+
     }
 }

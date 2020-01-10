@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 
 
     public float moveSpeed = 10f;
-    public float jumpHeight = 10f;
+    public static float jumpHeight = 10f;
 
     public bool isGrounded = false;
 
