@@ -8,14 +8,12 @@ public class Flower : MonoBehaviour
     [SerializeField] //finns det något annat sätt att hitta "player" på?
     Rigidbody2D player;
     GameObject thisObject;
+    [SerializeField] //finns det något annat sätt att hitta "player" på?
+    Rigidbody2D flower;
 
 
     public bool pickedUp = false;
     // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
@@ -25,7 +23,9 @@ public class Flower : MonoBehaviour
             //flower.transform.SetParent(player.transform);
             gameObject.transform.parent = player.transform; //denna fungerar också
             pickedUp = true;
-            //thisObject.constraints = RigidbodyConstraints2D.FreezeRotation; // så att objectet inte välter när ma pker in i den
+            //transform.Rotate(0, 0, -90);
+            gameObject.transform.rotation = Quaternion.Euler(0, 0, -90); //ändrar rotationen till 0,0,-90 så att objectet står upp när det är Picked Up
+            flower.constraints = RigidbodyConstraints2D.FreezeRotation; // så att objectet inte välter när ma pker in i den
             //gameObject.tag = "PickedUp";
         }
         
@@ -35,8 +35,13 @@ public class Flower : MonoBehaviour
         {
             gameObject.transform.parent = null; //this removes the object from being a child to the player 
             pickedUp = false;
-            //gameObject.Constraints = RigidbodyConstraints2D.None; // så att objectet man vältas igen
+            flower.constraints = RigidbodyConstraints2D.None; // så att objectet man vältas igen
 
         } 
+
+       /* if (Input.GetButtonDown("Jump") && pickedUp)
+        {
+            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, PlayerController.jumpHeight), ForceMode2D.Impulse);
+        } */
     }
 }

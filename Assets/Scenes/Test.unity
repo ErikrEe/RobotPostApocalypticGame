@@ -195,6 +195,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1244602024816951034}
   m_PrefabAsset: {fileID: 0}
+--- !u!50 &1731353433 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 1244602026306856355, guid: 1c03eba2fb7ac444c9a4e2d7914cda2b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1244602024816951034}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1731353438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,6 +214,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1961776584}
+  flower: {fileID: 1731353433}
+  pickedUp: 0
 --- !u!1 &1938292321
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,7 +333,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 6
-  jumpHeight: 5
   isGrounded: 0
 --- !u!50 &1961776584
 Rigidbody2D:
@@ -509,12 +516,12 @@ PrefabInstance:
     - target: {fileID: 1244602026306856359, guid: 1c03eba2fb7ac444c9a4e2d7914cda2b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.95
+      value: 1.06
       objectReference: {fileID: 0}
     - target: {fileID: 1244602026306856359, guid: 1c03eba2fb7ac444c9a4e2d7914cda2b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.31
+      value: 0.71
       objectReference: {fileID: 0}
     - target: {fileID: 1244602026306856359, guid: 1c03eba2fb7ac444c9a4e2d7914cda2b,
         type: 3}
@@ -560,6 +567,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1244602026306856352, guid: 1c03eba2fb7ac444c9a4e2d7914cda2b,
+        type: 3}
+      propertyPath: m_Density
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1244602026306856355, guid: 1c03eba2fb7ac444c9a4e2d7914cda2b,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c03eba2fb7ac444c9a4e2d7914cda2b, type: 3}
