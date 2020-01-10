@@ -20,12 +20,19 @@ public class Flower : MonoBehaviour
     Vector2 vector;
 
 
-    public bool pickedUp = false;
+    public static bool pickedUp = false;
     // Start is called before the first frame update
 
     // Update is called once per frame
     void Update()
     {
+
+        /*if(pickedUp)
+        {
+            player.AddForce(transform.forward * 1);
+        }*/
+
+
         vector.x = player.transform.position.x; //makes the variable vector equal to the players x position 
         if (Input.GetKeyDown(KeyCode.E) && (player.transform.position - this.transform.position).sqrMagnitude < 1.5f * 1.5f) //This if statement is triggered whe the button E is pressed and when the player is close enough to the object in a 1.3*1.3 radius from the player.
         {
@@ -35,7 +42,7 @@ public class Flower : MonoBehaviour
             pickedUp = true;  //changes this bool to true
             gameObject.transform.rotation = Quaternion.Euler(0, 0, -90); //changes the rotation of the object to 0,0,-90 so that the object is in its default position when picked up
             flower.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation; //Freezes the rotation and position of the object when it's picked up so it does not fall over or slide away from the player/parent
-            //flower.constraints = RigidbodyConstraints2D.FreezeRotation; // Freezes the rotation of the object when it's picked up so it does not fall over
+            //##flower.constraints = RigidbodyConstraints2D.FreezeRotation; // Freezes the rotation of the object when it's picked up so it does not fall over
         }
 
        /* if(Input.GetKeyDown(KeyCode.A))// här försöker jag ändra så att blomman är på andra sidan av karaktären när den går åt vänster
