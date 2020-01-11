@@ -46,13 +46,20 @@ public class Flower : MonoBehaviour
                    //##flower.constraints = RigidbodyConstraints2D.FreezeRotation; // Freezes the rotation of the object when it's picked up so it does not fall over
         }
 
-       /* if(Input.GetKeyDown(KeyCode.A))// här försöker jag ändra så att blomman är på andra sidan av karaktären när den går åt vänster
-        {
+       // if(Input.GetKeyDown(KeyCode.A))// här försöker jag ändra så att blomman är på andra sidan av karaktären när den går åt vänster
+            // If the input is moving the player right and the player is facing left...
+            if (CharacterController.move > 0 && !CharacterController.facingRight)
+            {
+                // ... flip the player.
+                Flip();
 
-            vector.x = vector.x + 0.7f;
-            gameObject.transform.position = new Vector2(vector.x, gameObject.transform.position.y); //Makes the position of the game object equal to the players position plus 0.7f on the x axis
-        } */
-        //fixa så att man kan glidflyga när man håller i blomman
+            }
+            // Otherwise if the input is moving the player left and the player is facing right...
+            else if (CharacterController.move < 0 && CharacterController.facingRight)
+            {
+                // ... flip the player.
+                Flip();
+            }
 
 
         //#### ÄNDRA Q TILL E - dock loopar den om för fort och jag har ingen aning om hur man ska fixa det....
@@ -62,7 +69,18 @@ public class Flower : MonoBehaviour
             pickedUp = false;
             flower.constraints = RigidbodyConstraints2D.None; // Un freezes the object so it can tilt over again.
 
-        } 
+        }
+
+         void Flip()
+        {
+            // Switch the way the player is labelled as facing.
+            CharacterController.facingRight = !CharacterController.facingRight;
+
+            // Multiply the player's x local scale by -1.
+            Vector3 theScale = transform.localScale;
+            theScale.x *= -1;
+            transform.localScale = theScale;
+        }
 
 
     }
