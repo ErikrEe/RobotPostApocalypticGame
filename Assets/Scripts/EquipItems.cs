@@ -8,15 +8,8 @@ public class EquipItems : MonoBehaviour
     [SerializeField]
     public Rigidbody2D equObject;
     public static bool pickedUp = false;
-    private bool left = false;
-    private bool right = false;
-    Vector2 vector;
-    Vector2 vectorTwo;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    private bool left = false, right = false;
+    Vector2 vector, vectorTwo;
 
     // Update is called once per frame
     void Update()
@@ -73,7 +66,7 @@ public class EquipItems : MonoBehaviour
         if(pickedUp && right)
         {
             vectorTwo.y = vectorTwo.y + 0.2f; //makes the vector.y equal to itself plus 0.2f
-            vector.x = vector.x + 0.7f;                                                 //makes the vector.x equal to itself plus 0.7f
+            vector.x = vector.x + 0.1f;                                                 //makes the vector.x equal to itself plus 0.7f
             equObject.transform.position = new Vector2(vector.x, vectorTwo.y);
         }
 
