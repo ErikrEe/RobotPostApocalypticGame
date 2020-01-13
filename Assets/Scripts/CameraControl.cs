@@ -8,6 +8,7 @@ public class CameraControl : MonoBehaviour
     public GameObject player;
     private Vector3 playerP;
     public GameObject LevelP;
+
     public float CameraZoomIn;
     public float CameraZoomOut;
     // Start is called before the first frame update
@@ -37,6 +38,8 @@ public class CameraControl : MonoBehaviour
 
             
             Camera1.transform.position = LevelP.transform.position;    // if player is colliding, move the camera to the position of the empty gameobject
+
+
             Camera1.orthographicSize = Mathf.Lerp(Camera1.orthographicSize, CameraZoomOut, Time.deltaTime); // zoom out smoothly
          
 
@@ -51,6 +54,7 @@ public class CameraControl : MonoBehaviour
 
     void cameraFollow()
     {
-        playerP = new Vector3 (player.transform.position.x, Camera1.transform.position.y, player.transform.position.z - 4); // makes a position for the camera
+        playerP = new Vector3 (Mathf.Lerp(Camera1.transform.position.x, player.transform.position.x, 2 * Time.deltaTime ), Camera1.transform.position.y, player.transform.position.z - 4); // makes the position for the camera be the same as the player on the x axis
+      
     }
 }
