@@ -24,8 +24,7 @@ public class EquipItems : MonoBehaviour
 
         vector.x = gameObject.transform.position.x;
         vectorTwo.y = gameObject.transform.position.y;
-        Debug.Log("Bruh funka bror " + equObject.transform.rotation.eulerAngles);
-        if (Input.GetKeyDown(KeyCode.E) && (gameObject.transform.position - this.transform.position).sqrMagnitude < 1.5f * 1.5f)
+        if (Input.GetKeyDown(KeyCode.E) && (equObject.transform.position - this.transform.position).sqrMagnitude < 2f * 2f)
         {
             pickedUp = true;
             vector.x = vector.x + 0.7f;                                                      //makes the vector.x equal to itself plus 0.7f
