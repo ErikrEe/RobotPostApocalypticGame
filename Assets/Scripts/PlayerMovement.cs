@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
     float xMove = 0f;  //Horizontal movement (Not speed)
 
-    bool jump = false;
+    public static bool jump = false;
     bool crouch = false;
 
     // Start is called before the first frame update
