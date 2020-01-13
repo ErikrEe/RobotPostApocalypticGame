@@ -5,9 +5,11 @@ using UnityEngine;
 public class CameraControl : MonoBehaviour
 {
     public Camera Camera1;
-   // public GameObject Camera2;
     public GameObject player;
     private Vector3 playerP;
+    public GameObject LevelP;
+    public float CameraZoomIn;
+    public float CameraZoomOut;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,15 +19,38 @@ public class CameraControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-           playerP = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z - 4);
+       
+       
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("CameraSwitch"))
+        if (collision.CompareTag("CameraFollow"))   // Checks if the player is colliding with the trigger
         {
-            Camera1.transform.position = playerP;
-            Camera1.orthographicSize = 2;
+            cameraFollow();       //if player is colliding, start the camerafollow method
+            Camera1.transform.position = playerP;   // Cameras position switches to players position
+            Camera1.orthographicSize = Mathf.Lerp(Camera1.orthographicSize, CameraZoomIn, Time.deltaTime);    //zoom in the camera smoothly
+    
         }
+      if (collision.CompareTag("CameraSwitch"))   //Checks if the player is colliding with the trigger
+        {
+
+            
+            Camera1.transform.position = LevelP.transform.position;    // if player is colliding, move the camera to the position of the empty gameobject
+            Camera1.orthographicSize = Mathf.Lerp(Camera1.orthographicSize, CameraZoomOut, Time.deltaTime); // zoom out smoothly
+         
+
+        }
+       
+    }
+
+ 
+
+
+
+
+    void cameraFollow()
+    {
+        playerP = new Vector3 (player.transform.position.x, Camera1.transform.position.y, player.transform.position.z - 4); // makes a position for the camera
     }
 }
