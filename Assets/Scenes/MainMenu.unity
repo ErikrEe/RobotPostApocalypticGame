@@ -1626,13 +1626,13 @@ PrefabInstance:
     - target: {fileID: 483525338333816155, guid: b92c7262e317f7143a2e0af8bd743d27,
         type: 3}
       propertyPath: m_ApplyRootMotion
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 483525338333816155, guid: b92c7262e317f7143a2e0af8bd743d27,
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 9100000, guid: a07cf688fa86a4b4f9d5b9c9faa0ed82, type: 2}
     - target: {fileID: 483525338798850306, guid: b92c7262e317f7143a2e0af8bd743d27,
         type: 3}
       propertyPath: m_RaycastTarget
