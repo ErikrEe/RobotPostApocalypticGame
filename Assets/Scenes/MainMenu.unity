@@ -1458,6 +1458,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelLoader
       objectReference: {fileID: 0}
+    - target: {fileID: 483525337873931087, guid: b92c7262e317f7143a2e0af8bd743d27,
+        type: 3}
+      propertyPath: m_TagString
+      value: UISceneManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 483525337873931084, guid: b92c7262e317f7143a2e0af8bd743d27,
+        type: 3}
+      propertyPath: transitionTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 483525337873931085, guid: b92c7262e317f7143a2e0af8bd743d27,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1581,7 +1591,7 @@ PrefabInstance:
     - target: {fileID: 483525338333816154, guid: b92c7262e317f7143a2e0af8bd743d27,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 483525338333816154, guid: b92c7262e317f7143a2e0af8bd743d27,
         type: 3}
@@ -1596,17 +1606,57 @@ PrefabInstance:
     - target: {fileID: 483525338333816156, guid: b92c7262e317f7143a2e0af8bd743d27,
         type: 3}
       propertyPath: m_BlockingObjects
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 483525338333816156, guid: b92c7262e317f7143a2e0af8bd743d27,
         type: 3}
       propertyPath: m_IgnoreReversedGraphics
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 483525338333816156, guid: b92c7262e317f7143a2e0af8bd743d27,
+        type: 3}
+      propertyPath: m_BlockingMask.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 483525338798850309, guid: b92c7262e317f7143a2e0af8bd743d27,
         type: 3}
       propertyPath: m_LocalPosition.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 483525338333816155, guid: b92c7262e317f7143a2e0af8bd743d27,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483525338333816155, guid: b92c7262e317f7143a2e0af8bd743d27,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 483525338798850306, guid: b92c7262e317f7143a2e0af8bd743d27,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 483525338798850305, guid: b92c7262e317f7143a2e0af8bd743d27,
+        type: 3}
+      propertyPath: m_Alpha
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 483525338798850305, guid: b92c7262e317f7143a2e0af8bd743d27,
+        type: 3}
+      propertyPath: m_BlocksRaycasts
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 483525338798850305, guid: b92c7262e317f7143a2e0af8bd743d27,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483525338798850304, guid: b92c7262e317f7143a2e0af8bd743d27,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b92c7262e317f7143a2e0af8bd743d27, type: 3}
