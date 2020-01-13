@@ -20,7 +20,6 @@ public class MainMenu : MonoBehaviour
 
 
 
-
     public void PlayGame() //This function starts the game by loading the first "Level" scene
     {
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
