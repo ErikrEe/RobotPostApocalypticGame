@@ -12,7 +12,7 @@ public class EquipItems : MonoBehaviour
     Vector2 vector, vectorTwo;
     Rigidbody2D playerVelocity;
 
-    void Start()                                                                              //Start is called before the first frame update
+    void Start()                                                                             //Start is called before the first frame update
     {
         playerVelocity = GetComponent<Rigidbody2D>();
     }
@@ -77,9 +77,9 @@ public class EquipItems : MonoBehaviour
              {
                  if(playerVelocity.position.y < 0)
                  {
-                     gameObject.GetComponent<Rigidbody2D>().gravityScale = 0.2f; //Sets the gravity for that object to 0
+                     gameObject.GetComponent<Rigidbody2D>().gravityScale = 0f;            //Sets the gravity for that object to 0
                  }
-                 gameObject.GetComponent<Rigidbody2D>().gravityScale = 1f; //Sets the gravity for that object to 1
+                 gameObject.GetComponent<Rigidbody2D>().gravityScale = 1f;                  //Sets the gravity for that object to 1
 
              } 
         }
@@ -92,7 +92,7 @@ public class EquipItems : MonoBehaviour
             equObject.transform.parent = null;                                              //this removes the object from being a child to the player 
             pickedUp = false;
             equObject.constraints = RigidbodyConstraints2D.None;                            // Un freezes the object so it can tilt over again
-            gameObject.GetComponent<Rigidbody2D>().gravityScale = 1;                        //Sets the gravity for that object to 1
+           // gameObject.GetComponent<Rigidbody2D>().gravityScale = 1;                        //Sets the gravity for that object to 1
         }
 
 
