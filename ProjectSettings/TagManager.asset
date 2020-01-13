@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - PickedUp
+  - CameraSwitch
+  - CameraFollow
   layers:
   - Default
   - TransparentFX
@@ -13,8 +15,6 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
   - 
   - 
   - Ground

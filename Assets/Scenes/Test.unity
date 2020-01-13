@@ -291,6 +291,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4441409585074301754, guid: c81b16d76a4bf6a47b6e1b382c8e400f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 4441409585074301735, guid: c81b16d76a4bf6a47b6e1b382c8e400f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -345,6 +350,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4441409583646348528, guid: c81b16d76a4bf6a47b6e1b382c8e400f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4441409583887071621, guid: c81b16d76a4bf6a47b6e1b382c8e400f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c81b16d76a4bf6a47b6e1b382c8e400f, type: 3}
@@ -548,7 +563,7 @@ GameObject:
   - component: {fileID: 1938292324}
   - component: {fileID: 1938292323}
   - component: {fileID: 1938292322}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -711,6 +726,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower
       objectReference: {fileID: 0}
+    - target: {fileID: 2715514516816338729, guid: 1c03eba2fb7ac444c9a4e2d7914cda2b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 2715514516816338728, guid: 1c03eba2fb7ac444c9a4e2d7914cda2b,
         type: 3}
       propertyPath: m_GravityScale
@@ -795,6 +815,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2715514515572245027, guid: 1c03eba2fb7ac444c9a4e2d7914cda2b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c03eba2fb7ac444c9a4e2d7914cda2b, type: 3}
