@@ -10,10 +10,19 @@ public class EquipItems : MonoBehaviour
     public static bool pickedUp = false;
     private bool left = false, right = false;
     Vector2 vector, vectorTwo;
+    Rigidbody2D playerVelocity;
 
+    void Start()
+    {
+        playerVelocity = GetComponent<Rigidbody2D>();
+    }
     // Update is called once per frame
     void Update()
     {
+        float verticalVelocity = playerVelocity.velocity.y;
+        //vectorThree.y = Input.GetAxisRaw("Vertical");
+
+
         vector.x = gameObject.transform.position.x;
         vectorTwo.y = gameObject.transform.position.y;
         if (Input.GetKeyDown(KeyCode.E) && (gameObject.transform.position - this.transform.position).sqrMagnitude < 1.5f * 1.5f)
@@ -55,6 +64,15 @@ public class EquipItems : MonoBehaviour
                 right = true;
                 //equObject.transform.position = new Vector2(-vector.x, vectorTwo.y);
             }
+            if(pickedUp && PlayerMovement.jump)
+            {
+                if(playerVelocity.position.y < 0)
+                {
+                    gameObject.GetComponent<Rigidbody2D>().gravityScale = 0.2f; //Sets the gravity for that object to 0
+                }
+                gameObject.GetComponent<Rigidbody2D>().gravityScale = 1f; //Sets the gravity for that object to 1
+            
+            }
         }
         if(pickedUp && left)
         {
@@ -75,7 +93,7 @@ public class EquipItems : MonoBehaviour
             equObject.transform.parent = null;                                          //this removes the object from being a child to the player 
             pickedUp = false;
             equObject.constraints = RigidbodyConstraints2D.None;                        // Un freezes the object so it can tilt over again.
-            //equObject.GetComponent<Rigidbody2D>().gravityScale = 1; //Sets the gravity for that object to 0
+            gameObject.GetComponent<Rigidbody2D>().gravityScale = 1; //Sets the gravity for that object to 0
         }
 
 

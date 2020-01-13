@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour
     }
     public void PlayGame() //This function starts the game by loading the first "Level" scene
     {
-        SceneManager.LoadScene("Level 1");
+        SceneManager.LoadScene("Test");
     }
     public void GoToOptions() //this function loads the "Options" scene
     {
