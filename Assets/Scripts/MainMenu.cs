@@ -32,7 +32,7 @@ public class MainMenu : MonoBehaviour
 
         yield return new WaitForSeconds(transitionTime); //Pauses Coroutine for set amount of seconds
 
-        SceneManager.LoadScene(levelIndex);
+        SceneManager.LoadScene(levelIndex); //Loads Scene
     }
 
 
