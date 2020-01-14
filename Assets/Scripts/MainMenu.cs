@@ -20,11 +20,11 @@ public class MainMenu : MonoBehaviour
 
 
 
-   /* public void PlayGame() //This function starts the game by loading the first "Level" scene
+    public void PlayGame() //This function starts the game by loading the first "Level" scene
     {
-        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+        LoadNextLevel();
     }
-
+    /*
     IEnumerator LoadLevel(int levelIndex)
     {
         transition.SetTrigger("Start"); //Triggers the animation
@@ -62,13 +62,13 @@ public class MainMenu : MonoBehaviour
 
 
 
-    void Update()
+   /* void Update()
     {
         if(Input.GetMouseButtonDown(0))
         {
-            LoadNextLevel();
+           
         }
-    }
+    }*/
 
     public void LoadNextLevel()
     {
