@@ -12,32 +12,15 @@ public class MainMenu : MonoBehaviour
     public float transitionTime = 1f;
 
 
+
+
+
+
+
     public void QuitGame() //This function closes the application when triggered
     {
         Application.Quit();
     }
-
-
-
-
-    public void PlayGame() //This function starts the game by loading the first "Level" scene
-    {
-        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
-    }
-
-    IEnumerator LoadLevel(int levelIndex)
-    {
-        transition.SetTrigger("Start"); //Triggers the animation
-
-        yield return new WaitForSeconds(transitionTime); //Pauses Coroutine for set amount of seconds
-
-        SceneManager.LoadScene(levelIndex); //Loads Scene
-    }
-
-
-
-
-    
 
 
     public void GoToOptions() //this function loads the "Options" scene
@@ -45,11 +28,45 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Options");
     }
 
+
     public void BackToMainMenu() //this function loads the "MainMenu" scene again
     {
         SceneManager.LoadScene("MainMenu");
     }
+
+
+
+
+    public void PlayGame() //This function starts the game by loading the first "Level" scene
+    {
+        LoadNextLevel();
+    }
+
+
+    public void LoadNextLevel() //Metod som startar en coroutine, och sedan accessar scenen + transitionar till "scenIndex" + 1
+    {
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+
+    }
+
+    //Coroutine nedan som triggar allting, spelar animation, väntar en sekund, loadar scenen
+
+    IEnumerator LoadLevel(int levelIndex)
+    {
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(transitionTime);
+
+        SceneManager.LoadScene(levelIndex);
+    }
+
+
+
     //fixa en funktion som unloadar ESC MENU
     //fixa så att karaktären och allt annat är pausat under esc menu
     //fixa så att det un-pausar när esc menu är unloadat
+
+
+
+
 }
