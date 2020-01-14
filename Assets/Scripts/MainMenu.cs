@@ -12,9 +12,26 @@ public class MainMenu : MonoBehaviour
     public float transitionTime = 1f;
 
 
+
+
+
+
+
     public void QuitGame() //This function closes the application when triggered
     {
         Application.Quit();
+    }
+
+
+    public void GoToOptions() //this function loads the "Options" scene
+    {
+        SceneManager.LoadScene("Options");
+    }
+
+
+    public void BackToMainMenu() //this function loads the "MainMenu" scene again
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
 
@@ -24,58 +41,15 @@ public class MainMenu : MonoBehaviour
     {
         LoadNextLevel();
     }
-    /*
-    IEnumerator LoadLevel(int levelIndex)
-    {
-        transition.SetTrigger("Start"); //Triggers the animation
-
-        yield return new WaitForSeconds(transitionTime); //Pauses Coroutine for set amount of seconds
-
-        SceneManager.LoadScene(levelIndex); //Loads Scene
-    }
-    */
 
 
-
-    
-
-
-    public void GoToOptions() //this function loads the "Options" scene
-    {
-        SceneManager.LoadScene("Options");
-    }
-
-    public void BackToMainMenu() //this function loads the "MainMenu" scene again
-    {
-        SceneManager.LoadScene("MainMenu");
-    }
-    //fixa en funktion som unloadar ESC MENU
-    //fixa så att karaktären och allt annat är pausat under esc menu
-    //fixa så att det un-pausar när esc menu är unloadat
-
-
-
-
-
-
-
-
-
-
-   /* void Update()
-    {
-        if(Input.GetMouseButtonDown(0))
-        {
-           
-        }
-    }*/
-
-    public void LoadNextLevel()
+    public void LoadNextLevel() //Metod som startar en coroutine, och sedan accessar scenen + transitionar till "scenIndex" + 1
     {
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
 
     }
 
+    //Coroutine nedan som triggar allting, spelar animation, väntar en sekund, loadar scenen
 
     IEnumerator LoadLevel(int levelIndex)
     {
@@ -88,6 +62,9 @@ public class MainMenu : MonoBehaviour
 
 
 
+    //fixa en funktion som unloadar ESC MENU
+    //fixa så att karaktären och allt annat är pausat under esc menu
+    //fixa så att det un-pausar när esc menu är unloadat
 
 
 
