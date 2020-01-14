@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour
 
 
 
-    public void PlayGame() //This function starts the game by loading the first "Level" scene
+   /* public void PlayGame() //This function starts the game by loading the first "Level" scene
     {
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
     }
@@ -33,7 +33,7 @@ public class MainMenu : MonoBehaviour
 
         SceneManager.LoadScene(levelIndex); //Loads Scene
     }
-
+    */
 
 
 
@@ -52,4 +52,44 @@ public class MainMenu : MonoBehaviour
     //fixa en funktion som unloadar ESC MENU
     //fixa så att karaktären och allt annat är pausat under esc menu
     //fixa så att det un-pausar när esc menu är unloadat
+
+
+
+
+
+
+
+
+
+
+    void Update()
+    {
+        if(Input.GetMouseButtonDown(0))
+        {
+            LoadNextLevel();
+        }
+    }
+
+    public void LoadNextLevel()
+    {
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+
+    }
+
+
+    IEnumerator LoadLevel(int levelIndex)
+    {
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(transitionTime);
+
+        SceneManager.LoadScene(levelIndex);
+    }
+
+
+
+
+
+
+
 }
