@@ -120,6 +120,24 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &206621002 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3908122383339322953, guid: c81b16d76a4bf6a47b6e1b382c8e400f,
+    type: 3}
+  m_PrefabInstance: {fileID: 3908122381837962156}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &206621011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206621002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97cf736de8a098d4ebdb3a311bd85cb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &451850890 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 8421215961594700478, guid: 1c03eba2fb7ac444c9a4e2d7914cda2b,
@@ -296,11 +314,11 @@ GameObject:
   - component: {fileID: 1374707593}
   - component: {fileID: 1374707592}
   - component: {fileID: 1374707591}
-  - component: {fileID: 1374707590}
   - component: {fileID: 1374707589}
+  - component: {fileID: 1374707590}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: DragObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -346,7 +364,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -405,7 +423,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1374707588}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.885, y: -1.75, z: -0.8808594}
+  m_LocalPosition: {x: 4, y: -1.31, z: -0.8808594}
   m_LocalScale: {x: 1.85476, y: 1.033156, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

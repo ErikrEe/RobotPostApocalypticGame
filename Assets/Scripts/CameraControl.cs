@@ -7,22 +7,14 @@ public class CameraControl : MonoBehaviour
     public Camera Camera1;
     public GameObject player;
     private Vector3 playerP;
-    public GameObject LevelP;
+    public GameObject LevelP1;
+    public GameObject LevelP2;
+
+   
+    private CameraControl cam;
 
     public float CameraZoomIn;
     public float CameraZoomOut;
-    // Start is called before the first frame update
-    void Start()
-    {
-      
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-       
-       
-    }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -33,24 +25,27 @@ public class CameraControl : MonoBehaviour
             Camera1.orthographicSize = Mathf.Lerp(Camera1.orthographicSize, CameraZoomIn, Time.deltaTime);    //zoom in the camera smoothly
     
         }
-      if (collision.CompareTag("CameraSwitch"))   //Checks if the player is colliding with the trigger
+      if (collision.CompareTag("CameraSwitch1"))   //Checks if the player is colliding with the trigger
         {
 
             
-            Camera1.transform.position = LevelP.transform.position;    // if player is colliding, move the camera to the position of the empty gameobject
+            Camera1.transform.position = LevelP1.transform.position;    // if player is colliding, move the camera to the position of the empty gameobject
 
 
-            Camera1.orthographicSize = Mathf.Lerp(Camera1.orthographicSize, CameraZoomOut, Time.deltaTime); // zoom out smoothly
-         
+            Camera1.orthographicSize = Mathf.Lerp(Camera1.orthographicSize, CameraZoomOut, 3 * Time.deltaTime); // zoom out smoothly
+           
+        }
+        if (collision.CompareTag("CameraSwitch2"))   //Checks if the player is colliding with the trigger
+        {
+
+
+            Camera1.transform.position = LevelP2.transform.position;    // if player is colliding, move the camera to the position of the empty gameobject
+
+
+            Camera1.orthographicSize = Mathf.Lerp(Camera1.orthographicSize, CameraZoomOut, 3 * Time.deltaTime); // zoom out smoothly
 
         }
-       
     }
-
- 
-
-
-
 
     void cameraFollow()
     {

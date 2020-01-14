@@ -3,12 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Ground
-  - PickedUp
-  - CameraSwitch
-  - CameraFollow
-  - UISceneManager
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -18,9 +13,9 @@ TagManager:
   - UI
   - 
   - 
-  - Ground
-  - Player
-  - IgnoreLayer
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -45,10 +40,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Overtop
-    uniqueID: 1311194753
-    locked: 0
-  - name: OverOvertop
-    uniqueID: 2250199791
     locked: 0
