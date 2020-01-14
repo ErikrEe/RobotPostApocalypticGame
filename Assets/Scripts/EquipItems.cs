@@ -14,6 +14,7 @@ public class EquipItems : MonoBehaviour
     private float currentheight;
     private float previousheight;
     private float travel;
+    Transform dragObject;
 
     void Start()                                                                             //Start is called before the first frame update
     {
@@ -25,12 +26,13 @@ public class EquipItems : MonoBehaviour
         float verticalVelocity = playerVelocity.velocity.y;
 
 
-      
 
+        dragObject = GameObject.FindWithTag("DragObject").transform;
 
-
-
-
+        if (Input.GetKeyDown(KeyCode.E) && (dragObject.transform.position - this.transform.position).sqrMagnitude < 2f * 2f)
+        {
+            dragObject.transform.parent = gameObject.transform;
+        }
 
 
 
@@ -108,6 +110,8 @@ public class EquipItems : MonoBehaviour
             equObject.constraints = RigidbodyConstraints2D.None;                            // Un freezes the object so it can tilt over again
             gameObject.GetComponent<Rigidbody2D>().gravityScale = 3;                        //Sets the gravity for the player to 3 (3 is the default gravity scale for the player)
         }
+
+
 
 
         void Flip()

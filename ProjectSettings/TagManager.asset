@@ -9,6 +9,7 @@ TagManager:
   - CameraSwitch
   - CameraFollow
   - UISceneManager
+  - DragObject
   layers:
   - Default
   - TransparentFX
