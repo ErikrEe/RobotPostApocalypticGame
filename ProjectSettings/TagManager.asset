@@ -3,16 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-<<<<<<< HEAD
   tags: []
-=======
-  tags:
-  - Ground
-  - PickedUp
-  - CameraFollow
-  - UISceneManager
-  - DragObject
->>>>>>> 16e0c6c4597727e7f08c7311ca7520e02f635eca
   layers:
   - Default
   - TransparentFX
