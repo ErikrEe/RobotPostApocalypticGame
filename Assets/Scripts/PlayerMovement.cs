@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     public static bool jump = false;
     bool crouch = false;
 
+    public static bool facingRight = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,9 +34,38 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-        if(Input.GetButtonDown("Jump") && !EquipItems.objectDraged)
+        if (facingRight == true)
+        {
+            animator.SetFloat("DirectionSpeed", xMove);
+        }
+
+        if(facingRight == false)
+        {
+            animator.SetFloat("DirectionSpeed", -xMove);
+        }
+
+
+
+
+        if (xMove < 0 && !facingRight)
+        {
+            // ... flip the player.
+            Flip();
+        }
+        // Otherwise if the input is moving the player left and the player is facing right...
+        else if (xMove > 0 && facingRight) 
+        {
+            // ... flip the player.
+            Flip();
+        }
+
+
+
+
+        if (Input.GetButton("Jump") && !EquipItems.objectDraged)
         {
             jump = true;  //If player presses "space" or "up" or "W" then it sets "jump" = true
+            animator.SetBool("IsJumping", true);
         }
 
         if (Input.GetButtonDown("Crouch"))
@@ -48,6 +79,21 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
+    }
+
+
+
+
+    private void Flip()
+    {
+        facingRight = false;
+    }
+
+
+
+   public void OnLanding ()
+    {
+        animator.SetBool("IsJumping", false);
     }
 
     //Multiplyng by Time.fixedDeltaTime will make sure that we're moving the same amount,
