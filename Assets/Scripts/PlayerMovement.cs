@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
         xMove = Input.GetAxisRaw("Horizontal") * moveSpeed; // -1 * moveSpeed |or| +1 * moveSpeed
 
-        if(Input.GetButtonDown("Jump"))
+        if(Input.GetButtonDown("Jump") && !EquipItems.objectDraged)
         {
             jump = true;  //If player presses "space" or "up" or "W" then it sets "jump" = true
         }
