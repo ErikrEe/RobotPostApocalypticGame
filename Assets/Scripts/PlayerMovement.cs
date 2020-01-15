@@ -138,6 +138,16 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("IsJumping", false);
     }
 
+
+
+    public void OnCrouching(bool isCrouching)
+    {
+        animator.SetBool("IsCrouching", isCrouching);
+    }
+
+
+
+
     //Multiplyng by Time.fixedDeltaTime will make sure that we're moving the same amount,
     //regardless of how many times (per second) this function is called
 

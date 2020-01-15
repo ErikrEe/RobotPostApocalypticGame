@@ -736,6 +736,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8211131009435004575, guid: b012d053c1042794a962d20216e80cf1,
         type: 3}
+      propertyPath: OnCrouchEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211131009435004575, guid: b012d053c1042794a962d20216e80cf1,
+        type: 3}
       propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
@@ -763,6 +768,61 @@ PrefabInstance:
         type: 3}
       propertyPath: jumpForce
       value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211131009435004575, guid: b012d053c1042794a962d20216e80cf1,
+        type: 3}
+      propertyPath: OnCrouchEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211131009435004575, guid: b012d053c1042794a962d20216e80cf1,
+        type: 3}
+      propertyPath: OnCrouchEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211131009435004575, guid: b012d053c1042794a962d20216e80cf1,
+        type: 3}
+      propertyPath: OnCrouchEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1550024613}
+    - target: {fileID: 8211131009435004575, guid: b012d053c1042794a962d20216e80cf1,
+        type: 3}
+      propertyPath: OnCrouchEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnCrouching
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211131009435004575, guid: b012d053c1042794a962d20216e80cf1,
+        type: 3}
+      propertyPath: OnCrouchEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211131009435004575, guid: b012d053c1042794a962d20216e80cf1,
+        type: 3}
+      propertyPath: whatIsGround.m_Bits
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211131009435004546, guid: b012d053c1042794a962d20216e80cf1,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.3830136
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211131009435004546, guid: b012d053c1042794a962d20216e80cf1,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211131009435004546, guid: b012d053c1042794a962d20216e80cf1,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211131009976385046, guid: b012d053c1042794a962d20216e80cf1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.775
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211131009976385046, guid: b012d053c1042794a962d20216e80cf1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.011
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b012d053c1042794a962d20216e80cf1, type: 3}
