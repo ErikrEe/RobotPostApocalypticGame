@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(xMove));
 
 
-/*
+
         if (facingRight == true)
         {
             animator.SetFloat("DirectionSpeed", xMove);
@@ -47,20 +47,20 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-        if (xMove < 0 && !facingRight)
+        if (xMove > 0 && !facingRight)
         {
             // ... flip the player.
             Flip();
         }
         // Otherwise if the input is moving the player left and the player is facing right...
-        else if (xMove > 0 && facingRight) 
+        else if (xMove < 0 && facingRight) 
         {
             // ... flip the player.
             Flip();
         }
 
 
-    */
+    
 
         if (Input.GetButton("Jump") && !EquipItems.objectDraged)
         {

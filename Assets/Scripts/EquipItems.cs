@@ -61,6 +61,7 @@ public class EquipItems : MonoBehaviour
 
             animator.SetBool("IsPulling", true); //Starts playing the "pulling" animation
 
+
             //gameObject.GetComponent<Rigidbody2D>().gravityScale = 4f;                     //Then the gravity for that object is set to 0.2f
 
         }
