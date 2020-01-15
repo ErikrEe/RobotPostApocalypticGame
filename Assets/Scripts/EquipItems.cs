@@ -8,6 +8,7 @@ public class EquipItems : MonoBehaviour
     [SerializeField]
     public Rigidbody2D equObject;
     public static bool pickedUp = false;
+    public static bool objectDraged = false;
     private bool left = false, right = false;
     Vector2 vector, vectorTwo;
     Rigidbody2D playerVelocity;
@@ -25,20 +26,40 @@ public class EquipItems : MonoBehaviour
     {
         float verticalVelocity = playerVelocity.velocity.y;
 
-
+        vector.x = gameObject.transform.position.x;
+        vectorTwo.y = gameObject.transform.position.y;
 
         dragObject = GameObject.FindWithTag("DragObject").transform;
+        dragObject = GameObject.FindWithTag("DragObject").transform;
 
-        if (Input.GetKeyDown(KeyCode.E) && (dragObject.transform.position - this.transform.position).sqrMagnitude < 2f * 2f)
+        if (Input.GetKeyDown(KeyCode.E) && (dragObject.transform.position - this.transform.position).sqrMagnitude < 2.5f * 2f && pickedUp == false) 
         {
-            dragObject.transform.parent = gameObject.transform;
+            //dragObject.transform.parent = gameObject.transform; NEJ GER FÖR MÅNGA BUGGAR
+            vector.x = vector.x + 1.5f;                                                     //makes the vector.x equal to itself plus 0.7f
+            dragObject.transform.position = new Vector2(vector.x, dragObject.position.y);
+            objectDraged = true;
+            //gameObject.GetComponent<Rigidbody2D>().gravityScale = 4f;                     //Then the gravity for that object is set to 0.2f
+
+        }
+        if(objectDraged) //#### FIXA så att den är på olika negative eller positiva sidor beroende på vart den är upplockad. Ska inte kunna hoppa med den eller hoppa väldigt lite?, eller kunna ta upp blomman samtidigt.
+        {
+           // vectorTwo.y = vectorTwo.y + 3f;                                               //makes the vector.y equal to itself plus 0.2f
+            vector.x = vector.x + 1.5f;                                                     //makes the vector.x equal to itself plus 0.7f
+            dragObject.transform.position = new Vector2(vector.x, dragObject.position.y);
+        }
+
+        if (Input.GetKey(KeyCode.Q) && dragObject)
+        {
+           // gameObject.GetComponent<Rigidbody2D>().gravityScale = 3f;
+            objectDraged = false;
+
         }
 
 
 
-        vector.x = gameObject.transform.position.x;
-        vectorTwo.y = gameObject.transform.position.y;
-        if (Input.GetKeyDown(KeyCode.E) && (equObject.transform.position - this.transform.position).sqrMagnitude < 2f * 2f)
+
+
+            if (Input.GetKeyDown(KeyCode.E) && (equObject.transform.position - this.transform.position).sqrMagnitude < 2f * 2f  && objectDraged == false)
         {
             pickedUp = true;
             vector.x = vector.x + 0.7f;                                                      //makes the vector.x equal to itself plus 0.7f
