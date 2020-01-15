@@ -9,6 +9,8 @@ public class EquipItems : MonoBehaviour
     public Rigidbody2D equObject;
     public static bool pickedUp = false;
     public static bool objectDraged = false;
+    public static bool objectLeft = false;
+    public static bool objectRight = false;
     private bool left = false, right = false;
     Vector2 vector, vectorTwo;
     Rigidbody2D playerVelocity;
@@ -55,12 +57,44 @@ public class EquipItems : MonoBehaviour
             //gameObject.GetComponent<Rigidbody2D>().gravityScale = 4f;                     //Then the gravity for that object is set to 0.2f
 
         }
-        if(objectDraged) //#### FIXA så att den är på olika negative eller positiva sidor beroende på vart den är upplockad.
+       /* if(objectDraged) //#### FIXA så att den är på olika negative eller positiva sidor beroende på vart den är upplockad.
         {
            // vectorTwo.y = vectorTwo.y + 3f;                                               //makes the vector.y equal to itself plus 0.2f
             vector.x = vector.x + 1.5f;                                                     //makes the vector.x equal to itself plus 0.7f
             dragObject.transform.position = new Vector2(vector.x, dragObject.transform.position.y);
+        }*/
+        //om object är dragtged och spelarens position på x är > objectets position = höger sida
+        if(objectDraged) //If an object is being dragged..
+        {
+            if(gameObject.transform.position.x > dragObject.transform.position.x) //and the player is on the right side of the object (OBJECT SHOULD BE LEFT SIDE)
+            {
+                vector.x = vector.x -1.5f;                                                     //makes the vector.x equal to itself plus 0.7f
+                objectLeft = true;
+                objectRight = false;
+            }
+            if (gameObject.transform.position.x < dragObject.transform.position.x) //and the player is on the left side of the object
+            {
+                vector.x = vector.x + 1.5f;                                                     //makes the vector.x equal to itself plus 0.7f
+                objectRight = true;
+                objectLeft = false;
+
+            }
+
+            if(objectLeft)
+            {
+
+                dragObject.transform.position = new Vector2(vector.x, dragObject.transform.position.y);
+            }
+            if(objectRight)
+            {
+
+                dragObject.transform.position = new Vector2(vector.x, dragObject.transform.position.y);
+            }
         }
+           
+
+           // dis = Vector3.Distance(dragObject.transform.position, gameObject.transform.position); //Compares the distance between the two vectors dragObject and gameObject
+
 
         if (Input.GetKey(KeyCode.Q) && dragObject)
         {
