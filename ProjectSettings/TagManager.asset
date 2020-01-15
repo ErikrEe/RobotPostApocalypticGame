@@ -4,13 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-<<<<<<< HEAD
-  - CameraSwitch1
-  - CameraSwitch2
-=======
-  - UISceneManager
+  - DragObject
   - Ground
->>>>>>> 6b0f5774fa993a536b266240b891f19d394247cd
   layers:
   - Default
   - TransparentFX
@@ -21,7 +16,7 @@ TagManager:
   - 
   - 
   - Player
-  - IgnoreCollisionWithPlayer
+  - Flower
   - 
   - 
   - 
