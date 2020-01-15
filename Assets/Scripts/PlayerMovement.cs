@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public CharacterController controller; //Ref to characterControllerScript
-
+    public Animator animator;
 
     public float moveSpeed = 40f;
 
@@ -26,6 +26,11 @@ public class PlayerMovement : MonoBehaviour
     {
 
         xMove = Input.GetAxisRaw("Horizontal") * moveSpeed; // -1 * moveSpeed |or| +1 * moveSpeed
+
+
+        animator.SetFloat("Speed", Mathf.Abs(xMove));
+
+
 
         if(Input.GetButtonDown("Jump") && !EquipItems.objectDraged)
         {
