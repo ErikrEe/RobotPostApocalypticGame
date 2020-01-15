@@ -4,35 +4,47 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    #region Variables
+
 
     public CharacterController controller; //Ref to characterControllerScript
-    public Animator animator;
 
-    public float moveSpeed = 40f;
+    public Animator animator; //animator variable
 
+    public float moveSpeed = 40f;  //moveSpeed variable to determine the speed of movement
     float xMove = 0f;  //Horizontal movement (Not speed)
 
-    public static bool jump = false;
-    bool crouch = false;
+    public static bool jump = false;  //True or false condition that determines if the player can jump
+    bool crouch = false;  //True or false condition that determines if the player can crouch
 
-    public static bool facingRight = true;
+    public static bool facingRight = true;  //true or false statement that checks which direction the player is facing
+
+
+    #endregion
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        //Keeping this here incase we need to add something to "Start"
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        xMove = Input.GetAxisRaw("Horizontal") * moveSpeed; // -1 * moveSpeed |or| +1 * moveSpeed
+        // -1 * moveSpeed |or| +1 * moveSpeed
+        xMove = Input.GetAxisRaw("Horizontal") * moveSpeed; 
 
 
+
+        // applies the animator parameter "Speed" to the ABSOLUTE value of the players horizontal speed
         animator.SetFloat("Speed", Mathf.Abs(xMove));
 
 
+
+
+        #region badCodeDidn'tWork
         /*
         if (facingRight == true)
         {
@@ -45,21 +57,26 @@ public class PlayerMovement : MonoBehaviour
         }
 
     */
+        #endregion
 
 
 
-        if(xMove < 0 && facingRight && EquipItems.objectRight)
-        {
-            animator.SetBool("IsPushing", false);
+        #region Pushing/pulling animation conditions
+
+        if (xMove < 0 && facingRight && EquipItems.objectRight) // if the player is moving to the left and facing...
+        {                                                      // ... to the right and has an equipped object...
+            animator.SetBool("IsPushing", false);              // ... to its right then pushing = false.
         }
 
-        if(xMove > 0 && facingRight && EquipItems.objectLeft)
-        {
-            animator.SetBool("IsPushing", false);
+
+
+        if(xMove > 0 && facingRight && EquipItems.objectLeft)  // if the player is moving to the right and facing...
+        {                                                      // ...to the right and has an equipped object to..
+            animator.SetBool("IsPushing", false);              // its left then push = false
         }
 
 
-
+        
 
         //If player is moving left and facing left and has an object to its left...
         if (xMove < 0 && facingRight && EquipItems.objectLeft)
@@ -75,7 +92,12 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
-    
+        #endregion
+
+
+
+        #region Jump/crouch + not holding objects
+        //Jumpcode
 
         if (Input.GetButton("Jump") && !EquipItems.objectDraged)
         {
@@ -85,7 +107,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Crouch"))
         {
-            crouch = true;  //If player presses "down" or "s" then it sets "crouch" = true
+            crouch = true;  //If player presses "s" then it sets "crouch" = true
         }
 
         else if (Input.GetButtonUp("Crouch"))
@@ -95,9 +117,12 @@ public class PlayerMovement : MonoBehaviour
 
 
     }
+    #endregion
 
 
-    /*
+
+
+    /* BadCodeDidn'tWork
 
     private void Flip()
     {
@@ -106,7 +131,9 @@ public class PlayerMovement : MonoBehaviour
 
     */
 
-   public void OnLanding ()
+
+
+    public void OnLanding ()
     {
         animator.SetBool("IsJumping", false);
     }

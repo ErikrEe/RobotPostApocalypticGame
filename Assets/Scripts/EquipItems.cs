@@ -57,8 +57,14 @@ public class EquipItems : MonoBehaviour
             //dragObject.transform.parent = gameObject.transform; NEJ GER FÖR MÅNGA BUGGAR
             //vector.x = vector.x + 1.5f;                                                     //makes the vector.x equal to itself plus 0.7f
             //dragObject.transform.position = new Vector2(vector.x, dragObject.transform.position.y);
+
+
             objectDraged = true;
-            animator.SetBool("IsPulling", true);
+
+
+            animator.SetBool("IsPulling", true);  //Sets the animation bool to true, which triggers the pulling animation
+
+
 
             //gameObject.GetComponent<Rigidbody2D>().gravityScale = 4f;                     //Then the gravity for that object is set to 0.2f
 
