@@ -5,14 +5,13 @@ using UnityEngine;
 public class CameraControl : MonoBehaviour
 {
     public Camera Camera1;
+
     public GameObject player;
-    private Vector3 playerP;
     public GameObject LevelP1;
     public GameObject LevelP2;
 
+    private Vector3 playerP;
    
-    private CameraControl cam;
-
     public float CameraZoomIn;
     public float CameraZoomOut;
 
