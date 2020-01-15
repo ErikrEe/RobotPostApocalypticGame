@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(xMove));
 
 
-
+        /*
         if (facingRight == true)
         {
             animator.SetFloat("DirectionSpeed", xMove);
@@ -41,24 +41,39 @@ public class PlayerMovement : MonoBehaviour
 
         if(facingRight == false)
         {
-            animator.SetFloat("DirectionSpeed", -xMove);
+            animator.SetFloat("DirectionSpeed", xMove);
+        }
+
+    */
+
+
+
+        if(xMove < 0 && facingRight && EquipItems.objectRight)
+        {
+            animator.SetBool("IsPushing", false);
+        }
+
+        if(xMove > 0 && facingRight && EquipItems.objectLeft)
+        {
+            animator.SetBool("IsPushing", false);
         }
 
 
 
 
-        if (xMove > 0 && !facingRight)
+        //If player is moving left and facing left and has an object to its left...
+        if (xMove < 0 && facingRight && EquipItems.objectLeft)
         {
             // ... flip the player.
-            Flip();
+            animator.SetBool("IsPushing", true);
         }
-        // Otherwise if the input is moving the player left and the player is facing right...
-        else if (xMove < 0 && facingRight) 
+        //if player is moving right and is facing right and has an object to its right...
+        else if (xMove > 0 && facingRight && EquipItems.objectRight) 
         {
             // ... flip the player.
-            Flip();
-        }
+            animator.SetBool("IsPushing", true);
 
+        }
 
     
 
@@ -82,14 +97,14 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-
+    /*
 
     private void Flip()
     {
         facingRight = false;
     }
 
-
+    */
 
    public void OnLanding ()
     {
