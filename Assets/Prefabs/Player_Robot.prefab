@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8211131009435004546}
   - component: {fileID: 8211131009435004547}
   - component: {fileID: 8211131009435004544}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player_Robot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bbd452b5e2abd141940aa9ddffead2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
+  controller: {fileID: 8211131009435004575}
   moveSpeed: 40
 --- !u!114 &8211131009435004573
 MonoBehaviour:
@@ -177,7 +177,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 8211131009435004545}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9d27c991bf4cac64d867af602099043f, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -234,7 +234,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.4313822, y: 1.2641054}
+  m_Size: {x: 1.4334639, y: 1.2641056}
   m_EdgeRadius: 0
 --- !u!1 &8211131009699498666
 GameObject:
@@ -245,7 +245,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8211131009699498661}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CeilingCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,7 +275,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8211131009976385046}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
