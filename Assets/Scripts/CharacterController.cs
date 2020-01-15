@@ -116,13 +116,13 @@ public class CharacterController : MonoBehaviour
             rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, movementSmoothing);
 
             // If the input is moving the player right and the player is facing left...
-            if (move > 0 && !facingRight)
+            if (move > 0 && !facingRight && !EquipItems.objectDraged)
             {
                 // ... flip the player.
                 Flip();
             }
             // Otherwise if the input is moving the player left and the player is facing right...
-            else if (move < 0 && facingRight)
+            else if (move < 0 && facingRight && !EquipItems.objectDraged)
             {
                 // ... flip the player.
                 Flip();
