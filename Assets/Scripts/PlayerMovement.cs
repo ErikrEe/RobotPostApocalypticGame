@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(xMove));
 
 
-
+/*
         if (facingRight == true)
         {
             animator.SetFloat("DirectionSpeed", xMove);
@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-
+    */
 
         if (Input.GetButton("Jump") && !EquipItems.objectDraged)
         {
