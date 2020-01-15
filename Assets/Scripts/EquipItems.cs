@@ -15,37 +15,47 @@ public class EquipItems : MonoBehaviour
     private float currentheight;
     private float previousheight;
     private float travel;
-    Transform dragObject;
+    Transform closeToPlayer, withTagDragObject;
+    GameObject dragObject;
+
 
     void Start()                                                                             //Start is called before the first frame update
     {
         playerVelocity = GetComponent<Rigidbody2D>();
     }
 
+
     void Update()                                                                            //Update is called once per frame
     {
-        float verticalVelocity = playerVelocity.velocity.y;
+        FindClosestEnemy(); //Går igenom FindClosestEnemy funktionen.
+
+
+
+
+
+
+
+         float verticalVelocity = playerVelocity.velocity.y;
 
         vector.x = gameObject.transform.position.x;
         vectorTwo.y = gameObject.transform.position.y;
 
-        dragObject = GameObject.FindWithTag("DragObject").transform;
-        dragObject = GameObject.FindWithTag("DragObject").transform;
 
-        if (Input.GetKeyDown(KeyCode.E) && (dragObject.transform.position - this.transform.position).sqrMagnitude < 2.5f * 2f && pickedUp == false) 
+        if (Input.GetKeyDown(KeyCode.E) && (dragObject.transform.position - this.transform.position).sqrMagnitude < 2.5f * 2f && pickedUp == false)  
         {
+            Debug.LogError(dragObject);
             //dragObject.transform.parent = gameObject.transform; NEJ GER FÖR MÅNGA BUGGAR
             vector.x = vector.x + 1.5f;                                                     //makes the vector.x equal to itself plus 0.7f
-            dragObject.transform.position = new Vector2(vector.x, dragObject.position.y);
+            dragObject.transform.position = new Vector2(vector.x, dragObject.transform.position.y);
             objectDraged = true;
             //gameObject.GetComponent<Rigidbody2D>().gravityScale = 4f;                     //Then the gravity for that object is set to 0.2f
 
         }
-        if(objectDraged) //#### FIXA så att den är på olika negative eller positiva sidor beroende på vart den är upplockad. Ska inte kunna hoppa med den eller hoppa väldigt lite?, eller kunna ta upp blomman samtidigt.
+        if(objectDraged) //#### FIXA så att den är på olika negative eller positiva sidor beroende på vart den är upplockad.
         {
            // vectorTwo.y = vectorTwo.y + 3f;                                               //makes the vector.y equal to itself plus 0.2f
             vector.x = vector.x + 1.5f;                                                     //makes the vector.x equal to itself plus 0.7f
-            dragObject.transform.position = new Vector2(vector.x, dragObject.position.y);
+            dragObject.transform.position = new Vector2(vector.x, dragObject.transform.position.y);
         }
 
         if (Input.GetKey(KeyCode.Q) && dragObject)
@@ -159,7 +169,30 @@ public class EquipItems : MonoBehaviour
             gameObject.GetComponent<Rigidbody2D>().gravityScale = 3f;                       //Then the gravity for that object is set to 3 (which is the default value)
         }
         previousheight = currentheight;
-    } 
+    }
+
+
+
+
+
+    void FindClosestEnemy() //hittar viken box/enemy är närmast spelaren
+    {
+        float distanceToClosestEnemy = Mathf.Infinity;
+        Enemy closestEnemy = null;
+        Enemy[] allEnemies = GameObject.FindObjectsOfType<Enemy>();
+
+        foreach (Enemy currentEnemy in allEnemies)
+        {
+            float distanceToEnemy = (currentEnemy.transform.position - this.transform.position).sqrMagnitude;
+            if (distanceToEnemy < distanceToClosestEnemy)
+            {
+                distanceToClosestEnemy = distanceToEnemy;
+                closestEnemy = currentEnemy;
+            }
+        }
+        Debug.DrawLine(this.transform.position, closestEnemy.transform.position);
+        dragObject = closestEnemy.gameObject; //dragObject = closestEnemy fast som ett gameObejct.
+    }
 
 
 }
