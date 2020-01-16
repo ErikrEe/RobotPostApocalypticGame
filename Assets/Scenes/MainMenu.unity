@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 20938403}
   m_Layer: 5
   m_Name: Start button
-  m_TagString: Untagged
+  m_TagString: UISceneManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -156,8 +156,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -20, y: 0}
-  m_SizeDelta: {x: 150, y: 45}
+  m_AnchoredPosition: {x: -20, y: -60}
+  m_SizeDelta: {x: 170, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &20938403
 MonoBehaviour:
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 1
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -565,9 +565,9 @@ RectTransform:
   m_Father: {fileID: 327035623}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -20, y: 101.100006}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -20, y: -180}
   m_SizeDelta: {x: 150, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &499898602
@@ -1038,8 +1038,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -20, y: -63.8}
-  m_SizeDelta: {x: 150, y: 45}
+  m_AnchoredPosition: {x: -20, y: -120}
+  m_SizeDelta: {x: 195.7, y: 49.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &902905777
 MonoBehaviour:
@@ -1393,11 +1393,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2385165622319196481, guid: 4cfb59f61de1f5d4abfc8a8a29424b39,
-        type: 3}
-      propertyPath: transition
-      value: 
-      objectReference: {fileID: 1657131826}
     - target: {fileID: 2385165622319196480, guid: 4cfb59f61de1f5d4abfc8a8a29424b39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1453,6 +1448,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2385165622319196481, guid: 4cfb59f61de1f5d4abfc8a8a29424b39,
+        type: 3}
+      propertyPath: transition
+      value: 
+      objectReference: {fileID: 1657131826}
     - target: {fileID: 2706052051632588925, guid: 4cfb59f61de1f5d4abfc8a8a29424b39,
         type: 3}
       propertyPath: m_Camera
