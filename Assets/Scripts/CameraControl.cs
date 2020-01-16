@@ -9,21 +9,26 @@ public class CameraControl : MonoBehaviour
     public GameObject player;
     public GameObject LevelP1;
     public GameObject LevelP2;
-
+    
     private Vector3 playerP;
    
     public float CameraZoomIn;
     public float CameraZoomOut;
-
+    public float CameraOffsetY;
+    private void Update()
+    {
+        cameraFollow();
+    }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("CameraFollow"))   // Checks if the player is colliding with the trigger
+       /* if (collision.CompareTag("CameraFollow"))   // Checks if the player is colliding with the trigger
         {
             cameraFollow();       //if player is colliding, start the camerafollow method
             Camera1.transform.position = playerP;   // Cameras position switches to players position
             Camera1.orthographicSize = Mathf.Lerp(Camera1.orthographicSize, CameraZoomIn, Time.deltaTime);    //zoom in the camera smoothly
     
         }
+        */
       if (collision.CompareTag("CameraSwitch1"))   //Checks if the player is colliding with the trigger
         {
 
@@ -48,7 +53,10 @@ public class CameraControl : MonoBehaviour
 
     void cameraFollow()
     {
-        playerP = new Vector3 (Mathf.Lerp(Camera1.transform.position.x, player.transform.position.x, 2 * Time.deltaTime ), Camera1.transform.position.y, player.transform.position.z - 4); // makes the position for the camera be the same as the player on the x axis
-      
+        playerP = new Vector3 (Mathf.Lerp(Camera1.transform.position.x, player.transform.position.x, 2 * Time.deltaTime ), this.transform.position.y + CameraOffsetY, player.transform.position.z - 4); // makes the position for the camera be the same as the player on the x axis
+          
+        Camera1.transform.position = playerP;   // Cameras position switches to players position
+        Camera1.orthographicSize = Mathf.Lerp(Camera1.orthographicSize, CameraZoomIn, Time.deltaTime);    //zoom in the camera smoothly
+
     }
 }
