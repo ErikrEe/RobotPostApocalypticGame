@@ -55,8 +55,7 @@ public class CameraControl : MonoBehaviour
     {
         playerP = new Vector3 (Mathf.Lerp(Camera1.transform.position.x, player.transform.position.x, 2 * Time.deltaTime ), this.transform.position.y + CameraOffsetY, player.transform.position.z - 4); // makes the position for the camera be the same as the player on the x axis
           
-        Camera1.transform.position = playerP;   // Cameras position switches to players position
-        Camera1.orthographicSize = Mathf.Lerp(Camera1.orthographicSize, CameraZoomIn, Time.deltaTime);    //zoom in the camera smoothly
+       
 
     }
 }
