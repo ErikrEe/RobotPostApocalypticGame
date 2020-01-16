@@ -218,7 +218,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 14840535}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.44, y: -0.14, z: -24.566406}
+  m_LocalPosition: {x: -12.44, y: 2.78, z: 0}
   m_LocalScale: {x: 1, y: 8.004, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -457,6 +457,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &895906418 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1559633107, guid: b012d053c1042794a962d20216e80cf1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1550024612}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1345640648
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -970,6 +976,21 @@ PrefabInstance:
       propertyPath: equObject
       value: 
       objectReference: {fileID: 451850890}
+    - target: {fileID: 8211131009435004573, guid: b012d053c1042794a962d20216e80cf1,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 895906418}
+    - target: {fileID: 8211131009435004575, guid: b012d053c1042794a962d20216e80cf1,
+        type: 3}
+      propertyPath: whatIsGround.m_Bits
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211131009435004575, guid: b012d053c1042794a962d20216e80cf1,
+        type: 3}
+      propertyPath: jumpForce
+      value: 300
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b012d053c1042794a962d20216e80cf1, type: 3}
 --- !u!4 &1773938881 stripped
@@ -1081,12 +1102,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1885231194}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.671777, y: 1.629556, z: -0.8808594}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 723776551}
-  m_Father: {fileID: 1773938881}
-  m_RootOrder: 3
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1889504335
 PrefabInstance:
