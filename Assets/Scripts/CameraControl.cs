@@ -55,7 +55,6 @@ public class CameraControl : MonoBehaviour
     {
         playerP = new Vector3 (Mathf.Lerp(Camera1.transform.position.x, player.transform.position.x, 2 * Time.deltaTime ), this.transform.position.y + CameraOffsetY, player.transform.position.z - 4); // makes the position for the camera be the same as the player on the x axis
           
-       
 
     }
 }
