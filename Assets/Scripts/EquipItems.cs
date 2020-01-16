@@ -127,13 +127,12 @@ public class EquipItems : MonoBehaviour
             pickedUp = true;
             vector.x = vector.x + 0.7f;                                                      //makes the vector.x equal to itself plus 0.7f
 
-            
-            
-            
+
+
             equObject.constraints = RigidbodyConstraints2D.FreezeAll;
             equObject.transform.parent = gameObject.transform;
             equObject.transform.position = new Vector2(vector.x, vectorTwo.y);              //Makes the position of the object equal to the players position plus some modifications so that the object doesnt teleport into the player
-            equObject.transform.localRotation = Quaternion.Euler(0, 0, -90);
+            equObject.transform.localRotation = Quaternion.Euler(0, 0, 0);
 
 
             if (equObject.transform.localScale.x < 0) //Tobbes kod
@@ -146,8 +145,8 @@ public class EquipItems : MonoBehaviour
 
         if(pickedUp)
         {
-            vectorTwo.y = vectorTwo.y + 0.2f;                                               //makes the vector.y equal to itself plus 0.2f
-            vector.x = vector.x + 0.7f;                                                     //makes the vector.x equal to itself plus 0.7f
+            vectorTwo.y = vectorTwo.y + 1.55f;                                               //makes the vector.y equal to itself plus 0.2f
+            vector.x = vector.x + 0.65f;                                                     //makes the vector.x equal to itself plus 0.7f
                                                                                             //equObject.transform.position = new Vector2(vector.x, vectorTwo.y); 
                                                                                             //Makes the position of the game object equal to the players position plus 0.7f on the x axis and 0.2 on the y axis
 
@@ -172,7 +171,7 @@ public class EquipItems : MonoBehaviour
             if (left)
             {
                 vectorTwo.y = vectorTwo.y - 0.8f; //0.2f;                                           //makes the vector.y equal to itself plus 0.2f
-                vector.x = vector.x -1.5f;                                                 //makes the vector.x equal to itself plus 0.7f
+                vector.x = vector.x -1.2f;                                                 //makes the vector.x equal to itself plus 0.7f
                 equObject.transform.position = new Vector2(vector.x, vectorTwo.y);          //Makes the position of the object equal to the players position plus some modifications so that the object doesnt teleport into the player
             }
             else if (right)
