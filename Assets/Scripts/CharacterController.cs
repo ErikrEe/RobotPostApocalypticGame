@@ -14,6 +14,8 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private Transform ceilingCheck;                          // A position marking where to check for ceilings
     [SerializeField] private Collider2D crouchDisableCollider;                // A collider that will be disabled when crouching
 
+
+
     const float groundedRadius = .2f; // Radius of the overlap circle to determine if grounded
     private bool grounded;            // Whether or not the player is grounded.
     const float ceilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
@@ -96,6 +98,7 @@ public class CharacterController : MonoBehaviour
                 // Disable one of the colliders when crouching
                 if (crouchDisableCollider != null)
                     crouchDisableCollider.enabled = false;
+
             }
             else
             {
@@ -116,13 +119,13 @@ public class CharacterController : MonoBehaviour
             rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, movementSmoothing);
 
             // If the input is moving the player right and the player is facing left...
-            if (move > 0 && !facingRight)
+            if (move > 0 && !facingRight && !EquipItems.objectDraged)
             {
                 // ... flip the player.
                 Flip();
             }
             // Otherwise if the input is moving the player left and the player is facing right...
-            else if (move < 0 && facingRight)
+            else if (move < 0 && facingRight && !EquipItems.objectDraged)
             {
                 // ... flip the player.
                 Flip();

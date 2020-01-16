@@ -20,6 +20,9 @@ public class EquipItems : MonoBehaviour
     Transform closeToPlayer, withTagDragObject;
     GameObject dragObject;
 
+    public Animator animator;
+
+
 
     void Start()                                                                             //Start is called before the first frame update
     {
@@ -48,12 +51,21 @@ public class EquipItems : MonoBehaviour
         vectorTwo.y = gameObject.transform.position.y;
 
 
-        if (Input.GetKeyDown(KeyCode.E) && (dragObject.transform.position - this.transform.position).sqrMagnitude < 2.5f * 2f && pickedUp == false)  
+        if (Input.GetKeyDown(KeyCode.E) && (dragObject.transform.position - this.transform.position).sqrMagnitude < 4f * 2f && pickedUp == false)  
         {
+           // Debug.LogError("fungerar");
             //dragObject.transform.parent = gameObject.transform; NEJ GER FÖR MÅNGA BUGGAR
             //vector.x = vector.x + 1.5f;                                                     //makes the vector.x equal to itself plus 0.7f
             //dragObject.transform.position = new Vector2(vector.x, dragObject.transform.position.y);
+
+
             objectDraged = true;
+
+
+            animator.SetBool("IsPulling", true);  //Sets the animation bool to true, which triggers the pulling animation
+
+
+
             //gameObject.GetComponent<Rigidbody2D>().gravityScale = 4f;                     //Then the gravity for that object is set to 0.2f
 
         }
@@ -64,17 +76,17 @@ public class EquipItems : MonoBehaviour
             dragObject.transform.position = new Vector2(vector.x, dragObject.transform.position.y);
         }*/
         //om object är dragtged och spelarens position på x är > objectets position = höger sida
-        if(objectDraged) //If an object is being dragged..
+        if(objectDraged) //If an object is being dragged.. //BUGG####### && gameObject.transform.position.y -1 >= dragObject.transform.position.y för att inte  kunna ta upp objekt som är över spelaren
         {
             if(gameObject.transform.position.x > dragObject.transform.position.x) //and the player is on the right side of the object (OBJECT SHOULD BE LEFT SIDE)
             {
-                vector.x = vector.x -1.5f;                                                     //makes the vector.x equal to itself plus 0.7f
+                vector.x = vector.x -1.7f;                                                     //makes the vector.x equal to itself plus 0.7f
                 objectLeft = true;
                 objectRight = false;
             }
             if (gameObject.transform.position.x < dragObject.transform.position.x) //and the player is on the left side of the object
             {
-                vector.x = vector.x + 1.5f;                                                     //makes the vector.x equal to itself plus 0.7f
+                vector.x = vector.x + 1.7f;                                                     //makes the vector.x equal to itself plus 0.7f
                 objectRight = true;
                 objectLeft = false;
 
@@ -89,6 +101,7 @@ public class EquipItems : MonoBehaviour
             {
 
                 dragObject.transform.position = new Vector2(vector.x, dragObject.transform.position.y);
+
             }
         }
            
@@ -100,6 +113,8 @@ public class EquipItems : MonoBehaviour
         {
            // gameObject.GetComponent<Rigidbody2D>().gravityScale = 3f;
             objectDraged = false;
+
+            animator.SetBool("IsPulling", false); //Stops playing the "Pulling" animation
 
         }
 
@@ -141,7 +156,7 @@ public class EquipItems : MonoBehaviour
             {
                 
 
-                Flip();                                                                     // ... flip the flower.
+               // Flip();                                                                     // ... flip the flower.
                 left = true;
                 right = false;
 
@@ -149,20 +164,20 @@ public class EquipItems : MonoBehaviour
 
             else if (CharacterController.move > 0 && CharacterController.facingRight)       // Otherwise if the input is moving the player left and the player is facing right...
             {
-                Flip();                                                                     // ... flip the flower.
+               // Flip();                                                                     // ... flip the flower.
                 left = false;
                 right = true;
 
             }
             if (left)
             {
-                vectorTwo.y = vectorTwo.y + 0.2f;                                           //makes the vector.y equal to itself plus 0.2f
-                vector.x = vector.x - 1.5f;                                                 //makes the vector.x equal to itself plus 0.7f
+                vectorTwo.y = vectorTwo.y - 0.8f; //0.2f;                                           //makes the vector.y equal to itself plus 0.2f
+                vector.x = vector.x -1.5f;                                                 //makes the vector.x equal to itself plus 0.7f
                 equObject.transform.position = new Vector2(vector.x, vectorTwo.y);          //Makes the position of the object equal to the players position plus some modifications so that the object doesnt teleport into the player
             }
             else if (right)
             {
-                vectorTwo.y = vectorTwo.y + 0.2f;                                           //makes the vector.y equal to itself plus 0.2f
+                vectorTwo.y = vectorTwo.y - 0.8f;                                           //makes the vector.y equal to itself plus 0.2f
                 vector.x = vector.x + 0.1f;                                                 //makes the vector.x equal to itself plus 0.7f
                 equObject.transform.position = new Vector2(vector.x, vectorTwo.y);          //Makes the position of the object equal to the players position plus some modifications so that the object doesnt teleport into the player
             }
@@ -228,7 +243,7 @@ public class EquipItems : MonoBehaviour
                 closestEnemy = currentEnemy;
             }
         }
-        Debug.DrawLine(this.transform.position, closestEnemy.transform.position);
+       // Debug.DrawLine(this.transform.position, closestEnemy.transform.position);
         dragObject = closestEnemy.gameObject; //dragObject = closestEnemy fast som ett gameObejct.
     }
 
