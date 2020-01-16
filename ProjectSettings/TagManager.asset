@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - UISceneManager
+  - CameraSwitch1
+  - CameraFollow
+  - CameraSwitch2
   layers:
   - Default
   - TransparentFX
@@ -13,8 +17,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Ignore
+  - Player
   - 
   - 
   - 
