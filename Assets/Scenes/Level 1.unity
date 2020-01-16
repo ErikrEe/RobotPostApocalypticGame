@@ -533,7 +533,7 @@ PrefabInstance:
     - target: {fileID: 8211131009435004575, guid: b012d053c1042794a962d20216e80cf1,
         type: 3}
       propertyPath: jumpForce
-      value: 100
+      value: 150
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b012d053c1042794a962d20216e80cf1, type: 3}
@@ -611,7 +611,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1474647660}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.75, y: -4.2, z: -1}
+  m_LocalPosition: {x: 6.79, y: -4.2, z: -1}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -887,7 +887,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1983641557}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.54, y: -4.2, z: -1}
+  m_LocalPosition: {x: -6.5, y: -4.2, z: -1}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
