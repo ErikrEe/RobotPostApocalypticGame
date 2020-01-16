@@ -25,7 +25,7 @@ public class MainMenu : MonoBehaviour
 
     public void GoToOptions() //this function loads the "Options" scene
     {
-        SceneManager.LoadScene("Options");
+        SceneManager.LoadScene("OptionsMenu");
     }
 
 
