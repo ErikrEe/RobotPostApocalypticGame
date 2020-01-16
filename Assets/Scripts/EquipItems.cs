@@ -123,7 +123,8 @@ public class EquipItems : MonoBehaviour
 
 
             if (Input.GetKeyDown(KeyCode.E) && (equObject.transform.position - this.transform.position).sqrMagnitude < 2f * 2f  && objectDraged == false)
-        {
+            {
+
             pickedUp = true;
             vector.x = vector.x + 0.7f;                                                      //makes the vector.x equal to itself plus 0.7f
 
@@ -136,12 +137,12 @@ public class EquipItems : MonoBehaviour
 
 
             if (equObject.transform.localScale.x < 0) //Tobbes kod
-            {
+                {
                 Vector3 theScale = equObject.transform.localScale;                          //Multiply the player's x local scale by -1.
                 theScale.x *= -1;
                 equObject.transform.localScale = theScale;
+                }
             }
-        }
 
         if(pickedUp)
         {
