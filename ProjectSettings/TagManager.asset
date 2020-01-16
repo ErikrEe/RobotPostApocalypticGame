@@ -3,19 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-<<<<<<< HEAD
-  - Undefined
-  - CameraSwitch1
-  - CameraSwitch2
-  - DragObject
-  - Ground
-  - CameraFollow
-  - UISceneManager
-=======
-  - DragObject
-  - Ground
->>>>>>> dd3e8bdaafc219375ba6740504c617e786fb2c42
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -25,13 +13,8 @@ TagManager:
   - UI
   - 
   - 
-<<<<<<< HEAD
   - 
   - 
-=======
-  - Player
-  - Flower
->>>>>>> dd3e8bdaafc219375ba6740504c617e786fb2c42
   - 
   - 
   - 
