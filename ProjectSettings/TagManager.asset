@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+<<<<<<< HEAD
   tags: []
+=======
+  tags:
+  - CameraSwitch1
+>>>>>>> 6374153d07b8dd929e24ab2dc2cb2d43709eaad1
   layers:
   - Default
   - TransparentFX
@@ -13,9 +18,15 @@ TagManager:
   - UI
   - 
   - 
+<<<<<<< HEAD
   - 
   - 
   - 
+=======
+  - Trigger
+  - 
+  - 
+>>>>>>> 6374153d07b8dd929e24ab2dc2cb2d43709eaad1
   - 
   - 
   - 
