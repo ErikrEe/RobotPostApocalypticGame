@@ -76,7 +76,7 @@ public class EquipItems : MonoBehaviour
             dragObject.transform.position = new Vector2(vector.x, dragObject.transform.position.y);
         }*/
         //om object är dragtged och spelarens position på x är > objectets position = höger sida
-        if(objectDraged) //If an object is being dragged..
+        if(objectDraged) //If an object is being dragged.. //BUGG####### && gameObject.transform.position.y -1 >= dragObject.transform.position.y för att inte  kunna ta upp objekt som är över spelaren
         {
             if(gameObject.transform.position.x > dragObject.transform.position.x) //and the player is on the right side of the object (OBJECT SHOULD BE LEFT SIDE)
             {
