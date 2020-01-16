@@ -13,7 +13,6 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private Transform groundCheck;                           // A position marking where to check if the player is grounded.
     [SerializeField] private Transform ceilingCheck;                          // A position marking where to check for ceilings
     [SerializeField] private Collider2D crouchDisableCollider;                // A collider that will be disabled when crouching
-    [SerializeField] private Collider2D crouchRepositionCollider;             // A collider that will be moved when crouching
 
 
 
