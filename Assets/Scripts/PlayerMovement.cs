@@ -4,37 +4,110 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    #region Variables
+
 
     public CharacterController controller; //Ref to characterControllerScript
 
+    public Animator animator; //animator variable
 
-    public float moveSpeed = 40f;
-
+    public float moveSpeed = 40f;  //moveSpeed variable to determine the speed of movement
     float xMove = 0f;  //Horizontal movement (Not speed)
 
-    public static bool jump = false;
-    bool crouch = false;
+    public static bool jump = false;  //True or false condition that determines if the player can jump
+    bool crouch = false;  //True or false condition that determines if the player can crouch
+
+    public static bool facingRight = true;  //true or false statement that checks which direction the player is facing
+
+
+    #endregion
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        //Keeping this here incase we need to add something to "Start"
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        xMove = Input.GetAxisRaw("Horizontal") * moveSpeed; // -1 * moveSpeed |or| +1 * moveSpeed
+        // -1 * moveSpeed |or| +1 * moveSpeed
+        xMove = Input.GetAxisRaw("Horizontal") * moveSpeed; 
 
-        if(Input.GetButtonDown("Jump") && !EquipItems.objectDraged)
+
+
+        // applies the animator parameter "Speed" to the ABSOLUTE value of the players horizontal speed
+        animator.SetFloat("Speed", Mathf.Abs(xMove));
+
+
+
+
+        #region badCodeDidn'tWork
+        /*
+        if (facingRight == true)
+        {
+            animator.SetFloat("DirectionSpeed", xMove);
+        }
+
+        if(facingRight == false)
+        {
+            animator.SetFloat("DirectionSpeed", xMove);
+        }
+
+    */
+        #endregion
+
+
+
+        #region Pushing/pulling animation conditions
+
+        if (xMove < 0 && facingRight && EquipItems.objectRight) // if the player is moving to the left and facing...
+        {                                                      // ... to the right and has an equipped object...
+            animator.SetBool("IsPushing", false);              // ... to its right then pushing = false.
+        }
+
+
+
+        if(xMove > 0 && facingRight && EquipItems.objectLeft)  // if the player is moving to the right and facing...
+        {                                                      // ...to the right and has an equipped object to..
+            animator.SetBool("IsPushing", false);              // its left then push = false
+        }
+
+
+        
+
+        //If player is moving left and facing left and has an object to its left...
+        if (xMove < 0 && facingRight && EquipItems.objectLeft)
+        {
+            // ... flip the player.
+            animator.SetBool("IsPushing", true);
+        }
+        //if player is moving right and is facing right and has an object to its right...
+        else if (xMove > 0 && facingRight && EquipItems.objectRight) 
+        {
+            // ... flip the player.
+            animator.SetBool("IsPushing", true);
+
+        }
+
+        #endregion
+
+
+
+        #region Jump/crouch + not holding objects
+        //Jumpcode
+
+        if (Input.GetButton("Jump") && !EquipItems.objectDraged)
         {
             jump = true;  //If player presses "space" or "up" or "W" then it sets "jump" = true
+            animator.SetBool("IsJumping", true);
         }
 
         if (Input.GetButtonDown("Crouch"))
         {
-            crouch = true;  //If player presses "down" or "s" then it sets "crouch" = true
+            crouch = true;  //If player presses "s" then it sets "crouch" = true
         }
 
         else if (Input.GetButtonUp("Crouch"))
@@ -44,6 +117,36 @@ public class PlayerMovement : MonoBehaviour
 
 
     }
+    #endregion
+
+
+
+
+    /* BadCodeDidn'tWork
+
+    private void Flip()
+    {
+        facingRight = false;
+    }
+
+    */
+
+
+
+    public void OnLanding ()
+    {
+        animator.SetBool("IsJumping", false);
+    }
+
+
+
+    public void OnCrouching(bool isCrouching)
+    {
+        animator.SetBool("IsCrouching", isCrouching);
+    }
+
+
+
 
     //Multiplyng by Time.fixedDeltaTime will make sure that we're moving the same amount,
     //regardless of how many times (per second) this function is called

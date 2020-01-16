@@ -20,6 +20,9 @@ public class EquipItems : MonoBehaviour
     Transform closeToPlayer, withTagDragObject;
     GameObject dragObject;
 
+    public Animator animator;
+
+
 
     void Start()                                                                             //Start is called before the first frame update
     {
@@ -50,11 +53,19 @@ public class EquipItems : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E) && (dragObject.transform.position - this.transform.position).sqrMagnitude < 4f * 2f && pickedUp == false)  
         {
-            Debug.LogError("fungerar");
+           // Debug.LogError("fungerar");
             //dragObject.transform.parent = gameObject.transform; NEJ GER FÖR MÅNGA BUGGAR
             //vector.x = vector.x + 1.5f;                                                     //makes the vector.x equal to itself plus 0.7f
             //dragObject.transform.position = new Vector2(vector.x, dragObject.transform.position.y);
+
+
             objectDraged = true;
+
+
+            animator.SetBool("IsPulling", true);  //Sets the animation bool to true, which triggers the pulling animation
+
+
+
             //gameObject.GetComponent<Rigidbody2D>().gravityScale = 4f;                     //Then the gravity for that object is set to 0.2f
 
         }
@@ -90,6 +101,7 @@ public class EquipItems : MonoBehaviour
             {
 
                 dragObject.transform.position = new Vector2(vector.x, dragObject.transform.position.y);
+
             }
         }
            
@@ -101,6 +113,8 @@ public class EquipItems : MonoBehaviour
         {
            // gameObject.GetComponent<Rigidbody2D>().gravityScale = 3f;
             objectDraged = false;
+
+            animator.SetBool("IsPulling", false); //Stops playing the "Pulling" animation
 
         }
 
@@ -229,7 +243,7 @@ public class EquipItems : MonoBehaviour
                 closestEnemy = currentEnemy;
             }
         }
-        Debug.DrawLine(this.transform.position, closestEnemy.transform.position);
+       // Debug.DrawLine(this.transform.position, closestEnemy.transform.position);
         dragObject = closestEnemy.gameObject; //dragObject = closestEnemy fast som ett gameObejct.
     }
 
