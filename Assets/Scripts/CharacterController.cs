@@ -79,12 +79,17 @@ public class CharacterController : MonoBehaviour
             }
         }
 
+
+
+
+
+
         //only control the player if grounded or airControl is turned on
         if (grounded || airControl)
         {
 
             // If crouching
-            if (crouch)
+            if (crouch && !EquipItems.pickedUp)
             {
                 if (!wasCrouching)
                 {
