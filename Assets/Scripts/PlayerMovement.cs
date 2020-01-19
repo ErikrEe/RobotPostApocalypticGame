@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerMovement : MonoBehaviour
 {
     #region Variables
@@ -32,6 +33,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
+
+
 
         // -1 * moveSpeed |or| +1 * moveSpeed
         xMove = Input.GetAxisRaw("Horizontal") * moveSpeed; 
@@ -105,7 +110,7 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("IsJumping", true);
         }
 
-        if (Input.GetButtonDown("Crouch"))
+        if (Input.GetButtonDown("Crouch") && !EquipItems.objectDraged)
         {
             crouch = true;  //If player presses "s" then it sets "crouch" = true
         }
