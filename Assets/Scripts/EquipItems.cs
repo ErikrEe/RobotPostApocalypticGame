@@ -38,20 +38,13 @@ public class EquipItems : MonoBehaviour
             FindClosestEnemy(); //Går igenom FindClosestEnemy funktionen.
         }
 
-
-
-
-
-
-
-
          float verticalVelocity = playerVelocity.velocity.y;
 
         vector.x = gameObject.transform.position.x;
         vectorTwo.y = gameObject.transform.position.y;
 
 
-        if (Input.GetKeyDown(KeyCode.E) && (dragObject.transform.position - this.transform.position).sqrMagnitude < 4f * 2f && pickedUp == false)  
+            if (Input.GetKeyDown(KeyCode.E) && (dragObject.transform.position - this.transform.position).sqrMagnitude < 4f * 2f && pickedUp == false && dragObject.transform.position.y -1 <= gameObject.transform.position.y && gameObject.transform.position.y <= dragObject.transform.position.y +1)  
         {
            // Debug.LogError("fungerar");
             //dragObject.transform.parent = gameObject.transform; NEJ GER FÖR MÅNGA BUGGAR
@@ -109,7 +102,7 @@ public class EquipItems : MonoBehaviour
            // dis = Vector3.Distance(dragObject.transform.position, gameObject.transform.position); //Compares the distance between the two vectors dragObject and gameObject
 
 
-        if (Input.GetKey(KeyCode.Q) && dragObject)
+        if (Input.GetKey(KeyCode.Q) && dragObject || gameObject.transform.position.y + 1f < dragObject.transform.position.y)
         {
            // gameObject.GetComponent<Rigidbody2D>().gravityScale = 3f;
             objectDraged = false;
