@@ -22,11 +22,24 @@ public class EquipItems : MonoBehaviour
 
     public Animator animator;
 
+    //dessa avänds till att kalkylera spelarens storlek på X axeln
+    Collider playerCollider;
+    Vector3 playerSizeX;
+
+    float differenceWidth, offset;
+
 
 
     void Start()                                                                             //Start is called before the first frame update
     {
         playerVelocity = GetComponent<Rigidbody2D>();
+
+        //Fetch the Collider from the GameObject
+        playerCollider = GetComponent<Collider>();
+
+        //Fetch the size of the Collider volume
+        playerSizeX = playerCollider.bounds.size;
+
     }
 
 
@@ -62,14 +75,18 @@ public class EquipItems : MonoBehaviour
             //gameObject.GetComponent<Rigidbody2D>().gravityScale = 4f;                     //Then the gravity for that object is set to 0.2f
 
         }
-       /* if(objectDraged) //#### FIXA så att den är på olika negative eller positiva sidor beroende på vart den är upplockad.
-        {
-           // vectorTwo.y = vectorTwo.y + 3f;                                               //makes the vector.y equal to itself plus 0.2f
-            vector.x = vector.x + 1.5f;                                                     //makes the vector.x equal to itself plus 0.7f
-            dragObject.transform.position = new Vector2(vector.x, dragObject.transform.position.y);
-        }*/
-        //om object är dragtged och spelarens position på x är > objectets position = höger sida
-        if(objectDraged) //If an object is being dragged.. //BUGG####### && gameObject.transform.position.y -1 >= dragObject.transform.position.y för att inte  kunna ta upp objekt som är över spelaren
+
+        /*hitta rätt offset
+        if(true)
+    {
+
+    Stone# - playerSizeX.y = differenceWidth
+        stone -player = differenceWidth  //Skillnaden mellan objeckten
+            offset = differenceWidth + 1.7f //det som ska läggas till , till drag objects
+    } */
+
+
+        if (objectDraged) //If an object is being dragged.. //BUGG####### && gameObject.transform.position.y -1 >= dragObject.transform.position.y för att inte  kunna ta upp objekt som är över spelaren
         {
             if(gameObject.transform.position.x > dragObject.transform.position.x) //and the player is on the right side of the object (OBJECT SHOULD BE LEFT SIDE)
             {
