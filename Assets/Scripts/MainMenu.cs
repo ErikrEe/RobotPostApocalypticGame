@@ -9,9 +9,9 @@ public class MainMenu : MonoBehaviour
 
     public Animator transition;
 
+    public Animator titleTransition;
+
     public float transitionTime = 1f;
-
-
 
 
 
@@ -66,7 +66,7 @@ public class MainMenu : MonoBehaviour
     IEnumerator LoadLevel(int levelIndex)
     {
 
-
+        titleTransition.SetTrigger("TitleStart");
         transition.SetTrigger("Start");
 
         yield return new WaitForSeconds(transitionTime);
