@@ -85,7 +85,6 @@ public class EquipItems : MonoBehaviour
             {
                 //differenceWidth = objectSizeX.x/ playerSizeX.x; //Skillnaden mellan objeckten
                 offset = playerCollider.bounds.extents.x + objectCollider.bounds.extents.x + 0.3f; //det som ska läggas till , till drag objects  + - objectSizeX.x/5f
-                Debug.LogError(offset);
                 vector.x = vector.x + offset;                                                     //makes the vector.x equal to itself plus 0.7f
                 objectRight = true;
                 objectLeft = false;
