@@ -23,8 +23,8 @@ public class EquipItems : MonoBehaviour
     public Animator animator;
 
     //dessa avänds till att kalkylera spelarens storlek på X axeln
-    Collider playerCollider;
-    Vector3 playerSizeX;
+    Collider2D playerCollider, objectCollider;
+    Vector3 playerSizeX, objectSizeX;
 
     float differenceWidth, offset;
 
@@ -35,7 +35,7 @@ public class EquipItems : MonoBehaviour
         playerVelocity = GetComponent<Rigidbody2D>();
 
         //Fetch the Collider from the GameObject
-        playerCollider = GetComponent<Collider>();
+        playerCollider = GetComponent<Collider2D>();
 
         //Fetch the size of the Collider volume
         playerSizeX = playerCollider.bounds.size;
@@ -57,7 +57,7 @@ public class EquipItems : MonoBehaviour
         vectorTwo.y = gameObject.transform.position.y;
 
 
-            if (Input.GetKeyDown(KeyCode.E) && (dragObject.transform.position - this.transform.position).sqrMagnitude < 4f * 2f && pickedUp == false && dragObject.transform.position.y -1 <= gameObject.transform.position.y && gameObject.transform.position.y <= dragObject.transform.position.y +1)  
+            if (Input.GetKeyDown(KeyCode.E) && (dragObject.transform.position - this.transform.position).sqrMagnitude < objectSizeX.x * objectSizeX.y + 5f * 5f && pickedUp == false && dragObject.transform.position.y -1 <= gameObject.transform.position.y && gameObject.transform.position.y <= dragObject.transform.position.y +1)  
         {
            // Debug.LogError("fungerar");
             //dragObject.transform.parent = gameObject.transform; NEJ GER FÖR MÅNGA BUGGAR
@@ -76,27 +76,30 @@ public class EquipItems : MonoBehaviour
 
         }
 
-        /*hitta rätt offset
-        if(true)
-    {
+        //hitta rätt offset
+       /* if(true)
+        {
 
-    Stone# - playerSizeX.y = differenceWidth
-        stone -player = differenceWidth  //Skillnaden mellan objeckten
-            offset = differenceWidth + 1.7f //det som ska läggas till , till drag objects
-    } */
+            differenceWidth = objectSizeX.x - playerSizeX.x; //Skillnaden mellan objeckten
+            offset = differenceWidth + 0.01f; //det som ska läggas till , till drag objects
+        } */
 
 
         if (objectDraged) //If an object is being dragged.. //BUGG####### && gameObject.transform.position.y -1 >= dragObject.transform.position.y för att inte  kunna ta upp objekt som är över spelaren
         {
             if(gameObject.transform.position.x > dragObject.transform.position.x) //and the player is on the right side of the object (OBJECT SHOULD BE LEFT SIDE)
             {
-                vector.x = vector.x -1.7f;                                                     //makes the vector.x equal to itself plus 0.7f
+                differenceWidth = objectSizeX.x - playerSizeX.x; //Skillnaden mellan objeckten
+                offset = -differenceWidth; //det som ska läggas till , till drag objects +  - objectSizeX.x/5f
+                vector.x = vector.x + offset;                                                     //makes the vector.x equal to itself plus 0.7f
                 objectLeft = true;
                 objectRight = false;
             }
             if (gameObject.transform.position.x < dragObject.transform.position.x) //and the player is on the left side of the object
             {
-                vector.x = vector.x + 1.7f;                                                     //makes the vector.x equal to itself plus 0.7f
+                differenceWidth = objectSizeX.x - playerSizeX.x; //Skillnaden mellan objeckten
+                offset = differenceWidth; //det som ska läggas till , till drag objects  + - objectSizeX.x/5f
+                vector.x = vector.x + offset;                                                     //makes the vector.x equal to itself plus 0.7f
                 objectRight = true;
                 objectLeft = false;
 
@@ -106,6 +109,7 @@ public class EquipItems : MonoBehaviour
             {
 
                 dragObject.transform.position = new Vector2(vector.x, dragObject.transform.position.y);
+
             }
             if(objectRight)
             {
@@ -119,7 +123,7 @@ public class EquipItems : MonoBehaviour
            // dis = Vector3.Distance(dragObject.transform.position, gameObject.transform.position); //Compares the distance between the two vectors dragObject and gameObject
 
 
-        if (Input.GetKey(KeyCode.Q) && dragObject || gameObject.transform.position.y + 1f < dragObject.transform.position.y)
+        if (Input.GetKey(KeyCode.Q) && dragObject) // || gameObject.transform.position.y + 1f < dragObject.transform.position.y)  ##Om denna ifsats triggas av att objektet är för långt bort fuckar det upp offset koden...
         {
            // gameObject.GetComponent<Rigidbody2D>().gravityScale = 3f;
             objectDraged = false;
@@ -132,7 +136,7 @@ public class EquipItems : MonoBehaviour
 
 
 
-            if (Input.GetKeyDown(KeyCode.E) && (equObject.transform.position - this.transform.position).sqrMagnitude < 2f * 2f  && objectDraged == false)
+            if (Input.GetKeyDown(KeyCode.E) && (equObject.transform.position - this.transform.position).sqrMagnitude < 2f * 2f  && objectDraged == false) //måste också bli större med stenarna...
             {
 
             pickedUp = true;
@@ -254,7 +258,14 @@ public class EquipItems : MonoBehaviour
             }
         }
        // Debug.DrawLine(this.transform.position, closestEnemy.transform.position);
-        dragObject = closestEnemy.gameObject; //dragObject = closestEnemy fast som ett gameObejct.
+        dragObject = closestEnemy.gameObject; //dragObject = closestEnemy fast som ett gameObejct.  //Problemet här är att den inte tar dragObjecktets collider2d   
+
+        //Fetch the Collider from the GameObject
+        objectCollider = closestEnemy.gameObject.GetComponent<Collider2D>();
+
+        //Fetch the size of the Collider volume
+        objectSizeX = objectCollider.bounds.size;
+
     }
 
 
