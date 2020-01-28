@@ -52,7 +52,7 @@ public class EquipItems : MonoBehaviour
         vectorTwo.y = gameObject.transform.position.y;
 //MODIFIERA KODEN UNDER#################################################################################
             if (Input.GetKeyDown(KeyCode.E) && (dragObject.transform.position - this.transform.position).sqrMagnitude < (objectCollider.bounds.extents.x * 2) * (objectCollider.bounds.extents.y * 2) +1 && pickedUp == false && dragObject.transform.position.y -1 <= gameObject.transform.position.y + objectCollider.bounds.extents.y && gameObject.transform.position.y + objectCollider.bounds.extents.y <= dragObject.transform.position.y +1)  
-        {
+            {
 
 
             objectDraged = true;
@@ -61,7 +61,7 @@ public class EquipItems : MonoBehaviour
             animator.SetBool("IsPulling", true);  //Sets the animation bool to true, which triggers the pulling animation
 
 
-        }
+            }
 
 
         if (objectDraged) //If an object is being dragged..
@@ -114,6 +114,7 @@ public class EquipItems : MonoBehaviour
             {
 
             pickedUp = true;
+            animator.SetBool("HoldingFlower", true);  //Sets the "HoldingFlower" bool to true
             vector.x = vector.x + 0.7f;                                                      //makes the vector.x equal to itself plus 0.7f
 
 
@@ -179,6 +180,9 @@ public class EquipItems : MonoBehaviour
         {
             equObject.transform.parent = null;                                              //this removes the object from being a child to the player 
             pickedUp = false;
+
+            animator.SetBool("HoldingFlower", false);
+
             equObject.constraints = RigidbodyConstraints2D.None;                            // Un freezes the object so it can tilt over again
             gameObject.GetComponent<Rigidbody2D>().gravityScale = 3;                        //Sets the gravity for the player to 3 (3 is the default gravity scale for the player)
         }

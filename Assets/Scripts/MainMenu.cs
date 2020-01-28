@@ -19,10 +19,13 @@ public class MainMenu : MonoBehaviour
 
     public float transitionTime = 1f;
 
-    float timer = 0;
-    public bool timerReached = false;
-    float sceneDelay = 1.5f;
-    bool hasOptions = false;
+    private float timer = 0;
+    private float sceneDelay = 1.5f;
+    private bool hasOptions = false;
+
+    private bool hasBackToMenu = false;
+    private float optionsTimer = 0;
+    private float backToMenuDelay = 1.5f;
 
 
 
@@ -45,6 +48,25 @@ public class MainMenu : MonoBehaviour
             timer = 0;
             hasOptions = false;
         }
+
+
+
+
+        if(hasBackToMenu)
+        {
+            optionsTimer += Time.deltaTime;
+        }
+
+        if(optionsTimer > backToMenuDelay)
+        {
+            SceneManager.LoadScene("MainMenu");
+            optionsTimer = 0;
+            hasBackToMenu = false;
+        }
+
+
+
+
     }
 
     public void GoToOptions() //this function loads the "Options" scene
@@ -63,7 +85,8 @@ public class MainMenu : MonoBehaviour
 
     public void BackToMainMenu() //this function loads the "MainMenu" scene again
     {
-        SceneManager.LoadScene("MainMenu");
+        hasBackToMenu = true;
+        transition.SetTrigger("Start");
     }
 
     private void FixedUpdate()
