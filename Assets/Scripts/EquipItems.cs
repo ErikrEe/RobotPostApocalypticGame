@@ -23,9 +23,8 @@ public class EquipItems : MonoBehaviour
 
     //dessa avänds till att kalkylera spelarens storlek på X axeln
     Collider2D playerCollider, objectCollider;
-    Vector3 playerSizeX, objectSizeX;
 
-    float differenceWidth, offset;
+    float offset;
 
 
 
@@ -35,9 +34,6 @@ public class EquipItems : MonoBehaviour
 
         //Fetch the Collider from the GameObject
         playerCollider = GetComponent<Collider2D>();
-
-        //Fetch the size of the Collider volume
-        playerSizeX = gameObject.transform.localScale; //playerCollider.bounds.size;
 
     }
 
@@ -54,8 +50,7 @@ public class EquipItems : MonoBehaviour
 
         vector.x = gameObject.transform.position.x;
         vectorTwo.y = gameObject.transform.position.y;
-
-        //##### här under, måste lägga till samma grej som ska göra så att objektet inte får större offset beroende på hur stort det är, lägga till differenceWidth fast med den grejen så att det inte blir för stort
+//MODIFIERA KODEN UNDER#################################################################################
             if (Input.GetKeyDown(KeyCode.E) && (dragObject.transform.position - this.transform.position).sqrMagnitude < (objectCollider.bounds.extents.x * 2) * (objectCollider.bounds.extents.y * 2) +1 && pickedUp == false && dragObject.transform.position.y -1 <= gameObject.transform.position.y && gameObject.transform.position.y <= dragObject.transform.position.y +1)  
         {
 
@@ -72,10 +67,7 @@ public class EquipItems : MonoBehaviour
         if (objectDraged) //If an object is being dragged..
         {
             if(gameObject.transform.position.x > dragObject.transform.position.x) //and the player is on the right side of the object (OBJECT SHOULD BE LEFT SIDE)
-            {
-                //differenceWidth = objectSizeX.x - playerSizeX.x; //Skillnaden mellan objeckten
-                
-                
+            {          
                 offset = playerCollider.bounds.extents.x + objectCollider.bounds.extents.x + 0.3f; //det som ska läggas till , till drag objects +  - objectSizeX.x/5f
                 vector.x = vector.x - offset;                                                     //makes the vector.x equal to itself plus 0.7f
                 objectLeft = true;
@@ -83,9 +75,7 @@ public class EquipItems : MonoBehaviour
             }
             if (gameObject.transform.position.x < dragObject.transform.position.x) //and the player is on the left side of the object
             {
-                //differenceWidth = objectSizeX.x/ playerSizeX.x; //Skillnaden mellan objeckten
-                offset = playerCollider.bounds.extents.x + objectCollider.bounds.extents.x + 0.3f; //det som ska läggas till , till drag objects  + - objectSizeX.x/5f
-                Debug.LogError(offset);
+                offset = playerCollider.bounds.extents.x + objectCollider.bounds.extents.x + 0.3f; //yay
                 vector.x = vector.x + offset;                                                     //makes the vector.x equal to itself plus 0.7f
                 objectRight = true;
                 objectLeft = false;
@@ -107,7 +97,7 @@ public class EquipItems : MonoBehaviour
         }
 
 
-        if (Input.GetKey(KeyCode.Q) && dragObject) // || gameObject.transform.position.y + 1f < dragObject.transform.position.y)  ##Om denna ifsats triggas av att objektet är för långt bort fuckar det upp offset koden...
+        if (Input.GetKey(KeyCode.Q) && dragObject || gameObject.transform.position.y + objectCollider.bounds.extents.y < dragObject.transform.position.y)  //if Q is pressed or the "dragObject" is higher up than the player...
         {
             objectDraged = false;
 
@@ -119,7 +109,7 @@ public class EquipItems : MonoBehaviour
 
 
 
-            if (Input.GetKeyDown(KeyCode.E) && (equObject.transform.position - this.transform.position).sqrMagnitude < 2f * 2f  && objectDraged == false) //måste också bli större med stenarna...
+            if (Input.GetKeyDown(KeyCode.E) && (equObject.transform.position - this.transform.position).sqrMagnitude < 2f * 2f  && objectDraged == false) 
             {
 
             pickedUp = true;
@@ -245,9 +235,6 @@ public class EquipItems : MonoBehaviour
 
         //Fetch the Collider from the GameObject
         objectCollider = closestEnemy.gameObject.GetComponent<Collider2D>();
-
-        //Fetch the size of the Collider volume
-        objectSizeX = dragObject.transform.localScale; //objectCollider.bounds.size;
 
     }
 
