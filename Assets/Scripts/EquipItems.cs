@@ -17,7 +17,6 @@ public class EquipItems : MonoBehaviour
     private float currentheight;
     private float previousheight;
     private float travel;
-    Transform closeToPlayer, withTagDragObject;
     GameObject dragObject;
 
     public Animator animator;
@@ -38,7 +37,7 @@ public class EquipItems : MonoBehaviour
         playerCollider = GetComponent<Collider2D>();
 
         //Fetch the size of the Collider volume
-        playerSizeX = playerCollider.bounds.size;
+        playerSizeX = gameObject.transform.localScale; //playerCollider.bounds.size;
 
     }
 
@@ -56,13 +55,9 @@ public class EquipItems : MonoBehaviour
         vector.x = gameObject.transform.position.x;
         vectorTwo.y = gameObject.transform.position.y;
 
-
-            if (Input.GetKeyDown(KeyCode.E) && (dragObject.transform.position - this.transform.position).sqrMagnitude < objectSizeX.x * objectSizeX.y + 5f * 5f && pickedUp == false && dragObject.transform.position.y -1 <= gameObject.transform.position.y && gameObject.transform.position.y <= dragObject.transform.position.y +1)  
+        //##### här under, måste lägga till samma grej som ska göra så att objektet inte får större offset beroende på hur stort det är, lägga till differenceWidth fast med den grejen så att det inte blir för stort
+            if (Input.GetKeyDown(KeyCode.E) && (dragObject.transform.position - this.transform.position).sqrMagnitude < (objectCollider.bounds.extents.x * 2) * (objectCollider.bounds.extents.y * 2) +1 && pickedUp == false && dragObject.transform.position.y -1 <= gameObject.transform.position.y && gameObject.transform.position.y <= dragObject.transform.position.y +1)  
         {
-           // Debug.LogError("fungerar");
-            //dragObject.transform.parent = gameObject.transform; NEJ GER FÖR MÅNGA BUGGAR
-            //vector.x = vector.x + 1.5f;                                                     //makes the vector.x equal to itself plus 0.7f
-            //dragObject.transform.position = new Vector2(vector.x, dragObject.transform.position.y);
 
 
             objectDraged = true;
@@ -71,34 +66,26 @@ public class EquipItems : MonoBehaviour
             animator.SetBool("IsPulling", true);  //Sets the animation bool to true, which triggers the pulling animation
 
 
-
-            //gameObject.GetComponent<Rigidbody2D>().gravityScale = 4f;                     //Then the gravity for that object is set to 0.2f
-
         }
 
-        //hitta rätt offset
-       /* if(true)
-        {
 
-            differenceWidth = objectSizeX.x - playerSizeX.x; //Skillnaden mellan objeckten
-            offset = differenceWidth + 0.01f; //det som ska läggas till , till drag objects
-        } */
-
-
-        if (objectDraged) //If an object is being dragged.. //BUGG####### && gameObject.transform.position.y -1 >= dragObject.transform.position.y för att inte  kunna ta upp objekt som är över spelaren
+        if (objectDraged) //If an object is being dragged..
         {
             if(gameObject.transform.position.x > dragObject.transform.position.x) //and the player is on the right side of the object (OBJECT SHOULD BE LEFT SIDE)
             {
-                differenceWidth = objectSizeX.x - playerSizeX.x; //Skillnaden mellan objeckten
-                offset = -differenceWidth; //det som ska läggas till , till drag objects +  - objectSizeX.x/5f
-                vector.x = vector.x + offset;                                                     //makes the vector.x equal to itself plus 0.7f
+                //differenceWidth = objectSizeX.x - playerSizeX.x; //Skillnaden mellan objeckten
+                
+                
+                offset = playerCollider.bounds.extents.x + objectCollider.bounds.extents.x + 0.3f; //det som ska läggas till , till drag objects +  - objectSizeX.x/5f
+                vector.x = vector.x - offset;                                                     //makes the vector.x equal to itself plus 0.7f
                 objectLeft = true;
                 objectRight = false;
             }
             if (gameObject.transform.position.x < dragObject.transform.position.x) //and the player is on the left side of the object
             {
-                differenceWidth = objectSizeX.x - playerSizeX.x; //Skillnaden mellan objeckten
-                offset = differenceWidth; //det som ska läggas till , till drag objects  + - objectSizeX.x/5f
+                //differenceWidth = objectSizeX.x/ playerSizeX.x; //Skillnaden mellan objeckten
+                offset = playerCollider.bounds.extents.x + objectCollider.bounds.extents.x + 0.3f; //det som ska läggas till , till drag objects  + - objectSizeX.x/5f
+                Debug.LogError(offset);
                 vector.x = vector.x + offset;                                                     //makes the vector.x equal to itself plus 0.7f
                 objectRight = true;
                 objectLeft = false;
@@ -118,14 +105,10 @@ public class EquipItems : MonoBehaviour
 
             }
         }
-           
-
-           // dis = Vector3.Distance(dragObject.transform.position, gameObject.transform.position); //Compares the distance between the two vectors dragObject and gameObject
 
 
         if (Input.GetKey(KeyCode.Q) && dragObject) // || gameObject.transform.position.y + 1f < dragObject.transform.position.y)  ##Om denna ifsats triggas av att objektet är för långt bort fuckar det upp offset koden...
         {
-           // gameObject.GetComponent<Rigidbody2D>().gravityScale = 3f;
             objectDraged = false;
 
             animator.SetBool("IsPulling", false); //Stops playing the "Pulling" animation
@@ -258,13 +241,13 @@ public class EquipItems : MonoBehaviour
             }
         }
        // Debug.DrawLine(this.transform.position, closestEnemy.transform.position);
-        dragObject = closestEnemy.gameObject; //dragObject = closestEnemy fast som ett gameObejct.  //Problemet här är att den inte tar dragObjecktets collider2d   
+        dragObject = closestEnemy.gameObject;
 
         //Fetch the Collider from the GameObject
         objectCollider = closestEnemy.gameObject.GetComponent<Collider2D>();
 
         //Fetch the size of the Collider volume
-        objectSizeX = objectCollider.bounds.size;
+        objectSizeX = dragObject.transform.localScale; //objectCollider.bounds.size;
 
     }
 
