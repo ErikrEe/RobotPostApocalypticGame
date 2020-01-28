@@ -11,7 +11,18 @@ public class MainMenu : MonoBehaviour
 
     public Animator titleTransition;
 
+    public Animator startButton;
+
+    public Animator optionsButton;
+
+    public Animator quitButton;
+
     public float transitionTime = 1f;
+
+    float timer = 0;
+    public bool timerReached = false;
+    float sceneDelay = 1.5f;
+    bool hasOptions = false;
 
 
 
@@ -22,10 +33,31 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
+    private void Update()
+    {
+        if (hasOptions)
+        {
+            timer += Time.deltaTime;
+        }
+        if (timer > sceneDelay)
+        {
+            SceneManager.LoadScene("OptionsMenu");
+            timer = 0;
+            hasOptions = false;
+        }
+    }
 
     public void GoToOptions() //this function loads the "Options" scene
     {
-        SceneManager.LoadScene("OptionsMenu");
+        hasOptions = true;
+        optionsButton.SetTrigger("ClickOptions");
+
+        transition.SetTrigger("Start");
+
+        
+
+
+
     }
 
 
@@ -67,6 +99,12 @@ public class MainMenu : MonoBehaviour
     {
 
         titleTransition.SetTrigger("TitleStart");
+        startButton.SetTrigger("ClickStart");
+        optionsButton.SetTrigger("ClickOptions");
+        quitButton.SetTrigger("ClickQuit");
+
+
+
         transition.SetTrigger("Start");
 
         yield return new WaitForSeconds(transitionTime);
