@@ -52,6 +52,8 @@ public class MainMenu : MonoBehaviour
         hasOptions = true;
         optionsButton.SetTrigger("ClickOptions");
 
+        transition.SetTrigger("Start");
+
         
 
 
