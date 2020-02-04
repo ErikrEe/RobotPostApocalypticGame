@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float moveSpeed = 40f;  //moveSpeed variable to determine the speed of movement
     float xMove = 0f;  //Horizontal movement (Not speed)
+    public static float yMove = 0f;
 
     public static bool jump = false;  //True or false condition that determines if the player can jump
     bool crouch = false;  //True or false condition that determines if the player can crouch
@@ -27,6 +28,9 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+
+
         //Keeping this here incase we need to add something to "Start"
     }
 
@@ -34,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-
+        yMove = 
 
 
 
@@ -45,6 +49,13 @@ public class PlayerMovement : MonoBehaviour
 
         // applies the animator parameter "Speed" to the ABSOLUTE value of the players horizontal speed
         animator.SetFloat("Speed", Mathf.Abs(xMove));
+
+
+        /*
+        if(yMove <= 0.01)
+        {
+            OnLanding();
+        }*/
 
 
 
@@ -119,6 +130,7 @@ public class PlayerMovement : MonoBehaviour
         {
             crouch = false;  //if player releases the Crouch button, then it sets "crouch" = false
         }
+
 
 
     }

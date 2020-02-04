@@ -142,6 +142,9 @@ public class CharacterController : MonoBehaviour
             grounded = false;
             rb.AddForce(new Vector2(0f, jumpForce));
         }
+
+
+
     }
 
 
