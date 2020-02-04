@@ -13,7 +13,7 @@ public class EquipItems : MonoBehaviour
     public static bool objectRight = false;
     private bool left = false, right = false;
     Vector2 vector, vectorTwo;
-    Rigidbody2D playerVelocity;
+    Rigidbody2D playerVelocity, objectRigidbody;
     private float currentheight;
     private float previousheight;
     private float travel;
@@ -50,7 +50,7 @@ public class EquipItems : MonoBehaviour
 
         vector.x = gameObject.transform.position.x;
         vectorTwo.y = gameObject.transform.position.y;
-//MODIFIERA KODEN UNDER#################################################################################
+
             if (Input.GetKeyDown(KeyCode.E) && (dragObject.transform.position - this.transform.position).sqrMagnitude < (objectCollider.bounds.extents.x * 2) * (objectCollider.bounds.extents.y * 2) +1 && pickedUp == false && dragObject.transform.position.y -1 <= gameObject.transform.position.y + objectCollider.bounds.extents.y && gameObject.transform.position.y + objectCollider.bounds.extents.y <= dragObject.transform.position.y +1 && (CharacterController.facingRight && gameObject.transform.position.x < dragObject.transform.position.x || !CharacterController.facingRight && gameObject.transform.position.x > dragObject.transform.position.x))
             {
 
@@ -66,7 +66,9 @@ public class EquipItems : MonoBehaviour
 
         if (objectDraged) //If an object is being dragged..
         {
-            if(gameObject.transform.position.x > dragObject.transform.position.x) //and the player is on the right side of the object (OBJECT SHOULD BE LEFT SIDE)
+            //objectRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+            if (gameObject.transform.position.x > dragObject.transform.position.x) //and the player is on the right side of the object (OBJECT SHOULD BE LEFT SIDE)
             {          
                 offset = playerCollider.bounds.extents.x + objectCollider.bounds.extents.x + 0.3f; //det som ska läggas till , till drag objects +  - objectSizeX.x/5f
                 vector.x = vector.x - offset;                                                     //makes the vector.x equal to itself plus 0.7f
@@ -101,6 +103,7 @@ public class EquipItems : MonoBehaviour
         if (Input.GetKey(KeyCode.Q) && dragObject || gameObject.transform.position.y + objectCollider.bounds.extents.y < dragObject.transform.position.y)  //if Q is pressed or the "dragObject" is higher up than the player...
         {
             objectDraged = false;
+            //objectRigidbody.constraints = RigidbodyConstraints2D.None;
 
             animator.SetBool("IsPulling", false); //Stops playing the "Pulling" animation
 
@@ -240,6 +243,8 @@ public class EquipItems : MonoBehaviour
 
         //Fetch the Collider from the GameObject
         objectCollider = closestEnemy.gameObject.GetComponent<Collider2D>();
+
+        objectRigidbody = closestEnemy.gameObject.GetComponent<Rigidbody2D>();
 
     }
 
