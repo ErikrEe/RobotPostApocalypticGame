@@ -38,7 +38,6 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-        yMove = 
 
 
 
@@ -49,13 +48,6 @@ public class PlayerMovement : MonoBehaviour
 
         // applies the animator parameter "Speed" to the ABSOLUTE value of the players horizontal speed
         animator.SetFloat("Speed", Mathf.Abs(xMove));
-
-
-        /*
-        if(yMove <= 0.01)
-        {
-            OnLanding();
-        }*/
 
 
 
