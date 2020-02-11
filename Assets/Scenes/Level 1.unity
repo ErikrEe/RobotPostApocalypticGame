@@ -8124,6 +8124,16 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 857467181}
+    - target: {fileID: 2231158439254415747, guid: a82d712178ffe7e45930aade4796c481,
+        type: 3}
+      propertyPath: decisionTime.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2231158439254415747, guid: a82d712178ffe7e45930aade4796c481,
+        type: 3}
+      propertyPath: decisionTime.y
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2231158439254415746, guid: a82d712178ffe7e45930aade4796c481,
         type: 3}
       propertyPath: m_Constraints

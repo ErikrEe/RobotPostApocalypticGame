@@ -17,7 +17,7 @@ public class WandererNPC : MonoBehaviour
     internal float decisionTimeCount = 0;
 
     // The possible directions that the object can move int, right, left, up, down, and zero for staying in place. I added left & right twice to give a bigger chance if it happening
-    internal Vector3[] moveDirections = new Vector3[] { Vector3.right, Vector3.left, Vector3.right, Vector3.left, Vector3.zero };
+    internal Vector3[] moveDirections = new Vector3[] { Vector3.right, Vector3.left, Vector3.right, Vector3.left, Vector3.zero, Vector3.zero };
     internal int currentMoveDirection;
 
     // Use this for initialization
@@ -61,9 +61,17 @@ public class WandererNPC : MonoBehaviour
         // Choose whether to move R or L ?
         currentMoveDirection = Mathf.FloorToInt(Random.Range(0, moveDirections.Length));
 
-        if (moveDirections.Length > 0)
+        animator.SetBool("Speed", true);
+
+        /*
+        if (moveDirections.Length > 1)
         {
             animator.SetBool("Speed", true);
         }
+
+        if (moveDirections.Length < 1)
+        {
+            animator.SetBool("Speed", false);
+        } */
     }
 }
