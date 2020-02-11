@@ -9,6 +9,8 @@ public class MainMenu : MonoBehaviour
 
     //Behöver stänga av movement speed etc när escMenu är aktiv, Equip Items scriptet interferar förmodligen då det ändrar movement speed etc, kanske stnga av scripten?? vem vet tbh..
 
+    public Animator backToMainMenu;
+
     public Animator transition;
 
     public Animator titleTransition;
@@ -63,7 +65,7 @@ public class MainMenu : MonoBehaviour
         {
             Cursor.visible = true;
             //stäng av movement Och controller scripten
-            EquipItems.playerVelocity.constraints = RigidbodyConstraints2D.FreezeAll;
+            //EquipItems.playerVelocity.constraints = RigidbodyConstraints2D.FreezeAll;
         }
 
         if(Input.GetKeyDown(KeyCode.Escape))
@@ -124,6 +126,8 @@ public class MainMenu : MonoBehaviour
     {
         hasBackToMenu = true;
         transition.SetTrigger("Start");
+        backToMainMenu.SetTrigger("backToMenu");
+
     }
 
     private void FixedUpdate()
@@ -173,6 +177,7 @@ public class MainMenu : MonoBehaviour
     public void Back()
     {
         SceneManager.UnloadSceneAsync("EscMenu");
+
     }
 
     //Coroutine nedan som triggar allting, spelar animation, väntar en sekund, loadar scenen
