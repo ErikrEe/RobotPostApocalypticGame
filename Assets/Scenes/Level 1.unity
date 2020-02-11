@@ -8044,6 +8044,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: InsectNPC
       objectReference: {fileID: 0}
+    - target: {fileID: 2231158439254415748, guid: a82d712178ffe7e45930aade4796c481,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2231158439254415744, guid: a82d712178ffe7e45930aade4796c481,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8057,7 +8062,7 @@ PrefabInstance:
     - target: {fileID: 2231158439254415744, guid: a82d712178ffe7e45930aade4796c481,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.4895833
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 2231158439254415744, guid: a82d712178ffe7e45930aade4796c481,
         type: 3}
@@ -8114,6 +8119,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2231158439254415747, guid: a82d712178ffe7e45930aade4796c481,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 857467181}
     - target: {fileID: 2231158439254415746, guid: a82d712178ffe7e45930aade4796c481,
         type: 3}
       propertyPath: m_Constraints
