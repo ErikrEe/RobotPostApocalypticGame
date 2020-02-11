@@ -27,8 +27,14 @@ public class MainMenu : MonoBehaviour
     private float optionsTimer = 0;
     private float backToMenuDelay = 1.5f;
 
-
-
+    [SerializeField]
+    private string levelName;
+    [SerializeField]
+    private bool unloadScene;
+    [SerializeField]
+    private string unloadLevelName;
+    [SerializeField]
+    private bool loadingLevel;
 
 
     public void QuitGame() //This function closes the application when triggered
@@ -38,6 +44,17 @@ public class MainMenu : MonoBehaviour
 
     private void Update()
     {
+        if (SceneManager.GetSceneByName(levelName).isLoaded) loadingLevel = false;
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Debug.LogError("EscMenu blir nu loadad");
+            EscMenu();
+            //player.constraints = RigidbodyConstraints2D.FreezeAll; göra så att player inte kan röra på sig.
+
+        }
+
+
         if (hasOptions)
         {
             timer += Time.deltaTime;
@@ -114,6 +131,28 @@ public class MainMenu : MonoBehaviour
     {
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
 
+    }
+
+    public void EscMenu()
+    {
+        //Using the below code for a back button thing
+        if (!SceneManager.GetSceneByName(levelName).isLoaded)// && !loadingLevel) Den verkade fucka upp allt..
+        /*If scene is not already loaded, and the script is not already loading a level*/
+        {
+            Debug.Log(gameObject.name + " is trying to load" + levelName);
+            SceneManager.LoadSceneAsync(levelName, LoadSceneMode.Additive); //Loads scene
+            loadingLevel = true;
+            if (unloadScene && SceneManager.GetSceneByName(unloadLevelName).isLoaded)
+            /*If the level that it is configured to unload is already loaded and unloadScene is ticked*/
+            {
+                SceneManager.UnloadSceneAsync(unloadLevelName); //Unloads level
+            }
+        }
+    }
+
+    public void Back()
+    {
+        SceneManager.UnloadSceneAsync("EscMenu");
     }
 
     //Coroutine nedan som triggar allting, spelar animation, väntar en sekund, loadar scenen
