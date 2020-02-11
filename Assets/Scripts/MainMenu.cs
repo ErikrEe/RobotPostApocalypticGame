@@ -36,6 +36,8 @@ public class MainMenu : MonoBehaviour
     [SerializeField]
     private bool loadingLevel;
 
+    public bool playing;
+
 
     public void QuitGame() //This function closes the application when triggered
     {
@@ -45,6 +47,20 @@ public class MainMenu : MonoBehaviour
     private void Update()
     {
         if (SceneManager.GetSceneByName(levelName).isLoaded) loadingLevel = false;
+
+        if(!SceneManager.GetSceneByName("EscMenu").isLoaded && SceneManager.GetSceneByName("Level 1").isLoaded || SceneManager.GetSceneByName("Bara för aesthetic").isLoaded)//game är loaded och escmenu inte är loaded
+        {
+            playing = true;
+        }
+
+        if(playing) //playing är true när leveln är loadad och esc menu inte är loadad.
+        {
+            Cursor.visible = false;
+        }
+        else
+        {
+            Cursor.visible = true;
+        }
 
         if(Input.GetKeyDown(KeyCode.Escape))
         {

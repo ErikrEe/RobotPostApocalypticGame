@@ -33,6 +33,7 @@ public class EquipItems : MonoBehaviour
 
     void Start()                                                                             //Start is called before the first frame update
     {
+
         playerVelocity = GetComponent<Rigidbody2D>();
 
         //Fetch the Collider from the GameObject
