@@ -16,7 +16,7 @@ public class EquipItems : MonoBehaviour
     public static bool objectRight = false;
     private bool left = false, right = false;
     Vector2 vector, vectorTwo;
-    Rigidbody2D playerVelocity, objectRigidbody;
+    public static Rigidbody2D playerVelocity, objectRigidbody;
     private float currentheight;
     private float previousheight;
     private float travel;

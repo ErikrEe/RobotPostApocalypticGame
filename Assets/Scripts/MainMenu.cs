@@ -63,7 +63,7 @@ public class MainMenu : MonoBehaviour
         {
             Cursor.visible = true;
             //stäng av movement Och controller scripten
-            PlayerMovement.moveSpeed = 0;
+            EquipItems.playerVelocity.constraints = RigidbodyConstraints2D.FreezeAll;
         }
 
         if(Input.GetKeyDown(KeyCode.Escape))
