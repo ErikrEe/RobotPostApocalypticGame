@@ -5,6 +5,8 @@ using UnityEngine;
 public class WandererNPC : MonoBehaviour
 {
 
+    public Animator animator;
+
     internal Transform thisTransform;
 
     // The movement speed of the object
@@ -35,7 +37,7 @@ public class WandererNPC : MonoBehaviour
     void Update()
     {
         // Move the object in the chosen direction at the set speed
-        thisTransform.position += moveDirections[currentMoveDirection] * Time.deltaTime * moveSpeed;
+         thisTransform.position += moveDirections[currentMoveDirection] * Time.deltaTime * moveSpeed;
 
         if (decisionTimeCount > 0) decisionTimeCount -= Time.deltaTime;
         else
@@ -46,11 +48,22 @@ public class WandererNPC : MonoBehaviour
             // Choose a movement direction, or stay in place
             ChooseMoveDirection();
         }
+
+
+
+
+        
+
     }
 
     void ChooseMoveDirection()
     {
         // Choose whether to move R or L ?
         currentMoveDirection = Mathf.FloorToInt(Random.Range(0, moveDirections.Length));
+
+        if (moveDirections.Length > 0)
+        {
+            animator.SetBool("Speed", true);
+        }
     }
 }
