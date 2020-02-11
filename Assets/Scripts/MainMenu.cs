@@ -7,8 +7,6 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
 
-    //Behöver stänga av movement speed etc när escMenu är aktiv, Equip Items scriptet interferar förmodligen då det ändrar movement speed etc, kanske stnga av scripten?? vem vet tbh..
-
     public Animator backToMainMenu;
 
     public Animator transition;
@@ -40,7 +38,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField]
     private bool loadingLevel;
 
-    public bool playing;
+    public static bool playing;
 
 
     public void QuitGame() //This function closes the application when triggered
@@ -55,6 +53,10 @@ public class MainMenu : MonoBehaviour
         if(!SceneManager.GetSceneByName("EscMenu").isLoaded && SceneManager.GetSceneByName("Level 1").isLoaded || SceneManager.GetSceneByName("Bara för aesthetic").isLoaded)//game är loaded och escmenu inte är loaded
         {
             playing = true;
+        }
+        else if (SceneManager.GetSceneByName("EscMenu").isLoaded)
+        {
+            playing = false;
         }
 
         if(playing) //playing är true när leveln är loadad och esc menu inte är loadad.

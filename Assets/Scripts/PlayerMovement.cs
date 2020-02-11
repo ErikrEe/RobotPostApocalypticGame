@@ -162,7 +162,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        controller.Move(xMove * Time.fixedDeltaTime, crouch, jump); //Arg 1 = horizontal movement || Arg 2 = Crouching? || Arg 3 = Jumping?
+        if(MainMenu.playing)
+        {
+            controller.Move(xMove * Time.fixedDeltaTime, crouch, jump); //Arg 1 = horizontal movement || Arg 2 = Crouching? || Arg 3 = Jumping?
+        }
+        if(!MainMenu.playing)
+        {
+             ; //Arg 1 = horizontal movement || Arg 2 = Crouching? || Arg 3 = Jumping?
+        }
         jump = false;  //sets jump to false when player has jumped
 
 
