@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
 
+    //Behöver stänga av movement speed etc när escMenu är aktiv, Equip Items scriptet interferar förmodligen då det ändrar movement speed etc, kanske stnga av scripten?? vem vet tbh..
+
     public Animator transition;
 
     public Animator titleTransition;
@@ -60,6 +62,8 @@ public class MainMenu : MonoBehaviour
         else
         {
             Cursor.visible = true;
+            //stäng av movement Och controller scripten
+            PlayerMovement.moveSpeed = 0;
         }
 
         if(Input.GetKeyDown(KeyCode.Escape))
@@ -192,7 +196,7 @@ public class MainMenu : MonoBehaviour
 
 
 
-    //fixa en funktion som unloadar ESC MENU
+    //fixa en funktion som unloadar ESC MENU- check
     //fixa så att karaktären och allt annat är pausat under esc menu
     //fixa så att det un-pausar när esc menu är unloadat
 
