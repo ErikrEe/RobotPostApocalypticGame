@@ -1,0 +1,437 @@
+fileFormatVersion: 2
+guid: 4aa91e12ffe395942b819cdf89e575c6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5128362160123191420
+    second: Pillbug_roll_Game_2020_0
+  - first:
+      213: 8481499285131600732
+    second: Pillbug_roll_Game_2020_1
+  - first:
+      213: -6990406276777673113
+    second: Pillbug_roll_Game_2020_2
+  - first:
+      213: -5912595103386100840
+    second: Pillbug_roll_Game_2020_3
+  - first:
+      213: -6169127319908517116
+    second: Pillbug_roll_Game_2020_4
+  - first:
+      213: -637956922932942422
+    second: Pillbug_roll_Game_2020_5
+  - first:
+      213: -7996449025145720471
+    second: Pillbug_roll_Game_2020_6
+  - first:
+      213: 6083557549775093908
+    second: Pillbug_roll_Game_2020_7
+  - first:
+      213: -6806268311058007185
+    second: Pillbug_roll_Game_2020_8
+  - first:
+      213: -4800845894942220689
+    second: Pillbug_roll_Game_2020_9
+  - first:
+      213: 8172525072143591841
+    second: Pillbug_roll_Game_2020_10
+  - first:
+      213: -4256513389926645164
+    second: Pillbug_roll_Game_2020_11
+  - first:
+      213: 74218111224761185
+    second: Pillbug_roll_Game_2020_12
+  - first:
+      213: -8191717829403944484
+    second: Pillbug_roll_Game_2020_13
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Pillbug_roll_Game_2020_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 500
+        width: 110
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efc31c0cd5696f14a9251b40cb9995ff
+      internalID: -5128362160123191420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pillbug_roll_Game_2020_1
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 500
+        width: 110
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3f9f8501fe3d6b41b9f5f8e6e4a95ac
+      internalID: 8481499285131600732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pillbug_roll_Game_2020_2
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 500
+        width: 110
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8cd248449e1a564d84e0d3d3e356243
+      internalID: -6990406276777673113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pillbug_roll_Game_2020_3
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 480
+        width: 90
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccd5bfb40c67f80499e520b6b7e38776
+      internalID: -5912595103386100840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pillbug_roll_Game_2020_4
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 340
+        width: 70
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ec6f82cf5569ee458f767e05b2ea1d4
+      internalID: -6169127319908517116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pillbug_roll_Game_2020_5
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 340
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e561a888b50a23f438b426a97e3573e5
+      internalID: -637956922932942422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pillbug_roll_Game_2020_6
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 340
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa140a4b75a3ded4aa7ff31ed68ffa9a
+      internalID: -7996449025145720471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pillbug_roll_Game_2020_7
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 340
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce74e452d265e7f469646245a1b7d89d
+      internalID: 6083557549775093908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pillbug_roll_Game_2020_8
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 180
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5095c7e745bcfc246949473a1dca7f8e
+      internalID: -6806268311058007185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pillbug_roll_Game_2020_9
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 180
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28c9657faa1ebc44493ae9b192daa033
+      internalID: -4800845894942220689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pillbug_roll_Game_2020_10
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 180
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92d4c35eb1388f5439b53c26c215811d
+      internalID: 8172525072143591841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pillbug_roll_Game_2020_11
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 180
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d2630218ee0cc445b97fd5f78e8b9c7
+      internalID: -4256513389926645164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pillbug_roll_Game_2020_12
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 20
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3206486d56eb1640a5e737d41f506b0
+      internalID: 74218111224761185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pillbug_roll_Game_2020_13
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 20
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 843ee5832a999644eb109c15435e6d4a
+      internalID: -8191717829403944484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: af5a8780dc8a4c046bd8b8d9ea4f0907
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
