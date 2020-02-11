@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Animator animator; //animator variable
 
-    public float moveSpeed = 40f;  //moveSpeed variable to determine the speed of movement
+    public static float moveSpeed = 40f;  //moveSpeed variable to determine the speed of movement
     float xMove = 0f;  //Horizontal movement (Not speed)
     public static float yMove = 0f;
 

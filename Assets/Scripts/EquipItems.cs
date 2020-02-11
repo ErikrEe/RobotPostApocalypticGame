@@ -48,6 +48,7 @@ public class EquipItems : MonoBehaviour
         if (!objectDraged)
         {
             FindClosestEnemy(); //Går igenom FindClosestEnemy funktionen.
+            PlayerMovement.moveSpeed = 40;
         }
 
          float verticalVelocity = playerVelocity.velocity.y;
@@ -70,6 +71,7 @@ public class EquipItems : MonoBehaviour
 
         if (objectDraged) //If an object is being dragged..
         {
+            PlayerMovement.moveSpeed = 20;
             //objectRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
 
             if (gameObject.transform.position.x > dragObject.transform.position.x) //and the player is on the right side of the object (OBJECT SHOULD BE LEFT SIDE)
