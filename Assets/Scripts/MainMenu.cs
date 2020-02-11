@@ -7,8 +7,6 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
 
-    //Behöver stänga av movement speed etc när escMenu är aktiv, Equip Items scriptet interferar förmodligen då det ändrar movement speed etc, kanske stnga av scripten?? vem vet tbh..
-
     public Animator backToMainMenu;
 
     public Animator transition;
