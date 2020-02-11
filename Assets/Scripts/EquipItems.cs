@@ -5,6 +5,9 @@ using System;
 
 public class EquipItems : MonoBehaviour
 {
+    //Anledning till att sten inte är så långsam => add velocity! Lägg till så att man blir långsammare manuelt!
+
+
     [SerializeField]
     public Rigidbody2D equObject;
     public static bool pickedUp = false;
