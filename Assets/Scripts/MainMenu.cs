@@ -50,7 +50,7 @@ public class MainMenu : MonoBehaviour
     {
         if (SceneManager.GetSceneByName(levelName).isLoaded) loadingLevel = false;
 
-        if(!SceneManager.GetSceneByName("EscMenu").isLoaded && SceneManager.GetSceneByName("Level 1").isLoaded || SceneManager.GetSceneByName("Bara för aesthetic").isLoaded)//game är loaded och escmenu inte är loaded
+        if(!SceneManager.GetSceneByName("EscMenu").isLoaded && (SceneManager.GetSceneByName("Level 1").isLoaded || SceneManager.GetSceneByName("Bara för aesthetic").isLoaded || SceneManager.GetSceneByName("Level 2").isLoaded))//game är loaded och escmenu inte är loaded
         {
             playing = true;
         }
