@@ -16,7 +16,7 @@ public class CharacterController : MonoBehaviour
 
 
 
-    const float groundedRadius = .2f; // Radius of the overlap circle to determine if grounded
+    const float groundedRadius = .1f; // Radius of the overlap circle to determine if grounded
     private bool grounded;            // Whether or not the player is grounded.
     const float ceilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
     private Rigidbody2D rb;
@@ -43,6 +43,12 @@ public class CharacterController : MonoBehaviour
 
         if (OnCrouchEvent == null)
             OnCrouchEvent = new BoolEvent();
+    }
+
+    private void OnDrawGizmos()
+    {
+
+        Gizmos.DrawWireSphere(groundCheck.position, groundedRadius);
     }
 
     private void FixedUpdate()
