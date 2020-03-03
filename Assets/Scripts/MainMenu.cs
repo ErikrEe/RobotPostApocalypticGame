@@ -65,7 +65,8 @@ public class MainMenu : MonoBehaviour
         }
         else
         {
-            Cursor.visible = true;
+            Cursor.visible = false;
+            // Cursor.visible = true;
             //stäng av movement Och controller scripten
             //EquipItems.playerVelocity.constraints = RigidbodyConstraints2D.FreezeAll;
         }
