@@ -1,0 +1,797 @@
+fileFormatVersion: 2
+guid: 10f47beec0ad9dc43bb7659bec2f4d89
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6165754683847240630
+    second: NewAssetsForRoboGame_0
+  - first:
+      213: -1579802919493303046
+    second: NewAssetsForRoboGame_1
+  - first:
+      213: -5766027012988345116
+    second: NewAssetsForRoboGame_2
+  - first:
+      213: -4158573594537152878
+    second: NewAssetsForRoboGame_3
+  - first:
+      213: 6002094777843643264
+    second: NewAssetsForRoboGame_4
+  - first:
+      213: 3219982483089877459
+    second: NewAssetsForRoboGame_5
+  - first:
+      213: 3866024023080521033
+    second: NewAssetsForRoboGame_6
+  - first:
+      213: -115325311405917688
+    second: NewAssetsForRoboGame_7
+  - first:
+      213: -8959660767610462265
+    second: NewAssetsForRoboGame_8
+  - first:
+      213: -4959885282361492859
+    second: NewAssetsForRoboGame_9
+  - first:
+      213: -5649339285194995800
+    second: NewAssetsForRoboGame_10
+  - first:
+      213: 5357041344076503951
+    second: NewAssetsForRoboGame_11
+  - first:
+      213: 8415217740021574373
+    second: NewAssetsForRoboGame_12
+  - first:
+      213: 5534284275202313428
+    second: NewAssetsForRoboGame_13
+  - first:
+      213: 4372913899761455320
+    second: NewAssetsForRoboGame_14
+  - first:
+      213: 4609101022065047025
+    second: NewAssetsForRoboGame_15
+  - first:
+      213: -7379710913250703431
+    second: NewAssetsForRoboGame_16
+  - first:
+      213: -4902783967533288168
+    second: NewAssetsForRoboGame_17
+  - first:
+      213: 4645187493540709724
+    second: NewAssetsForRoboGame_18
+  - first:
+      213: -359391392263608206
+    second: NewAssetsForRoboGame_19
+  - first:
+      213: -6939955065448414282
+    second: NewAssetsForRoboGame_20
+  - first:
+      213: 2159264442837251017
+    second: NewAssetsForRoboGame_21
+  - first:
+      213: 4271552400986878059
+    second: NewAssetsForRoboGame_22
+  - first:
+      213: 6483924527536380962
+    second: NewAssetsForRoboGame_23
+  - first:
+      213: 5214631329967193363
+    second: NewAssetsForRoboGame_24
+  - first:
+      213: -108112650373411402
+    second: NewAssetsForRoboGame_25
+  - first:
+      213: -3353823893174765743
+    second: NewAssetsForRoboGame_26
+  - first:
+      213: 8323120328537115083
+    second: NewAssetsForRoboGame_27
+  - first:
+      213: -8213810044359709671
+    second: NewAssetsForRoboGame_28
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: NewAssetsForRoboGame_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 106
+        width: 20
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1f5b09d6d8ce1b40ae93bd85be211e4
+      internalID: -6165754683847240630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewAssetsForRoboGame_1
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 108
+        width: 35
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9a1d1824909a2e4bb758af522ebb8be
+      internalID: -1579802919493303046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewAssetsForRoboGame_2
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 109
+        width: 49
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28bcc348fe2285e45a1785309b159ffd
+      internalID: -5766027012988345116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewAssetsForRoboGame_3
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 113
+        width: 37
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22b7c93b13833e94498dbb89e20253b7
+      internalID: -4158573594537152878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewAssetsForRoboGame_4
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 114
+        width: 14
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fa115fb41f843045bf64cb61f2f8903
+      internalID: 6002094777843643264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewAssetsForRoboGame_5
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 83
+        width: 61
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f88aca6128a9d347ad8ec6a5416ea10
+      internalID: 3219982483089877459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewAssetsForRoboGame_6
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 87
+        width: 38
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33a2800754232a9429ccd8960a4ea9b2
+      internalID: 3866024023080521033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewAssetsForRoboGame_7
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 88
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39f225782ce0c3f4daf06c0bc0dc8d26
+      internalID: -115325311405917688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewAssetsForRoboGame_8
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 87
+        width: 72
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fabf78b217f5c545be85b1e6314dc50
+      internalID: -8959660767610462265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewAssetsForRoboGame_9
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 55
+        width: 36
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 690abfd81d3e26a4d8620ba5ce2e2bc8
+      internalID: -4959885282361492859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewAssetsForRoboGame_10
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 56
+        width: 69
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 018ff5322b664f743ad1e8567d7b5a64
+      internalID: -5649339285194995800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewAssetsForRoboGame_11
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 58
+        width: 27
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a38c7a158841154a8a0b79ec297b142
+      internalID: 5357041344076503951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewAssetsForRoboGame_12
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 59
+        width: 24
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1894b95044b69446afe5f9d868f9f57
+      internalID: 8415217740021574373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewAssetsForRoboGame_13
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 59
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05ad52ebc4648c04f96b627ba248dd8a
+      internalID: 5534284275202313428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewAssetsForRoboGame_14
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 60
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42bc30c05a7957f45a165e088897c6eb
+      internalID: 4372913899761455320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewAssetsForRoboGame_15
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 33
+        width: 50
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b0ca6e8d00cb974b9b2001f37e023ca
+      internalID: 4609101022065047025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewAssetsForRoboGame_16
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 32
+        width: 64
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52a390cb62f718b449deb06d2cf049b8
+      internalID: -7379710913250703431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewAssetsForRoboGame_17
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 33
+        width: 25
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c65fecbe9a5c904eb11d1bf08864d51
+      internalID: -4902783967533288168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewAssetsForRoboGame_18
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 35
+        width: 32
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf4f4147e91ee9548b289f5e97f0cb38
+      internalID: 4645187493540709724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewAssetsForRoboGame_19
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 36
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 410c441517687854db054766feb78472
+      internalID: -359391392263608206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewAssetsForRoboGame_20
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 7
+        width: 29
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1126446d7d931f846a8e6edc75672171
+      internalID: -6939955065448414282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewAssetsForRoboGame_21
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 9
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e3e41524f7453e4cb3d6ee6752a0fcd
+      internalID: 2159264442837251017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewAssetsForRoboGame_22
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 8
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9c7aca97f23c374bbe278c4030b263b
+      internalID: 4271552400986878059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewAssetsForRoboGame_23
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 11
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74bedfe9f3514ec46976c5125e50ff20
+      internalID: 6483924527536380962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewAssetsForRoboGame_24
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 8
+        width: 21
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9671f8f8333d7c443bac24e71ef17478
+      internalID: 5214631329967193363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewAssetsForRoboGame_25
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 9
+        width: 35
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6de204c96949b4a4db176c2b584c139a
+      internalID: -108112650373411402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewAssetsForRoboGame_26
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 12
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e7351c6f58b52e40b4cc024dff68309
+      internalID: -3353823893174765743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewAssetsForRoboGame_27
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 10
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 639a853bc63b3d94287831ac5ae829ad
+      internalID: 8323120328537115083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewAssetsForRoboGame_28
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 11
+        width: 22
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85812fbef523c8848b10c47c29f763da
+      internalID: -8213810044359709671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: ca7e11a998b995442a529d1393c22b5c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
