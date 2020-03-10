@@ -58,7 +58,7 @@ public class WandererNPC : MonoBehaviour
 
     void ChooseMoveDirection()
     {
-        // Choose whether to move R or L ?
+        // Choose whether to move R or L or stay in place ?
         currentMoveDirection = Mathf.FloorToInt(Random.Range(0, moveDirections.Length));
 
         animator.SetBool("Speed", true);

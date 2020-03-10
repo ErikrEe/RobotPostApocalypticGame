@@ -7768,12 +7768,12 @@ PrefabInstance:
     - target: {fileID: 2231158439254415747, guid: a82d712178ffe7e45930aade4796c481,
         type: 3}
       propertyPath: decisionTime.x
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2231158439254415747, guid: a82d712178ffe7e45930aade4796c481,
         type: 3}
       propertyPath: decisionTime.y
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2231158439254415746, guid: a82d712178ffe7e45930aade4796c481,
         type: 3}
