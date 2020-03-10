@@ -107,7 +107,7 @@ public class PlayerMovement : MonoBehaviour
         #region Jump/crouch + not holding objects
         //Jumpcode
 
-        if (Input.GetButton("Jump") && !EquipItems.objectDraged)
+        if (Input.GetButton("Jump") && !EquipItems.objectDraged && !CharacterController.roofAbove)
         {
             jump = true;  //If player presses "space" or "up" or "W" then it sets "jump" = true
             animator.SetBool("IsJumping", true);
