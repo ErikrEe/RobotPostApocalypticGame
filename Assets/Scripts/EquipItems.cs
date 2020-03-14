@@ -184,13 +184,19 @@ public class EquipItems : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Q) && pickedUp)
         {
+
+
+
             equObject.transform.parent = null;                                              //this removes the object from being a child to the player 
             pickedUp = false;
+
 
             animator.SetBool("HoldingFlower", false);
 
             equObject.constraints = RigidbodyConstraints2D.None;                            // Un freezes the object so it can tilt over again
             gameObject.GetComponent<Rigidbody2D>().gravityScale = 3;                        //Sets the gravity for the player to 3 (3 is the default gravity scale for the player)
+
+
         }
 
 
