@@ -24,7 +24,7 @@ public class CameraControl : MonoBehaviour
         if (collision.CompareTag("CameraFollow"))   // Checks if the player is colliding with the trigger
         {
             cameraFollow();       //if player is colliding, start the camerafollow method
-            Camera1.transform.position = playerP.;   // Cameras position switches to players position
+            Camera1.transform.position = playerP;   // Cameras position switches to players position
             Camera1.orthographicSize = Mathf.Lerp(Camera1.orthographicSize, CameraZoomIn, Time.deltaTime);    //zoom in the camera smoothly
     
         }
