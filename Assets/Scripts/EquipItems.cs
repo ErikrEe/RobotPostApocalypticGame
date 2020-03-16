@@ -149,9 +149,7 @@ public class EquipItems : MonoBehaviour
 
             if (CharacterController.move < 0 && !CharacterController.facingRight)           // If the input is moving the player right and the player is facing left...
             {
-                
-
-               // Flip();                                                                     // ... flip the flower.
+               
                 left = true;
                 right = false;
 
@@ -159,7 +157,7 @@ public class EquipItems : MonoBehaviour
 
             else if (CharacterController.move > 0 && CharacterController.facingRight)       // Otherwise if the input is moving the player left and the player is facing right...
             {
-               // Flip();                                                                     // ... flip the flower.
+
                 left = false;
                 right = true;
 
@@ -199,17 +197,6 @@ public class EquipItems : MonoBehaviour
 
         }
 
-
-
-
-        void Flip()
-        {
-            
-            CharacterController.facingRight = !CharacterController.facingRight;             //Switch the way the player is labelled as facing.
-            Vector3 theScale = transform.localScale;                                        //Multiply the player's x local scale by -1.
-            theScale.x *= -1;
-            transform.localScale = theScale;
-        }
     }
 
     void LateUpdate() //This part of the code determines if the player is moving upwards or downwards on the y axis by comparing past and current position.
