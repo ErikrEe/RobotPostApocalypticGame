@@ -46,6 +46,7 @@ public class CharacterController : MonoBehaviour
             OnCrouchEvent = new BoolEvent();
     }
 
+
     private void OnDrawGizmos()
     {
 

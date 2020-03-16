@@ -21,6 +21,9 @@ public class PlayerMovement : MonoBehaviour
 
     public static bool facingRight = true;  //true or false statement that checks which direction the player is facing
 
+    public bool jumped; //Harriet
+    public float jumpdelay; //Harriet
+
 
     #endregion
 
@@ -28,7 +31,14 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Harriet {
+        jumped = false;
 
+        if (jumpdelay <= 0)
+        {
+            jumpdelay = 0.2f;
+        }
+        //Harriet }
 
 
         //Keeping this here incase we need to add something to "Start"
@@ -107,10 +117,13 @@ public class PlayerMovement : MonoBehaviour
         #region Jump/crouch + not holding objects
         //Jumpcode
 
-        if (Input.GetButton("Jump") && !EquipItems.objectDraged && !CharacterController.roofAbove)
+        if (Input.GetButton("Jump") && !EquipItems.objectDraged && !CharacterController.roofAbove && !jumped) //Harriet -> !jumped
         {
             jump = true;  //If player presses "space" or "up" or "W" then it sets "jump" = true
             animator.SetBool("IsJumping", true);
+            jumped = true; //Harriet
+            StartCoroutine(SpamBlockco());//Harriet
+
         }
 
         if (Input.GetButtonDown("Crouch") && !EquipItems.objectDraged)
@@ -175,4 +188,16 @@ public class PlayerMovement : MonoBehaviour
 
 
     }
+
+    public IEnumerator SpamBlockco() //Harriet
+    {
+        if (jumped == true)
+        {
+            yield return new WaitForSeconds(jumpdelay);
+        }
+        yield return null;
+        jumped = false;
+    }
 }
+
+
