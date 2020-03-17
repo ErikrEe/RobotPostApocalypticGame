@@ -115,13 +115,14 @@ public class PlayerMovement : MonoBehaviour
         #region Jump/crouch + not holding objects
         //Jumpcode
 
-        if (Input.GetButton("Jump") && !EquipItems.objectDraged && !CharacterController.roofAbove && !jumped) //Harriet added !jumped
+        if (Input.GetButtonDown("Jump") && !EquipItems.objectDraged && !CharacterController.roofAbove && !jumped) //Harriet added !jumped
         {
+            
+            
             jump = true;  //If player presses "space" or "up" or "W" then it sets "jump" = true
-            jumped = true; //Harriet
+            //jumped = true; //Harriet
             animator.SetBool("IsJumping", true);
-
-            StartCoroutine(SpamBlockco());//Harriet, starts the delay co-routine
+            //StartCoroutine(SpamBlockco());//Harriet, starts the delay co-routine
 
         }
 
