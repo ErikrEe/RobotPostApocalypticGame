@@ -122,7 +122,7 @@ public class PlayerMovement : MonoBehaviour
             jump = true;  //If player presses "space" or "up" or "W" then it sets "jump" = true
             //jumped = true; //Harriet
             animator.SetBool("IsJumping", true);
-            //StartCoroutine(SpamBlockco());//Harriet, starts the delay co-routine
+            StartCoroutine(SpamBlockco());//Harriet, starts the delay co-routine
 
         }
 
