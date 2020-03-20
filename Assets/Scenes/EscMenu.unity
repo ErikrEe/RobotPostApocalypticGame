@@ -262,10 +262,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 0.56078434, b: 0.9866854, a: 1}
+    m_NormalColor: {r: 0, g: 0, b: 0, a: 1}
     m_HighlightedColor: {r: 1, g: 0.495283, b: 0.495283, a: 0.39215687}
-    m_PressedColor: {r: 1, g: 1, b: 1, a: 0.54901963}
-    m_SelectedColor: {r: 1, g: 0, b: 0, a: 0.98039216}
+    m_PressedColor: {r: 0.6901961, g: 0.6901961, b: 0.6901961, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 0.98039216}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -412,10 +412,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.7947062, g: 0.5254902, b: 1, a: 1}
+    m_NormalColor: {r: 0, g: 0, b: 0, a: 1}
     m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0.39215687}
-    m_PressedColor: {r: 1, g: 1, b: 1, a: 0.54509807}
-    m_SelectedColor: {r: 1, g: 0, b: 0, a: 0.9647059}
+    m_PressedColor: {r: 0.6901961, g: 0.6901961, b: 0.6901961, a: 0.54509807}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 0.9647059}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -535,7 +535,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 43d59b5c638b0664db55f3a4e4d130ef, type: 2}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -681,6 +681,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.6194333
       objectReference: {fileID: 0}
+    - target: {fileID: 2706052051632588921, guid: 4cfb59f61de1f5d4abfc8a8a29424b39,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2706052051632588920, guid: 4cfb59f61de1f5d4abfc8a8a29424b39,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -745,11 +750,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2706052051632588921, guid: 4cfb59f61de1f5d4abfc8a8a29424b39,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2385165623785091849, guid: 4cfb59f61de1f5d4abfc8a8a29424b39,
         type: 3}
