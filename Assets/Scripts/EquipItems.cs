@@ -42,7 +42,7 @@ public class EquipItems : MonoBehaviour
     void Update()                                                                            //Update is called once per frame
     {
 
-        if (!objectDraged)
+        if (!objectDraged && !pickedUp) //la till !pickedUp så att det skulle fungera med raycast scriptet, kanske skapar buggar?
         {
             FindClosestEnemy(); //Går igenom FindClosestEnemy funktionen.
             PlayerMovement.moveSpeed = 40;

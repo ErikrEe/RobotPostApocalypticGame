@@ -1713,6 +1713,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2734867953619717677, guid: da080b7d88be5a84a8d47a91fadf7ed8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 2734867953619717673, guid: da080b7d88be5a84a8d47a91fadf7ed8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2193,6 +2198,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 2734867953619717677, guid: da080b7d88be5a84a8d47a91fadf7ed8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 2734867953619717673, guid: da080b7d88be5a84a8d47a91fadf7ed8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2201,7 +2211,7 @@ PrefabInstance:
     - target: {fileID: 2734867953619717673, guid: da080b7d88be5a84a8d47a91fadf7ed8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18.189999
+      value: 17.14
       objectReference: {fileID: 0}
     - target: {fileID: 2734867953619717673, guid: da080b7d88be5a84a8d47a91fadf7ed8,
         type: 3}
@@ -10695,7 +10705,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1614222841}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -419.5, y: 14.4, z: 0}
+  m_LocalPosition: {x: -575.05, y: 11.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 99882898}
@@ -12325,6 +12335,45 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 958283144}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2119586297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119586294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce71be4f21869bc4bbf334214de26c4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collider: {fileID: 2119586298}
+--- !u!61 &2119586298
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119586294}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.75, y: 1.44}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.13, y: 2}
+    newSize: {x: 5, y: 5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.29, y: 0.54}
+  m_EdgeRadius: 0
 --- !u!1001 &2142468779
 PrefabInstance:
   m_ObjectHideFlags: 0
