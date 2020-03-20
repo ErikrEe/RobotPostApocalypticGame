@@ -78,11 +78,11 @@ public class CharacterController : MonoBehaviour
     
 
 
-    public static float move;
+    public static float move; //Harriet, to be able to use move in both scripts while the variable still being inside of the Function
 
     public void Move(float moveTwo, bool crouch, bool jump)
     {
-        move = moveTwo;
+        move = moveTwo; //Harriet, to be able to use move in both scripts while the variable still being inside of the Function
         // If crouching, check to see if the character can stand up
         if (!crouch)
         {
