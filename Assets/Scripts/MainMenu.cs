@@ -1,13 +1,12 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement; 
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
 
-    public Animator backToMainMenu;
+    //Erik {
+    public Animator backToMainMenu;   
 
     public Animator transition;
 
@@ -28,7 +27,10 @@ public class MainMenu : MonoBehaviour
     private bool hasBackToMenu = false;
     private float optionsTimer = 0;
     private float backToMenuDelay = 1.5f;
+    //Erik }
 
+        
+    //Harriet {
     [SerializeField]
     private string levelName;
     [SerializeField]
@@ -39,7 +41,7 @@ public class MainMenu : MonoBehaviour
     private bool loadingLevel;
 
     public static bool playing;
-
+    //Harriet }
 
     public void QuitGame() //This function closes the application when triggered
     {
@@ -48,38 +50,45 @@ public class MainMenu : MonoBehaviour
 
     private void Update()
     {
-        if (SceneManager.GetSceneByName(levelName).isLoaded) loadingLevel = false;
-
-        if(!SceneManager.GetSceneByName("EscMenu").isLoaded && (SceneManager.GetSceneByName("Level 1").isLoaded || SceneManager.GetSceneByName("Bara för aesthetic").isLoaded || SceneManager.GetSceneByName("Level 2").isLoaded))//game är loaded och escmenu inte är loaded
+        //Harriet {
+        Cursor.lockState = CursorLockMode.Locked;
+        if (SceneManager.GetSceneByName(levelName).isLoaded)
         {
-            playing = true;
-        }
-        else if (SceneManager.GetSceneByName("EscMenu").isLoaded)
-        {
-            playing = false;
+            loadingLevel = false;
         }
 
-        if(playing) //playing är true när leveln är loadad och esc menu inte är loadad.
-        {
-            Cursor.visible = false;
-        }
-        else
-        {
-            Cursor.visible = false;
-            // Cursor.visible = true;
-            //stäng av movement Och controller scripten
-            //EquipItems.playerVelocity.constraints = RigidbodyConstraints2D.FreezeAll;
-        }
+        #region invisible cursor during playing, visible cursor within the menues - not used anymore //Harriet
+        /*          
+          //när leveln är loadad och esc menu inte är loadad.
+          if (!SceneManager.GetSceneByName("EscMenu").isLoaded && (SceneManager.GetSceneByName("Level 1").isLoaded || SceneManager.GetSceneByName("Bara för aesthetic").isLoaded || SceneManager.GetSceneByName("Level 2").isLoaded))//game är loaded och escmenu inte är loaded
+          {
+              //playing är true 
+              playing = true;
+          }
+          else if (SceneManager.GetSceneByName("EscMenu").isLoaded)
+          {
+              playing = false;
+          }
+          if (playing)
+          {
+              Cursor.visible = false;
+          }
+          else
+          {
+                Cursor.visible = true;
+          } 
+          */
+        #endregion
 
-        if(Input.GetKeyDown(KeyCode.Escape))
+        //if the player presses escape...
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Debug.LogError("EscMenu blir nu loadad");
+            //then the function "EscMenu" will be started
             EscMenu();
-            //player.constraints = RigidbodyConstraints2D.FreezeAll; göra så att player inte kan röra på sig.
-
         }
+        //Harriet }
 
-
+        //Erik {
         if (hasOptions)
         {
             timer += Time.deltaTime;
@@ -91,41 +100,33 @@ public class MainMenu : MonoBehaviour
             hasOptions = false;
         }
 
-
-
-
-        if(hasBackToMenu)
+        if (hasBackToMenu)
         {
             optionsTimer += Time.deltaTime;
         }
 
-        if(optionsTimer > backToMenuDelay)
+        if (optionsTimer > backToMenuDelay)
         {
             SceneManager.LoadScene("MainMenu");
             optionsTimer = 0;
             hasBackToMenu = false;
         }
-
-
-
+        // Erik }
 
     }
 
-    public void GoToOptions() //this function loads the "Options" scene
+    //this function loads the "Options" scene
+    public void GoToOptions() 
     {
         hasOptions = true;
         optionsButton.SetTrigger("ClickOptions");
 
         transition.SetTrigger("Start");
 
-        
-
-
-
     }
 
-
-    public void BackToMainMenu() //this function loads the "MainMenu" scene again
+    //this function loads the "MainMenu" scene again
+    public void BackToMainMenu() 
     {
         hasBackToMenu = true;
         transition.SetTrigger("Start");
@@ -147,32 +148,33 @@ public class MainMenu : MonoBehaviour
 
 
 
-
-    public void PlayGame() //This function starts the game by loading the first "Level" scene
+    //This function starts the game by loading the first "Level" scene
+    public void PlayGame() 
     {
         LoadNextLevel();
     }
 
-
-    public void LoadNextLevel() //Metod som startar en coroutine, och sedan accessar scenen + transitionar till "scenIndex" + 1
+    //Metod som startar en coroutine, och sedan accessar scenen + transitionar till "scenIndex" + 1
+    public void LoadNextLevel() 
     {
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
 
     }
 
+    //Harriet {
     public void EscMenu()
     {
-        //Using the below code for a back button thing
-        if (!SceneManager.GetSceneByName(levelName).isLoaded)// && !loadingLevel) Den verkade fucka upp allt..
-        /*If scene is not already loaded, and the script is not already loading a level*/
+        //if the scene assigned to the variable LevelName is not already loaded then...
+        if (!SceneManager.GetSceneByName(levelName).isLoaded)
         {
-            Debug.Log(gameObject.name + " is trying to load" + levelName);
-            SceneManager.LoadSceneAsync(levelName, LoadSceneMode.Additive); //Loads scene
+            //Loads scene as an added scener (so the previous one is still loaded, and active in the background)
+            SceneManager.LoadSceneAsync(levelName, LoadSceneMode.Additive);
             loadingLevel = true;
+            //if unloadscene is true and the level assigned to unloadLevelName is loaded then...
             if (unloadScene && SceneManager.GetSceneByName(unloadLevelName).isLoaded)
-            /*If the level that it is configured to unload is already loaded and unloadScene is ticked*/
             {
-                SceneManager.UnloadSceneAsync(unloadLevelName); //Unloads level
+                //the level assigned to unloadLevelName will be unloaded
+                SceneManager.UnloadSceneAsync(unloadLevelName); 
             }
         }
     }
@@ -180,11 +182,11 @@ public class MainMenu : MonoBehaviour
     public void Back()
     {
         SceneManager.UnloadSceneAsync("EscMenu");
-
     }
+    //Harriet }
 
+    //Erik {
     //Coroutine nedan som triggar allting, spelar animation, väntar en sekund, loadar scenen
-
     IEnumerator LoadLevel(int levelIndex)
     {
 
@@ -201,14 +203,6 @@ public class MainMenu : MonoBehaviour
 
         SceneManager.LoadScene(levelIndex);
     }
-
-
-
-    //fixa en funktion som unloadar ESC MENU- check
-    //fixa så att karaktären och allt annat är pausat under esc menu
-    //fixa så att det un-pausar när esc menu är unloadat
-
-
-
+    //Erik }
 
 }

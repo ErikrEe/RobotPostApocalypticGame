@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FlowerCollider : MonoBehaviour
 {
@@ -18,13 +16,13 @@ public class FlowerCollider : MonoBehaviour
     void FixedUpdate()
     {
         // If the flower is picked up...
-        if (EquipItems.pickedUp) 
+        if (EquipItems.pickedUp)
         {
             collider.isTrigger = false; //then the trigger is not enabled -> making the collider actually collide
 
         }
         //If the flower is not picked up...
-        else if (!EquipItems.pickedUp) 
+        else if (!EquipItems.pickedUp)
         {
             //then the collider is used as a trigger -> making the collider NOT collide with objects
             collider.isTrigger = true;

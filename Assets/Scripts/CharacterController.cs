@@ -107,8 +107,8 @@ public class CharacterController : MonoBehaviour
         if (grounded || airControl)
         {
 
-            // If crouching
-            if (crouch && !EquipItems.pickedUp)
+            // If crouching and not holding the flower (!pickedUp)
+            if (crouch && !EquipItems.pickedUp) //Harriet, added !EquipItems.PickedUp
             {
                 if (!wasCrouching)
                 {
@@ -142,14 +142,14 @@ public class CharacterController : MonoBehaviour
             // And then smoothing it out and applying it to the character
             rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, movementSmoothing);
 
-            // If the input is moving the player right and the player is facing left...
-            if (move > 0 && !facingRight && !EquipItems.objectDraged)
+            // If the input is moving the player right and the player is facing left and the player is not draging a box (!objectDraged)...
+            if (move > 0 && !facingRight && !EquipItems.objectDraged) //Harriet, added !EquipItems.objectDraged
             {
                 // ... flip the player.
                 Flip();
             }
-            // Otherwise if the input is moving the player left and the player is facing right...
-            else if (move < 0 && facingRight && !EquipItems.objectDraged)
+            // Otherwise if the input is moving the player left and the player is facing right and the player is not draging a box (!objectDraged)...
+            else if (move < 0 && facingRight && !EquipItems.objectDraged)//Harriet, added !EquipItems.objectDraged
             {
                 // ... flip the player.
                 Flip();

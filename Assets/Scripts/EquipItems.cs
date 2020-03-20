@@ -2,6 +2,7 @@
 
 public class EquipItems : MonoBehaviour
 {
+    //Harriet's script, used to pick up and drop a flower object with "e", as well as drag and drop boxes with "e"
     [SerializeField]
     public Rigidbody2D equObject;
     public static Rigidbody2D playerVelocity, objectRigidbody;

@@ -53,6 +53,7 @@ public class CameraControl : MonoBehaviour
 
     void cameraFollow()
     {
+        //Harriet switched "this transform.position.y + CameraOffsetY" with "Camera1.transform.position.y", in order to make the camera not follow the player on the Y axis
         playerP = new Vector3 (Mathf.Lerp(Camera1.transform.position.x, player.transform.position.x, 2 * Time.deltaTime ), Camera1.transform.position.y, player.transform.position.z - 4); // makes the position for the camera be the same as the player on the x axis
           
 

@@ -33,9 +33,10 @@ public class PlayerMovement : MonoBehaviour
     {
         //Harriet {
         jumped = false;
-
+        //if the jumpdelay is equal too or less than zero then...
         if (jumpdelay <= 0)
         {
+            //the jumpdelay will be equal to 0.3f
             jumpdelay = 0.3f;
         }
         //Harriet }
@@ -190,15 +191,19 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    public IEnumerator SpamBlockco() //Harriet, this co-routine adds a delay to jumps whenever the player has jumped (jumped = true)
+    //Harriet, this co-routine adds a delay to jumps whenever the player has jumped (jumped = true) {
+    public IEnumerator SpamBlockco()
     {
+        //if the player has jumped
         if (jumped == true)
         {
+            //then start waiting for the amount of time in jumpdelay
             yield return new WaitForSeconds(jumpdelay);
         }
         yield return null;
         jumped = false;
     }
+    //Harriet }
 }
 
 
