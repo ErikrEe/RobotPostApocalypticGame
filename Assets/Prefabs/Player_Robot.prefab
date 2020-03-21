@@ -14,10 +14,9 @@ GameObject:
   - component: {fileID: 8211131009435004575}
   - component: {fileID: 8211131009435004572}
   - component: {fileID: 8211131009435004573}
-  - component: {fileID: 8211131009435004546}
-  - component: {fileID: 8211131009435004547}
-  - component: {fileID: 8211131009435004544}
   - component: {fileID: 1559633107}
+  - component: {fileID: 2345220487192500795}
+  - component: {fileID: 8519131571622876583}
   m_Layer: 8
   m_Name: Player_Robot
   m_TagString: Untagged
@@ -131,7 +130,7 @@ MonoBehaviour:
     m_Bits: 311
   groundCheck: {fileID: 8211131009976385046}
   ceilingCheck: {fileID: 8211131009699498661}
-  crouchDisableCollider: {fileID: 8211131009435004544}
+  crouchDisableCollider: {fileID: 2345220487192500795}
   OnLandEvent:
     m_PersistentCalls:
       m_Calls:
@@ -178,7 +177,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 8211131009435004575}
   animator: {fileID: 1559633107}
-  moveSpeed: 40
+  jumped: 0
+  jumpdelay: 0
 --- !u!114 &8211131009435004573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,74 +193,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   equObject: {fileID: 0}
   animator: {fileID: 0}
---- !u!58 &8211131009435004546
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8211131009435004545}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: 9d27c991bf4cac64d867af602099043f, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.55}
-  serializedVersion: 2
-  m_Radius: 0.43751323
---- !u!61 &8211131009435004547
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8211131009435004545}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: 9d27c991bf4cac64d867af602099043f, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.19, y: -0.19}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.13, y: 2}
-    newSize: {x: 5, y: 5}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.74887943, y: 0.37434405}
-  m_EdgeRadius: 0
---- !u!61 &8211131009435004544
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8211131009435004545}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: 9d27c991bf4cac64d867af602099043f, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.5}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.13, y: 2}
-    newSize: {x: 5, y: 5}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.1374979, y: 0.9872202}
-  m_EdgeRadius: 0
 --- !u!95 &1559633107
 Animator:
   serializedVersion: 3
@@ -280,6 +212,38 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!58 &2345220487192500795
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8211131009435004545}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.46}
+  serializedVersion: 2
+  m_Radius: 0.594975
+--- !u!70 &8519131571622876583
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8211131009435004545}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 9d27c991bf4cac64d867af602099043f, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.6}
+  m_Size: {x: 0.95, y: 0.57}
+  m_Direction: 0
 --- !u!1 &8211131009699498666
 GameObject:
   m_ObjectHideFlags: 0
