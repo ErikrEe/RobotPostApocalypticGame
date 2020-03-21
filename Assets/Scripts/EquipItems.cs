@@ -54,7 +54,7 @@ public class EquipItems : MonoBehaviour
             open = !open;
 
             //if open = true ,the player is close enough to the closest dragObject, isn't holding the flower (pickedUp = false), isn't above or below the object... 
-            if (open && (dragObject.transform.position - this.transform.position).sqrMagnitude < (objectCollider.bounds.extents.x * 2) * (objectCollider.bounds.extents.y * 2) + 1 && pickedUp == false && dragObject.transform.position.y - 1 <= gameObject.transform.position.y + objectCollider.bounds.extents.y && gameObject.transform.position.y + objectCollider.bounds.extents.y <= dragObject.transform.position.y + 1 && (CharacterController.facingRight && gameObject.transform.position.x < dragObject.transform.position.x || !CharacterController.facingRight && gameObject.transform.position.x > dragObject.transform.position.x))
+            if (open && (dragObject.transform.position - this.transform.position).sqrMagnitude < (objectCollider.bounds.extents.x * 2) * (objectCollider.bounds.extents.y * 2) + 1 && pickedUp == false && dragObject.transform.position.y - 1 <= gameObject.transform.position.y + objectCollider.bounds.extents.y && gameObject.transform.position.y + objectCollider.bounds.extents.y <= dragObject.transform.position.y + 2 && (CharacterController.facingRight && gameObject.transform.position.x < dragObject.transform.position.x || !CharacterController.facingRight && gameObject.transform.position.x > dragObject.transform.position.x))
             {
                 //sets the ObjectDraged bool true, which starts the objectDraged function
                 objectDraged = true;
@@ -90,7 +90,7 @@ public class EquipItems : MonoBehaviour
         {
             PlayerMovement.moveSpeed = 20;
             //sets the offset equal to half the players gameObjects x axis size plus halft the (objectCollider) dragObjects x axis size plus 0.3f
-            offset = playerCollider.bounds.extents.x + objectCollider.bounds.extents.x + 0.3f;
+            offset = playerCollider.bounds.extents.x + objectCollider.bounds.extents.x + 0.2f;
 
             //if the object is on the right side..
             if (objectRight)
