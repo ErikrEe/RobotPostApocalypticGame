@@ -48,82 +48,67 @@ public class EquipItems : MonoBehaviour
         //if player presses e..
         if (Input.GetKeyDown(KeyCode.E))
         {
-            // open = true; OM E TVÅ GÅNGER INTE FUNGERAR
+            //open becomes !open, allowing the use of e, for both dragging and relasing objects
             open = !open;
-
-
-
-            //makes the vector.x equal to itself plus the choosen offset
-            //vector.x = vector.x + offset;
 
             //if open = true ,the player is close enough to the closest dragObject, isn't holding the flower (pickedUp = false), isn't above or below the object... 
             if (open && (dragObject.transform.position - this.transform.position).sqrMagnitude < (objectCollider.bounds.extents.x * 2) * (objectCollider.bounds.extents.y * 2) + 1 && pickedUp == false && dragObject.transform.position.y - 1 <= gameObject.transform.position.y + objectCollider.bounds.extents.y && gameObject.transform.position.y + objectCollider.bounds.extents.y <= dragObject.transform.position.y + 1 && (CharacterController.facingRight && gameObject.transform.position.x < dragObject.transform.position.x || !CharacterController.facingRight && gameObject.transform.position.x > dragObject.transform.position.x))
             {
                 //sets the ObjectDraged bool true, which starts the objectDraged function
                 objectDraged = true;
-                //Sets the animation bool to true, which triggers the pulling animation
-                animator.SetBool("IsPulling", true);
+                animator.SetBool("IsPulling", true); //Erik, Sets the animation bool to true, which triggers the pulling animation
             }
 
-            //if open = false and dragObject = true, or the "dragObject" is higher up than the player...)
+            //if open = false and dragObject = true, or the "dragObject" is higher up than the player...
             if (!open && dragObject || gameObject.transform.position.y + objectCollider.bounds.extents.y < dragObject.transform.position.y)
             {
                 objectDraged = false;
-
-                animator.SetBool("IsPulling", false); //Stops playing the "Pulling" animation
-
+                animator.SetBool("IsPulling", false); //Erik, Stops playing the "Pulling" animation
             }
-            /*  //if player presses e again.. OM E TVÅ GÅNGER INTE FUNGERAR
-              if (Input.GetKeyDown(KeyCode.E))
-              {
-                  open = false;
-              }*/
-
 
             //and the player is on the right side of the object (OBJECT SHOULD BE LEFT SIDE)
             if (gameObject.transform.position.x > dragObject.transform.position.x)
             {
-                objectLeftSide();
-                Debug.LogError(offset);
-                //offset = -(playerCollider.bounds.extents.x + objectCollider.bounds.extents.x + 0.3f);
+                //makes the objectLeft bool true, and the objectRight bool false
+                objectLeft = true;
+                objectRight = false;
             }
 
             //and the player is on the left side of the object (OBJECT SHOULD BE RIGHT SIDE)
             if (gameObject.transform.position.x < dragObject.transform.position.x)
             {
-                objectRightSide();
-                Debug.LogError(offset);
-                //offset = playerCollider.bounds.extents.x + objectCollider.bounds.extents.x + 0.3f;
+                //makes the objectRight bool true, and the objectLeft bool fals
+                objectRight = true;
+                objectLeft = false;
             }
-
-
         }
 
         //If an object is being dragged..
         if (objectDraged)
         {
             PlayerMovement.moveSpeed = 20;
+            //sets the offset equal to half the players gameObjects x axis size plus halft the (objectCollider) dragObjects x axis size plus 0.3f
+            offset = playerCollider.bounds.extents.x + objectCollider.bounds.extents.x + 0.3f;
 
-
-
+            //if the object is on the right side..
             if (objectRight)
             {
-                offset = playerCollider.bounds.extents.x + objectCollider.bounds.extents.x + 0.3f;
+                //makes the vector.x equal to itself plus the choosen offset
                 vector.x = vector.x + offset;
-                dragObject.transform.position = new Vector2(vector.x, dragObject.transform.position.y);
-
             }
+            //if the object is on the left side..
             if (objectLeft)
             {
-                offset = playerCollider.bounds.extents.x + objectCollider.bounds.extents.x + 0.3f;
                 //makes the vector.x equal to itself minus the choosen offset
-                vector.x = vector.x - offset;
-                dragObject.transform.position = new Vector2(vector.x, dragObject.transform.position.y);
+                vector.x = vector.x - offset;;
             }
+
+            //sets the dragObjects position equal to the variable vector.x and the dragObjects y axis position
+            dragObject.transform.position = new Vector2(vector.x, dragObject.transform.position.y);
         }
         #endregion
 
-        //måste ändra så att det inte bara är if e, för då kommer både open och open2 hända samtidigt vilket vi inte vill! open fungerar rn, så inte ändra på det! NOPE DET VERKAR FUNGERA!
+
         #region Picking up the flower
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -204,66 +189,57 @@ public class EquipItems : MonoBehaviour
 
     }
 
-    void LateUpdate() //This part of the code determines if the player is moving upwards or downwards on the y axis by comparing past and current position.
+    //This part of the code determines if the player is moving upwards or downwards on the y axis by comparing past and current position.
+    void LateUpdate() 
     {
 
         currentheight = transform.position.y;
         travel = currentheight - previousheight;
-        if (pickedUp && travel < 0f)                                                        //if the player is moving negatively on the y axis...
+        //if the player is moving negatively on the y axis...
+        if (pickedUp && travel < 0f)                                                        
         {
-            gameObject.GetComponent<Rigidbody2D>().gravityScale = 0.2f;                     //Then the gravity for that object is set to 0.2f
+            //Then the gravity for that object is set to 0.2f
+            gameObject.GetComponent<Rigidbody2D>().gravityScale = 0.2f;                     
         }
-        else if (pickedUp && travel > 0)                                                    //if the player is moving positively on the y axis...
+        //if the player is moving positively on the y axis...
+        else if (pickedUp && travel > 0)                                                    
         {
-            gameObject.GetComponent<Rigidbody2D>().gravityScale = 3f;                       //Then the gravity for that object is set to 3 (which is the default value we are using)
+            //Then the gravity for that object is set to 3 (which is the default value we are using)
+            gameObject.GetComponent<Rigidbody2D>().gravityScale = 3f;                       
         }
         previousheight = currentheight;
     }
 
-
-
-
-    void objectRightSide()
-    {
-
-        Debug.LogError(vector.x + "vectorx");
-        objectRight = true;
-        objectLeft = false;
-
-    }
-
-    void objectLeftSide()
-    {
-
-        Debug.LogError(vector.x + "vectorx");
-        objectLeft = true;
-        objectRight = false;
-    }
-
-    void FindClosestEnemy() //hittar viken box/enemy är närmast spelaren
+    #region finds and assigns the dragObject variable, objectCollider and objectRigidbody
+    //finds which object with the "enemy" script equipped is closest to the player
+    void FindClosestEnemy() 
     {
         float distanceToClosestEnemy = Mathf.Infinity;
         Enemy closestEnemy = null;
         Enemy[] allEnemies = GameObject.FindObjectsOfType<Enemy>();
 
+        //for every object with the enemy script equipped..
         foreach (Enemy currentEnemy in allEnemies)
         {
             float distanceToEnemy = (currentEnemy.transform.position - this.transform.position).sqrMagnitude;
+            //updates what object with the enemy script is closest to the player
             if (distanceToEnemy < distanceToClosestEnemy)
             {
                 distanceToClosestEnemy = distanceToEnemy;
                 closestEnemy = currentEnemy;
             }
         }
-        // Debug.DrawLine(this.transform.position, closestEnemy.transform.position);
+        //assigns the closest object with the enemy script to the dragObject variable
         dragObject = closestEnemy.gameObject;
 
-        //Fetch the Collider from the GameObject
+        //Fetch the Collider from the closest object with the enemy script
         objectCollider = closestEnemy.gameObject.GetComponent<Collider2D>();
 
+        //Fetch the Rigidbody from the closest object with the enemy script
         objectRigidbody = closestEnemy.gameObject.GetComponent<Rigidbody2D>();
 
     }
+    #endregion
 
 
 }

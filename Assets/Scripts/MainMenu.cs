@@ -51,37 +51,41 @@ public class MainMenu : MonoBehaviour
     private void Update()
     {
         //Harriet {
+        //Should lock and hide the cursor every frame, (though Unity shows the mouse anyways since we're using the "Escape" key to load a scene, and unit uses escape to show the mouse cursor)
         Cursor.lockState = CursorLockMode.Locked;
         if (SceneManager.GetSceneByName(levelName).isLoaded)
         {
             loadingLevel = false;
         }
 
-        #region invisible cursor during playing, visible cursor within the menues - not used anymore //Harriet
-        /*          
-          //när leveln är loadad och esc menu inte är loadad.
-          if (!SceneManager.GetSceneByName("EscMenu").isLoaded && (SceneManager.GetSceneByName("Level 1").isLoaded || SceneManager.GetSceneByName("Bara för aesthetic").isLoaded || SceneManager.GetSceneByName("Level 2").isLoaded))//game är loaded och escmenu inte är loaded
-          {
-              //playing är true 
+        #region playing game or in menu
+                  
+          //if EscMenu is not loaded and one of the game scenes is loaded...
+          if (!SceneManager.GetSceneByName("EscMenu").isLoaded && (SceneManager.GetSceneByName("Level 1").isLoaded || SceneManager.GetSceneByName("Bara för aesthetic").isLoaded || SceneManager.GetSceneByName("Level 2").isLoaded))
+          { 
               playing = true;
           }
+          //if EscMenu is loaded...
           else if (SceneManager.GetSceneByName("EscMenu").isLoaded)
           {
               playing = false;
           }
-          if (playing)
-          {
-              Cursor.visible = false;
-          }
-          else
-          {
-                Cursor.visible = true;
-          } 
-          */
+        #endregion
+
+        #region invisible cursor during playing, visible cursor within the menues -not used anymore //Harriet
+        /* if (playing)
+         {
+             Cursor.visible = false;
+         }
+         else
+         {
+           Cursor.visible = true;
+       } */
+
         #endregion
 
         //if the player presses escape...
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape)) 
         {
             //then the function "EscMenu" will be started
             EscMenu();
@@ -178,7 +182,7 @@ public class MainMenu : MonoBehaviour
             }
         }
     }
-
+    //Unloads the EscMenu when called
     public void Back()
     {
         SceneManager.UnloadSceneAsync("EscMenu");
