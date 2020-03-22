@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool jumped; //Harriet, used to check if the player has jumped
     public float jumpdelay; //Harriet, used to give the jump delay a value
+    public AudioSource grassLanding; //Harriet, 
 
 
     #endregion
@@ -126,8 +127,14 @@ public class PlayerMovement : MonoBehaviour
             
             jump = true;  //If player presses "space" or "up" or "W" then it sets "jump" = true
             jumped = true; //Harriet
-            animator.SetBool("IsJumping", true);
+           // animator.SetBool("IsJumping", true);
             StartCoroutine(SpamBlockco());//Harriet, starts the delay co-routine
+
+        }
+        if (Input.GetButton("Jump") && !EquipItems.objectDraged && !CharacterController.roofAbove) //Harriet, made a new if statement without !jumped which allows the animator to play 
+        {
+
+            animator.SetBool("IsJumping", true);
 
         }
 
@@ -166,6 +173,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("IsJumping", false);
 
         //spela landing sound
+        //grassLanding.Play(0);
     }
 
 
@@ -203,11 +211,14 @@ public class PlayerMovement : MonoBehaviour
         //if the player has jumped
         if (jumped == true)
         {
+
+
             //then start waiting for the amount of time in jumpdelay
             yield return new WaitForSeconds(jumpdelay);
         }
         yield return null;
         jumped = false;
+        //play the landing gras sound
     }
     //Harriet }
 }

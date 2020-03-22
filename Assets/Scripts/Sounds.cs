@@ -80,16 +80,13 @@ public class Sounds : MonoBehaviour
             if(!robotMovement.isPlaying)
             {
                 //play the robot sound
-              //  StartCoroutine(FadeIn(robotMovement, 0.1f));
                 robotMovement.Play(0);
 
-                //robotMovement.UnPause();
             }
         }
         else
         {
             //stop playing the robotMovement sound
-            //StartCoroutine(FadeOut(robotMovement, 1f));
             robotMovement.Stop();
         }
 
@@ -115,38 +112,6 @@ public class Sounds : MonoBehaviour
 
     }
 
-
-    //this function makes the aoudio fade out when'ever called
-    public static IEnumerator FadeOut(AudioSource audioSource, float FadeTime)
-    {
-        float startVolume = audioSource.volume;
-
-        while (audioSource.volume > 0)
-        {
-            audioSource.volume -= startVolume * Time.deltaTime / FadeTime;
-
-            yield return null;
-        }
-
-        audioSource.Stop();
-        audioSource.volume = startVolume;
-    }
-
-    //this function makes the aoudio fade In when'ever called
-    public static IEnumerator FadeIn(AudioSource audioSource, float FadeTime)
-    {
-        float startVolume = audioSource.volume;
-
-        while (audioSource.volume < 0)
-        {
-            audioSource.volume += startVolume * Time.deltaTime / FadeTime;
-
-            yield return null;
-        }
-
-        audioSource.Stop();
-        audioSource.volume = startVolume;
-    }
 
 
     //This function chooses a random number between 1-3 whenever it is called, and sets the intNumber equal to the randomly picked number

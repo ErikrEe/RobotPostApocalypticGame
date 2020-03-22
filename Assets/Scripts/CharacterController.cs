@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 public class CharacterController : MonoBehaviour
@@ -20,6 +18,7 @@ public class CharacterController : MonoBehaviour
     //Erik }
 
 
+
     public static bool roofAbove = false; //Harriet's code, used in PlayerMovement to determine if there is roof above the player so that it can not jump
     const float groundedRadius = .1f; // Radius of the overlap circle to determine if grounded
     public static bool grounded;            // Whether or not the player is grounded.
@@ -36,7 +35,7 @@ public class CharacterController : MonoBehaviour
     [System.Serializable]
     public class BoolEvent : UnityEvent<bool> { }
 
-    public BoolEvent OnCrouchEvent;  
+    public BoolEvent OnCrouchEvent;
     private bool wasCrouching = false;  //Variable which determines if the player was crouching
 
     private void Awake()
@@ -69,17 +68,17 @@ public class CharacterController : MonoBehaviour
             if (colliders[i].gameObject != gameObject)
             {
 
-                
+
 
                 grounded = true;
-                
+
                 if (!wasGrounded)
                     OnLandEvent.Invoke();
             }
         }
     }
 
-    
+
 
 
     public static float move; //Harriet, to be able to use move in both scripts while the variable still being inside of the Function
