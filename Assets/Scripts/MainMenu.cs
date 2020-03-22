@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
 
     //Erik {
-    public Animator backToMainMenu;   
+    public Animator backToMainMenu;
 
     public Animator transition;
 
@@ -29,7 +30,7 @@ public class MainMenu : MonoBehaviour
     private float backToMenuDelay = 1.5f;
     //Erik }
 
-        
+
     //Harriet {
     [SerializeField]
     private string levelName;
@@ -41,6 +42,17 @@ public class MainMenu : MonoBehaviour
     private bool loadingLevel;
 
     public static bool playing;
+
+    public AudioMixer mixerTwo;
+    public AudioMixer mixer;
+    //Harriet }
+
+    //Harriet {
+   /* public void Start() //in start playerpref-variables for the volume options are loaded
+    {
+        mixer.SetFloat("Volume", Mathf.Log10(PlayerPrefs.GetFloat("AudioVolume", 0.75f)) * 20);
+        mixerTwo.SetFloat("Volume", Mathf.Log10(PlayerPrefs.GetFloat("MusicVolume", 0.75f)) * 20);
+    }*/
     //Harriet }
 
     public void QuitGame() //This function closes the application when triggered
@@ -59,17 +71,17 @@ public class MainMenu : MonoBehaviour
         }
 
         #region playing game or in menu
-                  
-          //if EscMenu is not loaded and one of the game scenes is loaded...
-          if (!SceneManager.GetSceneByName("EscMenu").isLoaded && (SceneManager.GetSceneByName("Level 1").isLoaded || SceneManager.GetSceneByName("Bara för aesthetic").isLoaded || SceneManager.GetSceneByName("Level 2").isLoaded))
-          { 
-              playing = true;
-          }
-          //if EscMenu is loaded...
-          else if (SceneManager.GetSceneByName("EscMenu").isLoaded)
-          {
-              playing = false;
-          }
+
+        //if EscMenu is not loaded and one of the game scenes is loaded...
+        if (!SceneManager.GetSceneByName("EscMenu").isLoaded && (SceneManager.GetSceneByName("Level 1").isLoaded || SceneManager.GetSceneByName("Bara för aesthetic").isLoaded || SceneManager.GetSceneByName("Level 2").isLoaded))
+        {
+            playing = true;
+        }
+        //if EscMenu is loaded...
+        else if (SceneManager.GetSceneByName("EscMenu").isLoaded)
+        {
+            playing = false;
+        }
         #endregion
 
         #region invisible cursor during playing, visible cursor within the menues -not used anymore //Harriet
@@ -85,7 +97,7 @@ public class MainMenu : MonoBehaviour
         #endregion
 
         //if the player presses escape...
-        if (Input.GetKeyDown(KeyCode.Escape)) 
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             //then the function "EscMenu" will be started
             EscMenu();
@@ -120,7 +132,7 @@ public class MainMenu : MonoBehaviour
     }
 
     //this function loads the "Options" scene
-    public void GoToOptions() 
+    public void GoToOptions()
     {
         hasOptions = true;
         optionsButton.SetTrigger("ClickOptions");
@@ -130,7 +142,7 @@ public class MainMenu : MonoBehaviour
     }
 
     //this function loads the "MainMenu" scene again
-    public void BackToMainMenu() 
+    public void BackToMainMenu()
     {
         hasBackToMenu = true;
         transition.SetTrigger("Start");
@@ -153,13 +165,13 @@ public class MainMenu : MonoBehaviour
 
 
     //This function starts the game by loading the first "Level" scene
-    public void PlayGame() 
+    public void PlayGame()
     {
         LoadNextLevel();
     }
 
     //Metod som startar en coroutine, och sedan accessar scenen + transitionar till "scenIndex" + 1
-    public void LoadNextLevel() 
+    public void LoadNextLevel()
     {
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
 
@@ -178,7 +190,7 @@ public class MainMenu : MonoBehaviour
             if (unloadScene && SceneManager.GetSceneByName(unloadLevelName).isLoaded)
             {
                 //the level assigned to unloadLevelName will be unloaded
-                SceneManager.UnloadSceneAsync(unloadLevelName); 
+                SceneManager.UnloadSceneAsync(unloadLevelName);
             }
         }
     }

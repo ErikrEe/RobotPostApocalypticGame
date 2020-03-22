@@ -18,7 +18,7 @@ public class CharacterController : MonoBehaviour
 
     public static bool roofAbove = false; //Harriet's code, used in PlayerMovement to determine if there is roof above the player so that it can not jump
     const float groundedRadius = .1f; // Radius of the overlap circle to determine if grounded
-    private bool grounded;            // Whether or not the player is grounded.
+    public static bool grounded;            // Whether or not the player is grounded.
     const float ceilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
     private Rigidbody2D rb;
     public static bool facingRight = true;  // For determining which way the player is currently facing.

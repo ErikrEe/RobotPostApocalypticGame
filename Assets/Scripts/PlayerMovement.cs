@@ -36,8 +36,8 @@ public class PlayerMovement : MonoBehaviour
         //if the jumpdelay is equal too or less than zero then...
         if (jumpdelay <= 0)
         {
-            //the jumpdelay will be equal to 0.3f
-            jumpdelay = 0.3f;
+            //the jumpdelay will be equal to 0.25f
+            jumpdelay = 0.25f; 
         }
         //Harriet }
 
@@ -160,6 +160,8 @@ public class PlayerMovement : MonoBehaviour
     public void OnLanding ()
     {
         animator.SetBool("IsJumping", false);
+
+        //####spela landing sound
     }
 
 
