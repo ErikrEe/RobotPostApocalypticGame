@@ -127,17 +127,21 @@ public class PlayerMovement : MonoBehaviour
             
             jump = true;  //If player presses "space" or "up" or "W" then it sets "jump" = true
             jumped = true; //Harriet
-           // animator.SetBool("IsJumping", true);
+            animator.SetBool("IsJumping", true);
             StartCoroutine(SpamBlockco());//Harriet, starts the delay co-routine
 
         }
+
+        #region delay + jump animation -not being used because of multiple buggs , Harriet
+        /*
         if (Input.GetButton("Jump") && !EquipItems.objectDraged && !CharacterController.roofAbove) //Harriet, made a new if statement without !jumped which allows the animator to play 
         {
 
             animator.SetBool("IsJumping", true);
 
         }
-
+        */
+        #endregion
 
         if (Input.GetButtonDown("Crouch") && !EquipItems.objectDraged)
         {
