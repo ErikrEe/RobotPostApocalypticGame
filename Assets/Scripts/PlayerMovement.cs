@@ -51,12 +51,16 @@ public class PlayerMovement : MonoBehaviour
 
 
         // -1 * moveSpeed |or| +1 * moveSpeed
+
+        //Erik {
         xMove = Input.GetAxisRaw("Horizontal") * moveSpeed; 
 
 
 
         // applies the animator parameter "Speed" to the ABSOLUTE value of the players horizontal speed
         animator.SetFloat("Speed", Mathf.Abs(xMove));
+
+        //Erik }
 
 
 
@@ -77,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
         #endregion
 
 
-
+        //Erik
         #region Pushing/pulling animation conditions
 
         if (xMove < 0 && facingRight && EquipItems.objectRight) // if the player is moving to the left and facing...
@@ -157,11 +161,11 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-    public void OnLanding ()
+    public void OnLanding () //Method for when player lands
     {
         animator.SetBool("IsJumping", false);
 
-        //####spela landing sound
+        //spela landing sound
     }
 
 
