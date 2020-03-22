@@ -5,7 +5,10 @@ using UnityEngine.Events;
 
 public class CharacterController : MonoBehaviour
 {
-    [SerializeField] private float jumpForce = 400f;                          // Amount of force added when the player jumps.
+
+    //Erik {
+
+    [SerializeField] private float jumpForce = 400f;                          // Amount of force added when the player jumps
     [Range(0, 1)] [SerializeField] private float crouchSpeed = .36f;          // Amount of maxSpeed applied to crouching movement. 1 = 100%
     [Range(0, .3f)] [SerializeField] private float movementSmoothing = .05f;  // How much to smooth out the movement
     [SerializeField] private bool airControl = false;                         // Whether or not a player can steer while jumping;
@@ -14,6 +17,7 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private Transform ceilingCheck;                          // A position marking where to check for ceilings
     [SerializeField] private Collider2D crouchDisableCollider;                // A collider that will be disabled when crouching
 
+    //Erik }
 
 
     public static bool roofAbove = false; //Harriet's code, used in PlayerMovement to determine if there is roof above the player so that it can not jump
@@ -22,27 +26,27 @@ public class CharacterController : MonoBehaviour
     const float ceilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
     private Rigidbody2D rb;
     public static bool facingRight = true;  // For determining which way the player is currently facing.
-    private Vector3 velocity = Vector3.zero;
+    private Vector3 velocity = Vector3.zero;  //The "Target" velocity for the player
 
     [Header("Events")]
     [Space]
 
-    public UnityEvent OnLandEvent;
+    public UnityEvent OnLandEvent;  //An event which controls what happens when the player is landing / has landed
 
     [System.Serializable]
     public class BoolEvent : UnityEvent<bool> { }
 
-    public BoolEvent OnCrouchEvent;
-    private bool wasCrouching = false;
+    public BoolEvent OnCrouchEvent;  
+    private bool wasCrouching = false;  //Variable which determines if the player was crouching
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();  //get the Rigidbody2D Component and stores it in the variable "rb"
 
-        if (OnLandEvent == null)
+        if (OnLandEvent == null)  //Creates a new Event if it doesn't exist
             OnLandEvent = new UnityEvent();
 
-        if (OnCrouchEvent == null)
+        if (OnCrouchEvent == null) //Creates a new Event if it doesn't exist
             OnCrouchEvent = new BoolEvent();
     }
 
@@ -50,15 +54,15 @@ public class CharacterController : MonoBehaviour
     private void OnDrawGizmos()
     {
 
-        Gizmos.DrawWireSphere(groundCheck.position, groundedRadius);
-    }
-
+        Gizmos.DrawWireSphere(groundCheck.position, groundedRadius);  //"Draws" / creates an invisible sphere... 
+    }                                                                 //..that visually shows what is being checked and if the player is assigned as.. 
+                                                                      //ON the ground or NOT on the ground
     private void FixedUpdate()
     {
-        bool wasGrounded = grounded;
+        bool wasGrounded = grounded;  //variable for if the player is on the ground is now re-assigned to "grounded"
         grounded = false;
         // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
-        // This can be done using layers instead but Sample Assets will not overwrite your project settings.
+
         Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, groundedRadius, whatIsGround);
         for (int i = 0; i < colliders.Length; i++)
         {
