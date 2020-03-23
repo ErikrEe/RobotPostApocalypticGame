@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 215054036}
   - component: {fileID: 215054037}
   m_Layer: 5
-  m_Name: Ambience slider
+  m_Name: slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -202,13 +202,24 @@ MonoBehaviour:
   m_FillRect: {fileID: 2143126747}
   m_HandleRect: {fileID: 1677827244}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 25
-  m_WholeNumbers: 1
+  m_WholeNumbers: 0
   m_Value: 17
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2060947938}
+        m_MethodName: SetVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &372163830
@@ -294,6 +305,18 @@ PrefabInstance:
       propertyPath: quitButton
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2385165622319196481, guid: 4cfb59f61de1f5d4abfc8a8a29424b39,
+        type: 3}
+      propertyPath: mixerTwo
+      value: 
+      objectReference: {fileID: 24100000, guid: c7a16e493a4a7a644958afb3afc6566c,
+        type: 2}
+    - target: {fileID: 2385165622319196481, guid: 4cfb59f61de1f5d4abfc8a8a29424b39,
+        type: 3}
+      propertyPath: mixer
+      value: 
+      objectReference: {fileID: 24100000, guid: 89ebccb46de4c7741b7df618d3c53ab0,
+        type: 2}
     - target: {fileID: 2385165622319196480, guid: 4cfb59f61de1f5d4abfc8a8a29424b39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -571,7 +594,8 @@ AudioSource:
   m_GameObject: {fileID: 648821914}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -7719014451098317099, guid: c7a16e493a4a7a644958afb3afc6566c,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 306b7908306ad9a48930ee79bc36e836, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -1287,7 +1311,7 @@ GameObject:
   - component: {fileID: 1802316946}
   - component: {fileID: 1802316947}
   m_Layer: 5
-  m_Name: Music slider
+  m_Name: sliderTwo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1358,13 +1382,24 @@ MonoBehaviour:
   m_FillRect: {fileID: 565044722}
   m_HandleRect: {fileID: 2020451372}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 25
-  m_WholeNumbers: 1
-  m_Value: 17
+  m_MinValue: 0.0001
+  m_MaxValue: 1
+  m_WholeNumbers: 0
+  m_Value: 0.0001
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2060947938}
+        m_MethodName: SetMusic
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &2020451371
@@ -1455,6 +1490,7 @@ GameObject:
   - component: {fileID: 2060947934}
   - component: {fileID: 2060947933}
   - component: {fileID: 2060947932}
+  - component: {fileID: 2060947938}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1583,6 +1619,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &2060947938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060947931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 958c1d7d5c3b5c441b1ee7fba698d75c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  robotMovement: {fileID: 0}
+  ambient1: {fileID: 0}
+  ambient2: {fileID: 0}
+  ambient3: {fileID: 0}
+  mixer: {fileID: 24100000, guid: 89ebccb46de4c7741b7df618d3c53ab0, type: 2}
+  slider: {fileID: 215054037}
+  mixerTwo: {fileID: 24100000, guid: c7a16e493a4a7a644958afb3afc6566c, type: 2}
+  sliderTwo: {fileID: 1802316947}
 --- !u!1 &2141936885
 GameObject:
   m_ObjectHideFlags: 0

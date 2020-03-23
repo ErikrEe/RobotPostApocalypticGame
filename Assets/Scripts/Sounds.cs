@@ -13,7 +13,11 @@ public class Sounds : MonoBehaviour
     int intNumber;
     //bool playRobotMovement = false;//INTE FRÅN ROAD TO HELL HELLER ^^
 
-
+        //to find the audio mixers and sliders
+    public AudioMixer mixer;
+    public Slider slider;
+    public AudioMixer mixerTwo;
+    public Slider sliderTwo;
 
 
     // Start is called before the first frame update
@@ -21,14 +25,10 @@ public class Sounds : MonoBehaviour
     {
         //##VART BORDE DET HÄR SITTA SÅ ATT DE LADDAS OCH SPARAS EFTER MAN ÄNDRAT MED OPTIONS?
 
-
-        /*
-        public void Start() //in start playerpref-variables for the volume options are loaded
-        {
-            mixer.SetFloat("Volume", Mathf.Log10(PlayerPrefs.GetFloat("AudioVolume", 0.75f)) * 20);
-            mixerTwo.SetFloat("Volume", Mathf.Log10(PlayerPrefs.GetFloat("MusicVolume", 0.75f)) * 20);
-        }
-        */
+      /* //in start playerpref-variables for the volume options are loaded
+        mixer.SetFloat("Volume", Mathf.Log10(PlayerPrefs.GetFloat("AudioVolume", 0.75f)) * 20);
+        mixerTwo.SetFloat("Volume", Mathf.Log10(PlayerPrefs.GetFloat("MusicVolume", 0.75f)) * 20);
+*/
 
         slider.value = PlayerPrefs.GetFloat("AudioVolume", 0.75f);
         sliderTwo.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
@@ -43,13 +43,7 @@ public class Sounds : MonoBehaviour
 
     }
 
-    public AudioMixer mixer;
-    [SerializeField]
-    private Slider slider;
 
-    public AudioMixer mixerTwo;
-    [SerializeField]
-    private Slider sliderTwo;
 
     public void SetVolume(float sliderValue) //this function sets and saves the audio volume
     {

@@ -48,11 +48,11 @@ public class MainMenu : MonoBehaviour
     //Harriet }
 
     //Harriet {
-   /* public void Start() //in start playerpref-variables for the volume options are loaded
+    public void Start() //in start playerpref-variables for the volume options are loaded
     {
         mixer.SetFloat("Volume", Mathf.Log10(PlayerPrefs.GetFloat("AudioVolume", 0.75f)) * 20);
         mixerTwo.SetFloat("Volume", Mathf.Log10(PlayerPrefs.GetFloat("MusicVolume", 0.75f)) * 20);
-    }*/
+    }
     //Harriet }
 
     public void QuitGame() //This function closes the application when triggered
