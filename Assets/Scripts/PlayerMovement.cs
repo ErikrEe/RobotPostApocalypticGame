@@ -196,8 +196,8 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-    //Multiplyng by Time.fixedDeltaTime will make sure that we're moving the same amount,
-    //regardless of how many times (per second) this function is called
+    //Multiplyng by Time.fixedDeltaTime will make sure that we're moving the same amount...
+    //...regardless of how many times (per second) this function is called
 
     private void FixedUpdate()
     {
