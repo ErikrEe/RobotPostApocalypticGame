@@ -177,8 +177,12 @@ public class PlayerMovement : MonoBehaviour
     {
         animator.SetBool("IsJumping", false);
 
-        //spela landing sound
-        //grassLanding.Play(0);
+        if (CharacterController.hasLanded)
+        {
+            //spela landing sound
+            grassLanding.Play(0);
+            Debug.LogError("GrassLanding played");
+        }
     }
 
 
