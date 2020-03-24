@@ -177,6 +177,7 @@ public class PlayerMovement : MonoBehaviour
     {
         animator.SetBool("IsJumping", false);
 
+
         if (CharacterController.hasLanded)
         {
             //spela landing sound
