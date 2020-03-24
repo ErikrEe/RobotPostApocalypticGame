@@ -5,8 +5,9 @@ using UnityEngine.Audio;
 
 public class RobotSounds : MonoBehaviour
 {
+    //Harriet's script
 
-    //lägger in componenten själv
+    //used to find the right audiosources to play
     [SerializeField]
     AudioSource robotMovement, ambient1, ambient2, ambient3;
 
@@ -31,6 +32,7 @@ public class RobotSounds : MonoBehaviour
             Debug.Log("timeCounter worked");
         }
 
+        //every frame the time counter will increase
         timeCounter += Time.deltaTime;
     
 
