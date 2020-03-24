@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EscMenu.unity
     guid: 3e5e9a7b30e30ea45bd442ea70f86151
+  - enabled: 1
+    path: Assets/Scenes/Level 3.unity
+    guid: 19aeecbae0c28e0468edef567c528223
   m_configObjects: {}
