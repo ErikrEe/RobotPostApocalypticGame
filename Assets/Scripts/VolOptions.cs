@@ -4,6 +4,8 @@ using UnityEngine.UI;
 public class VolOptions : MonoBehaviour
 {
 
+    //Harriet's Script
+
     //to find the audio mixers and sliders
     public AudioMixer mixer;
     public Slider slider;
