@@ -123,12 +123,13 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButton("Jump") && !EquipItems.objectDraged && !CharacterController.roofAbove && !jumped) //Harriet added !jumped
         {
-            
-            
+            //animator.SetBool("IsJumping", true);
+
             jump = true;  //If player presses "space" or "up" or "W" then it sets "jump" = true
             jumped = true; //Harriet
-            animator.SetBool("IsJumping", true);
+            
             StartCoroutine(SpamBlockco());//Harriet, starts the delay co-routine
+ 
 
         }
 
@@ -216,9 +217,9 @@ public class PlayerMovement : MonoBehaviour
         if (jumped == true)
         {
 
-
             //then start waiting for the amount of time in jumpdelay
             yield return new WaitForSeconds(jumpdelay);
+
         }
         yield return null;
         jumped = false;
