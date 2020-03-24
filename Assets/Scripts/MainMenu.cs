@@ -80,7 +80,7 @@ public class MainMenu : MonoBehaviour
         #region playing game or in menu
 
         //if EscMenu is not loaded and one of the game scenes is loaded...
-        if (!SceneManager.GetSceneByName("EscMenu").isLoaded && (SceneManager.GetSceneByName("Level 1").isLoaded || SceneManager.GetSceneByName("Bara för aesthetic").isLoaded || SceneManager.GetSceneByName("Level 2").isLoaded))
+        if (!SceneManager.GetSceneByName("EscMenu").isLoaded && (SceneManager.GetSceneByName("Level 1").isLoaded || SceneManager.GetSceneByName("Bara för aesthetic").isLoaded || SceneManager.GetSceneByName("Level 2").isLoaded) || SceneManager.GetSceneByName("Level 3").isLoaded)
         {
             playing = true;
         }
