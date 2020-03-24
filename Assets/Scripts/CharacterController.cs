@@ -18,7 +18,7 @@ public class CharacterController : MonoBehaviour
     //Erik }
 
 
-
+    public static bool hasLanded = false; //Harriet's code, used in PLayerMovement to determine when the landing sound should be played
     public static bool roofAbove = false; //Harriet's code, used in PlayerMovement to determine if there is roof above the player so that it can not jump
     const float groundedRadius = .1f; // Radius of the overlap circle to determine if grounded
     public static bool grounded;            // Whether or not the player is grounded.
@@ -73,7 +73,15 @@ public class CharacterController : MonoBehaviour
                 grounded = true;
 
                 if (!wasGrounded)
+                {
                     OnLandEvent.Invoke();
+                    hasLanded = true;
+                }
+
+                else
+                {
+                    hasLanded = false;
+                }
             }
         }
     }
