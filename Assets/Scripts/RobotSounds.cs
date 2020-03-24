@@ -5,8 +5,9 @@ using UnityEngine.Audio;
 
 public class RobotSounds : MonoBehaviour
 {
+    //Harriet's script
 
-    //lägger in componenten själv
+    //used to find the right audiosources to play
     [SerializeField]
     AudioSource robotMovement, ambient1, ambient2, ambient3;
 
@@ -28,9 +29,10 @@ public class RobotSounds : MonoBehaviour
             randomTime = Random.Range(60.0f, 180.0f);
             //set the timeCounter to 0.0f
             timeCounter = 0.0f;
-            Debug.LogError("timeCounter worked");
+            Debug.Log("timeCounter worked");
         }
 
+        //every frame the time counter will increase
         timeCounter += Time.deltaTime;
     
 
@@ -51,23 +53,28 @@ public class RobotSounds : MonoBehaviour
             robotMovement.Stop();
         }
 
-        //if the intNumber is equal to 1, if the intNumber is equal to 2, if the intNumber is equal to 3...
+        //if the intNumber is equal to 1...
         if (intNumber == 1)
         {
+            //play ambient sound 1
             ambient1.Play(0);
-            Debug.LogError("played 1");
+            Debug.Log("played 1");
             intNumber = 0;
         }
+        //if the intNumber is equal to 2..
         else if (intNumber == 2)
         {
+            //play ambient sound 2
             ambient2.Play(0);
-            Debug.LogError("played 2");
+            Debug.Log("played 2");
             intNumber = 0;
         }
+        //if the intNumber is equal to 3...
         else if (intNumber == 3)
         {
+            //play ambient sound 3
             ambient3.Play(0);
-            Debug.LogError("played 3");
+            Debug.Log("played 3");
             intNumber = 0;
         }
 
@@ -76,11 +83,9 @@ public class RobotSounds : MonoBehaviour
     //This function chooses a random number between 1-3 whenever it is called, and sets the intNumber equal to the randomly picked number
     int GetRandom(int min, int max)
     {
-
+        //the int rand is equal to a random number between the max int and the min int
         int rand = Random.Range(min, max);
-
-        //rand = intNumber;
-        Debug.LogError("GetRandom worked" + rand);
+        Debug.Log("GetRandom worked and gave the value " + rand);
         intNumber = rand;
         return rand;
 
