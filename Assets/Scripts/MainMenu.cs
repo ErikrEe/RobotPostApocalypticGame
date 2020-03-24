@@ -52,6 +52,13 @@ public class MainMenu : MonoBehaviour
     {
         mixer.SetFloat("AudioVol", Mathf.Log10(PlayerPrefs.GetFloat("AudioVolume", 0.75f)) * 20);
         mixerTwo.SetFloat("MusicVol", Mathf.Log10(PlayerPrefs.GetFloat("MusicVolume", 0.75f)) * 20);
+
+        EquipItems.pickedUp = false;
+        EquipItems.objectDraged = false;
+        EquipItems.objectLeft = false;
+        EquipItems.objectRight = false;
+        CharacterController.facingRight = true;
+
     }
     //Harriet }
 
