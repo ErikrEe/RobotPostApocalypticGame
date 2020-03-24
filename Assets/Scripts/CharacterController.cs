@@ -166,10 +166,10 @@ public class CharacterController : MonoBehaviour
                 Flip();
             }
         }
-        // If the player should jump...
+        // If the player is on the ground, AND presses the "Jump" button - Erik
         if (grounded && jump)
         {
-            // Add a vertical force to the player.
+            // Add a vertical force to the player, and tell the program that the player is no longer on the ground - Erik
             grounded = false;
             rb.AddForce(new Vector2(0f, jumpForce));
         }
@@ -181,10 +181,10 @@ public class CharacterController : MonoBehaviour
 
     private void Flip()
     {
-        // Switch the way the player is labelled as facing.
+        // Switch the way the player is labelled as facing - Erik
         facingRight = !facingRight;
 
-        // Multiply the player's x local scale by -1.
+        // Multiply the player's x local scale by -1 - Erik
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
