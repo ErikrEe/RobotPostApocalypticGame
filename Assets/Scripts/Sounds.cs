@@ -5,6 +5,12 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 public class Sounds : MonoBehaviour
 {
+    //public AudioMixer mixer;
+
+    /*public void SetLevel (float sliderValue)
+    {
+        mixer.SetFloat("MusicVolume", Mathf.Log10(sliderValue) * 20);
+    }*/
     
     //lägger in componenten själv
     [SerializeField]
@@ -25,10 +31,10 @@ public class Sounds : MonoBehaviour
     {
         //##VART BORDE DET HÄR SITTA SÅ ATT DE LADDAS OCH SPARAS EFTER MAN ÄNDRAT MED OPTIONS?
 
-      /* //in start playerpref-variables for the volume options are loaded
-        mixer.SetFloat("Volume", Mathf.Log10(PlayerPrefs.GetFloat("AudioVolume", 0.75f)) * 20);
-        mixerTwo.SetFloat("Volume", Mathf.Log10(PlayerPrefs.GetFloat("MusicVolume", 0.75f)) * 20);
-*/
+       //in start playerpref-variables for the volume options are loaded
+       // mixer.SetFloat("Volume", Mathf.Log10(PlayerPrefs.GetFloat("AudioVolume", 0.75f)) * 20);
+        //mixerTwo.SetFloat("Volume", Mathf.Log10(PlayerPrefs.GetFloat("MusicVolume", 0.75f)) * 20);
+
 
         slider.value = PlayerPrefs.GetFloat("AudioVolume", 0.75f);
         sliderTwo.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
@@ -47,12 +53,12 @@ public class Sounds : MonoBehaviour
 
     public void SetVolume(float sliderValue) //this function sets and saves the audio volume
     {
-        mixer.SetFloat("Volume", Mathf.Log10(sliderValue) * 20);
+        mixer.SetFloat("AudioVol", Mathf.Log10(sliderValue) * 20);
         PlayerPrefs.SetFloat("AudioVolume", sliderValue);
     }
     public void SetMusic(float sliderValue)//this function sets and saves the music volume
     {
-        mixerTwo.SetFloat("Volume", Mathf.Log10(sliderValue) * 20);
+        mixerTwo.SetFloat("MusicVol", Mathf.Log10(sliderValue) * 20);
         PlayerPrefs.SetFloat("MusicVolume", sliderValue);
     }
 
@@ -108,6 +114,7 @@ public class Sounds : MonoBehaviour
 
 
 
+
     //This function chooses a random number between 1-3 whenever it is called, and sets the intNumber equal to the randomly picked number
     int GetRandom (int min, int max)
     {
@@ -118,4 +125,9 @@ public class Sounds : MonoBehaviour
         rand = intNumber;
         return rand;
     }
+
+    
+
+
+
 }
