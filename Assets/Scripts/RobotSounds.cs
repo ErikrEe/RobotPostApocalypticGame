@@ -51,37 +51,40 @@ public class RobotSounds : MonoBehaviour
             robotMovement.Stop();
         }
 
-        //## LÄGGA TILL RANDOM WAIT TIME MELLAN ALLT SÅ ATT LJUDEN SPELAS AT RANDOM POINTS!
         //if the intNumber is equal to 1, if the intNumber is equal to 2, if the intNumber is equal to 3...
         if (intNumber == 1)
         {
             ambient1.Play(0);
             Debug.LogError("played 1");
+            intNumber = 0;
         }
         else if (intNumber == 2)
         {
             ambient2.Play(0);
             Debug.LogError("played 2");
+            intNumber = 0;
         }
         else if (intNumber == 3)
         {
             ambient3.Play(0);
             Debug.LogError("played 3");
+            intNumber = 0;
         }
 
     }
 
     //This function chooses a random number between 1-3 whenever it is called, and sets the intNumber equal to the randomly picked number
     int GetRandom(int min, int max)
-    { 
-        min = 1;
-        max = 3;
+    {
+
         int rand = Random.Range(min, max);
 
-        rand = intNumber;
+        //rand = intNumber;
+        Debug.LogError("GetRandom worked" + rand);
+        intNumber = rand;
         return rand;
 
-        Debug.LogError("GetRandom worked" + intNumber);
+
     }
 
 }

@@ -34,7 +34,8 @@ public class EquipItems : MonoBehaviour
     void Update()
     {
 
-        float verticalVelocity = playerVelocity.velocity.y;
+        //WHAT DIS DO?!?!?!??!?
+      //  float verticalVelocity = playerVelocity.velocity.y;
 
         vector.x = gameObject.transform.position.x;
         vectorTwo.y = gameObject.transform.position.y;
