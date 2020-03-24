@@ -53,10 +53,10 @@ public class MainMenu : MonoBehaviour
         mixer.SetFloat("AudioVol", Mathf.Log10(PlayerPrefs.GetFloat("AudioVolume", 0.75f)) * 20);
         mixerTwo.SetFloat("MusicVol", Mathf.Log10(PlayerPrefs.GetFloat("MusicVolume", 0.75f)) * 20);
 
-        EquipItems.pickedUp = false;
-        EquipItems.objectDraged = false;
-        EquipItems.objectLeft = false;
-        EquipItems.objectRight = false;
+        EquipItems.pickedUp = false;  
+        EquipItems.objectDraged = false;            //When Starting the game, the variables that check certain conditions...
+        EquipItems.objectLeft = false;              //...(flower being picked up, dragging / pushing objects... 
+        EquipItems.objectRight = false;             //...and facing directions) will be reset - Erik
         CharacterController.facingRight = true;
 
     }
