@@ -40068,10 +40068,11 @@ AudioSource:
   m_GameObject: {fileID: 2119586294}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 89ebccb46de4c7741b7df618d3c53ab0,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: b7d4744a27046e84b8fd1c66b9658c14, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.69
+  m_Volume: 0.24
   m_Pitch: 1.2
   Loop: 1
   Mute: 0
@@ -40164,17 +40165,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2119586294}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 958c1d7d5c3b5c441b1ee7fba698d75c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5efc15e7f617a1d4a9c2d80f2ee3f1c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   robotMovement: {fileID: 2119586299}
   ambient1: {fileID: 0}
   ambient2: {fileID: 0}
   ambient3: {fileID: 0}
-  mixer: {fileID: 0}
-  slider: {fileID: 0}
-  mixerTwo: {fileID: 0}
-  sliderTwo: {fileID: 0}
 --- !u!82 &2119586309
 AudioSource:
   m_ObjectHideFlags: 0
@@ -40184,7 +40181,8 @@ AudioSource:
   m_GameObject: {fileID: 2119586294}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 89ebccb46de4c7741b7df618d3c53ab0,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: b7d4744a27046e84b8fd1c66b9658c14, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
